@@ -719,7 +719,7 @@ function GeneralInformationdata({ location }) {
                       return (
                         <GData
                           data={item.eco_backward_yn}
-                          field="Economically Backward (Annual Income of Parents Less than 1LPA)"
+                          field="Economically Backward ( Annual Income of Parents Less than 1LPA )"
                         />
                       );
                     })}
