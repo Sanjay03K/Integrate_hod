@@ -1,8 +1,8 @@
 {
-  "name": "student-portal",
+  "name": "licet-portal",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://demos.creative-tim.com/studen-portel/#/",
+  "homepage": "https://demos.creative-tim.com/licet-portal/#/",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.5",
