@@ -191,47 +191,38 @@ function GeneralInformation() {
             <Tbody>
               {data
                 .filter((item) => {
-                  if (searchTerm == "" && searchTerm1=="") 
-                  {
+                  if (searchTerm == "" && searchTerm1 == "") {
                     return item;
-                  } 
-                  else if (searchTerm1!=="" && searchTerm=="")
-                      {
-                          if(
-                                item.batch
-                                .toLowerCase()
-                                .includes(searchTerm1.toLocaleLowerCase()) 
-                            )
-                                {
-                                  return item;
-                                }
-                              
-                          
+                  } else if (searchTerm1 !== "" && searchTerm == "") {
+                    if (
+                      item.batch
+                        .toLowerCase()
+                        .includes(searchTerm1.toLocaleLowerCase())
+                    ) {
+                      return item;
+                    }
+                  } else {
+                    if (
+                      item.batch
+                        .toLowerCase()
+                        .includes(searchTerm1.toLocaleLowerCase())
+                    ) {
+                      if (
+                        item.sname
+                          .toLowerCase()
+                          .includes(searchTerm.toLocaleLowerCase()) ||
+                        item.roll_no
+                          .toLowerCase()
+                          .includes(searchTerm.toLocaleLowerCase()) ||
+                        item.reg_no
+                          .toLowerCase()
+                          .includes(searchTerm.toLocaleLowerCase())
+                      ) {
+                        return item;
                       }
-                     
-                      else
-                      {
-                          if(
-                                item.batch
-                                .toLowerCase()
-                                .includes(searchTerm1.toLocaleLowerCase()) 
-                            )
-                                {
-                                  if(
-                                    item.sname
-                      .toLowerCase()
-                      .includes(searchTerm.toLocaleLowerCase()) ||
-                      item.roll_no
-                      .toLowerCase()
-                      .includes(searchTerm.toLocaleLowerCase()) ||
-                      item.reg_no
-                      .toLowerCase()
-                      .includes(searchTerm.toLocaleLowerCase())
-                                    )
-                                    {
-                                      return item;
-                                    }
-                   }   }})
+                    }
+                  }
+                })
                 .map((item) => {
                   return (
                     <GeneralParticularstablerow
