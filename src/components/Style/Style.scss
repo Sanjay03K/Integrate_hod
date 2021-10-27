@@ -1,10 +1,20 @@
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 0.5vw;
+  height: 0.5vw;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  margin: 0.7vw;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: gray;
-  border-radius: 100px;
-  scroll-behavior: smooth;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darkgray;
+  border-radius: 100vw;
 }
