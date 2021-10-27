@@ -33,6 +33,7 @@ function GeneralInformation() {
   const [data, setData] = useState([]);
   let params = new URLSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm1, setSearchTerm1] = useState("");
 
   params.append("department", localStorage.getItem("dept"));
   useEffect(async () => {
@@ -98,12 +99,12 @@ function GeneralInformation() {
               />
 
               <Input
-                onChange={(event) => setSearchTerm(event.target.value)}
+                onChange={(event) => setSearchTerm1(event.target.value)}
                 fontSize="xs"
                 py="11px"
-                placeholder="Type here..."
+                placeholder="Type batch"
                 borderRadius="inherit"
-                value={searchTerm}
+                value={searchTerm1}
               />
             </InputGroup>
           </Box>
@@ -190,25 +191,47 @@ function GeneralInformation() {
             <Tbody>
               {data
                 .filter((item) => {
-                  if (searchTerm == "") {
+                  if (searchTerm == "" && searchTerm1=="") 
+                  {
                     return item;
-                  } else if (
-                    item.sname
+                  } 
+                  else if (searchTerm1!=="" && searchTerm=="")
+                      {
+                          if(
+                                item.batch
+                                .toLowerCase()
+                                .includes(searchTerm1.toLocaleLowerCase()) 
+                            )
+                                {
+                                  return item;
+                                }
+                              
+                          
+                      }
+                     
+                      else
+                      {
+                          if(
+                                item.batch
+                                .toLowerCase()
+                                .includes(searchTerm1.toLocaleLowerCase()) 
+                            )
+                                {
+                                  if(
+                                    item.sname
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase()) ||
-                    item.roll_no
+                      item.roll_no
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase()) ||
-                    item.batch
-                      .toLowerCase()
-                      .includes(searchTerm.toLocaleLowerCase()) ||
-                    item.reg_no
+                      item.reg_no
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
-                  ) {
-                    return item;
-                  }
-                })
+                                    )
+                                    {
+                                      return item;
+                                    }
+                   }   }})
                 .map((item) => {
                   return (
                     <GeneralParticularstablerow
