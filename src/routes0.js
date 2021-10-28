@@ -1,7 +1,7 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
 import GeneralInformation0 from "views/Dashboard/GeneralInformation0";
-import Profile from "views/Dashboard/Profile.js";
+import Profile0 from "views/Dashboard/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
 
 import {
@@ -33,7 +33,7 @@ var dashRoutes = [
     name: "Profile",
     icon: <PersonIcon color="inherit" />,
     secondaryNavbar: true,
-    component: Profile,
+    component: Profile0,
     layout: "/admin0",
   },
   {

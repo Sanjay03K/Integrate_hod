@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import AuthLayout from "layouts/Auth.js";
+
 import AdminLayout0 from "layouts/Admin0";
 import AdminLayout from "layouts/Admin.js";
 import AdminLayout2 from "layouts/Admin2.js";

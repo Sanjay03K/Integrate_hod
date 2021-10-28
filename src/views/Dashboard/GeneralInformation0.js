@@ -68,8 +68,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Student Name{" "}
+                          Student Name
                         </Text>
                       </Flex>
                     </Flex>
@@ -194,8 +193,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Nationality{" "}
+                          Nationality
                         </Text>
                       </Flex>
                     </Flex>
@@ -220,8 +218,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Religion{" "}
+                          Religion
                         </Text>
                       </Flex>
                     </Flex>
@@ -246,8 +243,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          If Catholic, Parish?{" "}
+                          If Catholic, Parish?
                         </Text>
                       </Flex>
                     </Flex>
@@ -272,8 +268,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Dalit Catholic{" "}
+                          Dalit Catholic
                         </Text>
                       </Flex>
                     </Flex>
@@ -298,8 +293,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Community{" "}
+                          Community
                         </Text>
                       </Flex>
                     </Flex>
@@ -324,8 +318,7 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
-                          Blood Group{" "}
+                          Blood Group
                         </Text>
                       </Flex>
                     </Flex>
@@ -375,7 +368,6 @@ function GeneralInformationdata({ location }) {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          {" "}
                           Contact Number
                         </Text>
                       </Flex>

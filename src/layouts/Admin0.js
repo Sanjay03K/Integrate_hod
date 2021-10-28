@@ -172,7 +172,7 @@ export default function Dashboard(props) {
       <ChakraProvider theme={theme} resetCss={false}>
         <Sidebar
           routes={routes}
-          logoText={"Class Advisor Portal"}
+          logoText={"Student Portal"}
           display="none"
           sidebarVariant={sidebarVariant}
           {...rest}
@@ -187,7 +187,7 @@ export default function Dashboard(props) {
           <Portal>
             <AdminNavbar
               onOpen={onOpen}
-              logoText={"Class Advisor Portal"}
+              logoText={"Student Portal"}
               brandText={getActiveRoute(routes)}
               secondary={getActiveNavbar(routes)}
               rtlActive={false}
