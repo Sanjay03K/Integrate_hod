@@ -25,6 +25,8 @@ export default function AdminNavbar(props) {
     ...rest
   } = props;
 
+  // var num = 1;
+
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   let mainText = useColorModeValue("gray.700", "gray.200");
   let secondaryText = useColorModeValue("gray.400", "gray.200");
@@ -113,38 +115,29 @@ export default function AdminNavbar(props) {
         alignItems={{ xl: "center" }}
       >
         <Box mb={{ sm: "8px", md: "0px" }}>
-          <Breadcrumb>
+          <Link
+            color={mainText}
+            bg="inherit"
+            borderRadius="inherit"
+            fontSize="2xl"
+            fontWeight="bold"
+          >
+            {brandText}
+          </Link>
+          <Breadcrumb fontSize="sm">
             <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={secondaryText}>
-                Pages
+              <BreadcrumbLink
+                // href={"#/admin" + num + "/dashboard"}
+                color={secondaryText}
+              >
+                Portal
               </BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={mainText}>
-                {brandText}
-              </BreadcrumbLink>
+              <BreadcrumbLink color={mainText}>{brandText}</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
-          {/* Here we create navbar brand, based on route name */}
-          <Link
-            color={mainText}
-            href="#"
-            bg="inherit"
-            borderRadius="inherit"
-            fontWeight="bold"
-            _hover={{ color: { mainText } }}
-            _active={{
-              bg: "inherit",
-              transform: "none",
-              borderColor: "transparent",
-            }}
-            _focus={{
-              boxShadow: "none",
-            }}
-          >
-            {brandText}
-          </Link>
         </Box>
         <Box ms="auto" w={{ sm: "100%", md: "unset" }}>
           <AdminNavbarLinks
