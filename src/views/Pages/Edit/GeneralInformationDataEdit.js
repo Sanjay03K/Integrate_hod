@@ -569,7 +569,7 @@ function GeneralInformationDataEdit(props) {
 
 
     axios.post("http://localhost:5000/GeneralDataEdit", params);
-    window.location.href="http://localhost:3000/admin#/admin/GeneralInformationdata";
+    window.location.href="http://localhost:3000/Class-Advisor#/admin2/GeneralInformationdata";
   }
   const textColor = useColorModeValue("gray.700", "white");
 
