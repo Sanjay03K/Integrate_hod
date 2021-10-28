@@ -172,7 +172,7 @@ export default function Dashboard(props) {
       <ChakraProvider theme={theme} resetCss={false}>
         <Sidebar
           routes={routes}
-          logoText={"Class Advisor Portal"}
+          logoText={"LICET Portal"}
           display="none"
           sidebarVariant={sidebarVariant}
           {...rest}
@@ -187,7 +187,7 @@ export default function Dashboard(props) {
           <Portal>
             <AdminNavbar
               onOpen={onOpen}
-              logoText={"Class Advisor Portal"}
+              logoText={"LICET Portal"}
               brandText={getActiveRoute(routes)}
               secondary={getActiveNavbar(routes)}
               rtlActive={false}
@@ -201,10 +201,7 @@ export default function Dashboard(props) {
                 <Switch>
                   {getRoutes(routes)}
                   {getRoutes1(routes1)}
-                  <Redirect
-                    from="/Class-Advisor"
-                    to="/Class-Advisor/dashboard"
-                  />
+                  <Redirect from="/LICET" to="/LICET/dashboard" />
                 </Switch>
               </PanelContainer>
             </PanelContent>
