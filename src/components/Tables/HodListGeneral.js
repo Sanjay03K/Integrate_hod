@@ -18,7 +18,7 @@ function HodListGeneral(props) {
 
   return (
     <Tr>
-      <Td width={{ sm: "12em" }}>
+      <Td width={{ sm: "14vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
@@ -47,7 +47,7 @@ function HodListGeneral(props) {
           </Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "65%" }}>
+      <Td minWidth={{ sm: "22vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
