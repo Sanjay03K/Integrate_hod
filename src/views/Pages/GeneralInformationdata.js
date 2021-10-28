@@ -424,7 +424,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_name}
+                          data={item.guardian_name}
                           field="Guardian Name"
                         />
                       );
@@ -434,7 +434,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_qualification}
+                          data={item.guardian_qualification}
                           field="Guardian Qualification"
                         />
                       );
@@ -444,7 +444,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_occupation}
+                          data={item.guardian_occupation}
                           field="Guardian Occupation"
                         />
                       );
@@ -454,7 +454,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_office_address}
+                          data={item.guardian_office_address}
                           field="Guardian Office Address"
                         />
                       );
@@ -464,7 +464,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_annual_income}
+                          data={item.guardian_annual_income}
                           field="Guardian Annual Income"
                         />
                       );
@@ -474,7 +474,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_mob_no}
+                          data={item.guardian_mob_no}
                           field="Guardian Mobile No."
                         />
                       );
@@ -484,7 +484,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.gaurdian_email}
+                          data={item.guardian_email}
                           field="Guardian Email ID"
                         />
                       );
@@ -575,7 +575,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.no_of_sibilings}
+                          data={item.no_of_siblings}
                           field="No. of Sibilings"
                         />
                       );
@@ -585,7 +585,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.qualification_sibilings}
+                          data={item.qualification_siblings}
                           field="Qualification Of Sibilings"
                         />
                       );
@@ -595,7 +595,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.occupation_sibilings}
+                          data={item.occupation_siblings}
                           field="Occupation"
                         />
                       );
@@ -882,7 +882,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.Professional_membership_name}
+                          data={item.membership_name}
                           field="Membership Name"
                         />
                       );
