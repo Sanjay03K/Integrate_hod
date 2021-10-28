@@ -110,12 +110,12 @@ function GeneralInformation3() {
                 />
 
                 <Input
-                  onChange={(event) => setSearchTerm1(event.target.value)}
+                  onChange={(event) => setSearchTerm2(event.target.value)}
                   fontSize="xs"
                   py="11px"
-                  placeholder="Type batch"
+                  placeholder="Type department"
                   borderRadius="inherit"
-                  value={searchTerm1}
+                  value={searchTerm2}
                 />
               </InputGroup>
             </Box>
@@ -265,7 +265,7 @@ function GeneralInformation3() {
                       searchTerm == ""
                     ) {
                       if (
-                        item.batch
+                        item.dept
                           .toLowerCase()
                           .includes(searchTerm2.toLocaleLowerCase())
                       ) {
