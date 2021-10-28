@@ -54,7 +54,7 @@ export default function handleLogin() {
           window.location.href = URL + "/Student#/auth/GeneralInformationdata";
         } else {
           localStorage.setItem("StudentRoll", check.roll_no);
-          window.location.href = URL + "/Student#/admin/dashboard";
+          window.location.href = URL + "/Student#/admin0/dashboard";
         }
       }
       localStorage.setItem("useremail", result.data[0].email);

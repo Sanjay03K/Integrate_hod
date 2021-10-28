@@ -6,7 +6,7 @@ import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import routes from "routes2.js";
+import routes from "routes0.js";
 import routes1 from "routes1.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
@@ -201,7 +201,7 @@ export default function Dashboard(props) {
                 <Switch>
                   {getRoutes(routes)}
                   {getRoutes1(routes1)}
-                  <Redirect from="/admin0" to="/admin0/dashboard" />
+                  <Redirect from="/Student" to="/Student/dashboard" />
                 </Switch>
               </PanelContainer>
             </PanelContent>

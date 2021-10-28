@@ -1,9 +1,8 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformationHOD from "views/Dashboard/GeneralInformationHOD";
+import GeneralInformation0 from "views/Dashboard/GeneralInformation0";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata";
 
 import {
   HomeIcon,
@@ -26,7 +25,7 @@ var dashRoutes = [
     path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationHOD,
+    component: GeneralInformation0,
     layout: "/admin0",
   },
   {

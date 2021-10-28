@@ -3,7 +3,6 @@ import Dashboard from "views/Dashboard/Dashboard.js";
 import GeneralInformationHOD from "views/Dashboard/GeneralInformationHOD";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata";
 
 import {
   HomeIcon,
