@@ -338,13 +338,15 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
-
-                        <Select  placeholder="Select Option" isRequired>      
+                          <Select
+                            id="SID"
+                            placeholder="Select Option"
+                            isRequired
+                          >
                             <option value="option1">Male</option>
                             <option value="option2">Female</option>
                             <option value="option3">Other</option>
-                        </Select>
-
+                          </Select>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -379,7 +381,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
-                        <Input
+                          <Input
                             id="DOBID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -573,7 +575,7 @@ function GeneralInformationdata() {
                           fontWeight="bold"
                           minWidth="100%"
                         >
-                          If Catholic, Parish ? 
+                          If Catholic, Parish ?
                         </Text>
                       </Flex>
                     </Flex>
@@ -592,7 +594,7 @@ function GeneralInformationdata() {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder="Enter yes/no"
+                            placeholder="Enter Parish"
                           />
                         </FormControl>
                       </Flex>
@@ -628,10 +630,14 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
-                        <Select  placeholder="Select Option" isRequired>      
+                          <Select
+                            id="DALITID"
+                            placeholder="Select Option"
+                            isRequired
+                          >
                             <option value="option1">Y</option>
                             <option value="option2">N</option>
-                        </Select>
+                          </Select>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -2854,10 +2860,14 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">Y</option>
-                            <option value="option2">N</option>
-                        </Select>
+                            <Select
+                              id="AOL"
+                              placeholder="Select Option"
+                              isRequired
+                            >
+                              <option value="option1">Y</option>
+                              <option value="option2">N</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -2947,16 +2957,16 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Input
-                            id="DOA"
-                            borderRadius="5px"
-                            fontSize="sm"
-                            type="text"
-                            style={{
-                              backgroundColor: "rgb(31 39 51)",
-                            }}
-                            type="date"
-                          />
+                            <Input
+                              id="DOA"
+                              borderRadius="5px"
+                              fontSize="sm"
+                              type="text"
+                              style={{
+                                backgroundColor: "rgb(31 39 51)",
+                              }}
+                              type="date"
+                            />
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -2991,10 +3001,14 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">GQ</option>
-                            <option value="option2">MQ</option>
-                        </Select>
+                            <Select
+                              id="GQ"
+                              placeholder="Select Option"
+                              isRequired
+                            >
+                              <option value="option1">GQ</option>
+                              <option value="option2">MQ</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -3029,10 +3043,10 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">R</option>
-                            <option value="option2">L</option>
-                        </Select>
+                            <Select placeholder="Select Option" isRequired>
+                              <option value="option1">R</option>
+                              <option value="option2">L</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -3067,10 +3081,10 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">D</option>
-                            <option value="option2">H</option>
-                        </Select>
+                            <Select placeholder="Select Option" isRequired>
+                              <option value="option1">D</option>
+                              <option value="option2">H</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -3201,10 +3215,10 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">Y</option>
-                            <option value="option2">N</option>
-                        </Select>
+                            <Select placeholder="Select Option" isRequired>
+                              <option value="option1">Y</option>
+                              <option value="option2">N</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -3240,10 +3254,10 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
-                          <Select  placeholder="Select Option" isRequired>      
-                            <option value="option1">Y</option>
-                            <option value="option2">N</option>
-                        </Select>
+                            <Select placeholder="Select Option" isRequired>
+                              <option value="option1">Y</option>
+                              <option value="option2">N</option>
+                            </Select>
                           </FormControl>
                         </Flex>
                       </Flex>
