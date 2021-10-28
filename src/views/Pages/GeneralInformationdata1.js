@@ -140,7 +140,7 @@ function GeneralInformationdata({ location }) {
                 <Tr>
                   {data.map((item) => {
                     return (
-                      <GData data={item.contant_no} field="Contact Number" />
+                      <GData data={item.contact_no} field="Contact Number" />
                     );
                   })}
                 </Tr>
