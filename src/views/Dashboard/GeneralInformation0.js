@@ -28,7 +28,7 @@ function GeneralInformationdata({ location }) {
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
-  params.append("RollNumber", localStorage.getItem("generalStudent"));
+  params.append("RollNumber", localStorage.getItem("StudentRoll"));
 
   axios.post("http://localhost:5000/GeneralData", params).then((items) => {
     setData(items.data);

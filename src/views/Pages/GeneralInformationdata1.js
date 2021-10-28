@@ -596,7 +596,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={name_siblings}
+                          data={item.name_siblings}
                           field="Name of Siblings"
                         />
                       );
