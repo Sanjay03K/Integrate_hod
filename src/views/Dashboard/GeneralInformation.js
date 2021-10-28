@@ -170,7 +170,7 @@ function GeneralInformation() {
           Download Report
         </Button>
       </Card>
-      <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+      <Card overflowX={{ sm: "scroll", lg: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
             Students List
