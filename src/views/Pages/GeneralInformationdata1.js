@@ -586,8 +586,8 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.no_of_sibilings}
-                          field="No. of Sibilings"
+                          data={item.no_of_siblings}
+                          field="No. of Siblings"
                         />
                       );
                     })}
@@ -596,8 +596,8 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.qualification_sibilings}
-                          field="Qualification Of Sibilings"
+                          data={item.qualification_siblings}
+                          field="Qualification Of Siblings"
                         />
                       );
                     })}
@@ -606,7 +606,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.occupation_sibilings}
+                          data={item.occupation_siblings}
                           field="Occupation"
                         />
                       );
