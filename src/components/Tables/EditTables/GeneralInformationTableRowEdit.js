@@ -3,6 +3,8 @@ import {
   Badge,
   Button,
   Flex,
+  FormControl,
+  Input,
   Td,
   Text,
   Tr,
@@ -10,19 +12,18 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-function GeneralParticularstablerow(props) {
-  const { field,data } = props;
+function GeneralParticularsTableRowEdit(props) {
+  const { field, data } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
 
   return (
     <Tr>
-      <Td width={{ sm: "12em" }}>
+      <Td minWidth={{ sm: "17rem" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
-              marginLeft="1em"
               fontSize="md"
               color={textColor}
               fontWeight="bold"
@@ -33,31 +34,17 @@ function GeneralParticularstablerow(props) {
           </Flex>
         </Flex>
       </Td>
-      <Td width="1em">
+      <Td minWidth={{ sm: "17rem" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
-            <Text
-              fontSize="md"
-              color={textColor}
-              fontWeight="light-bold"
-              minWidth="100%"
-            >
-              {":"}
-            </Text>
-          </Flex>
-        </Flex>
-      </Td>
-      <Td minWidth={{ sm: "65%" }}>
-        <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-          <Flex direction="column">
-            <Text
-              fontSize="md"
-              color={textColor}
-              fontWeight="light-bold"
-              minWidth="100%"
-            >
-              {data}
-            </Text>
+            <FormControl>
+              <Input
+                borderRadius="5px"
+                fontSize="sm"
+                type="text"
+                placeholder={field}
+              />
+            </FormControl>
           </Flex>
         </Flex>
       </Td>
@@ -65,4 +52,4 @@ function GeneralParticularstablerow(props) {
   );
 }
 
-export default GeneralParticularstablerow;
+export default GeneralParticularsTableRowEdit;
