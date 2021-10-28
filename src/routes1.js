@@ -4,6 +4,10 @@ import GeneralInformationHOD from "views/Dashboard/GeneralInformationHOD";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import GeneralInformationdata from "views/Pages/GeneralInformationdata";
+
+import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
+import GeneralInformationdata1 from "views/Pages/GeneralInformationdata1";
+
 import {
   HomeIcon,
   StatsIcon,
@@ -49,6 +53,20 @@ var dashRoutes = [
         layout: "/auth",
       },
     ],
+  },
+  {
+    path: "/Class-Advisor/GeneralInformationdata",
+    name: "General Information Data",
+    icon: <StatsIcon color="inherit" />,
+    component: GeneralInformationdata1,
+    layout: "/admin2",
+  },
+  {
+    path: "/Class-Advisor/GeneralInformationDataEdit",
+    name: "General Information Data Edit",
+    component: GeneralInformationDataEdit,
+    icon: <StatsIcon color="inherit" />,
+    layout: "/admin2",
   },
 ];
 export default dashRoutes;
