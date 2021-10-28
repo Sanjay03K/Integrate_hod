@@ -5,6 +5,7 @@ import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import GeneralInformationdata from "views/Pages/GeneralInformationdata";
 
+import GeneralInformationDataStudent from "views/Pages/Edit/GeneralInformationdata";
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata1 from "views/Pages/GeneralInformationdata1";
 
@@ -46,6 +47,12 @@ var dashRoutes = [
     component: GeneralInformationDataEdit,
     icon: <StatsIcon color="inherit" />,
     layout: "/admin2",
+  },
+
+  {
+    path: "/GeneralInformationdata",
+    component: GeneralInformationDataStudent,
+    layout: "/auth",
   },
 ];
 export default dashRoutes;
