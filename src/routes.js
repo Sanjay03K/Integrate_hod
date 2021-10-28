@@ -4,6 +4,7 @@ import GeneralInformationdata2 from "views/Pages/GeneralInformationdata2";
 import GeneralInformationdata3 from "views/Pages/GeneralInformationdata3";
 
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
+import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
 
 import {
   HomeIcon,
@@ -43,6 +44,12 @@ var dashRoutes = [
     component: GeneralInformationDataEdit,
     icon: <StatsIcon color="inherit" />,
     layout: "/admin1",
+  },
+
+  {
+    path: "/GeneralInformationdata",
+    component: GeneralInformationdata,
+    layout: "/auth",
   },
 ];
 export default dashRoutes;
