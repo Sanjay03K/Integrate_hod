@@ -11,11 +11,11 @@ import routes1 from "routes1.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
-
 // Custom components
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
+
 export default function Dashboard(props) {
   const { ...rest } = props;
   // states and functions
@@ -24,6 +24,9 @@ export default function Dashboard(props) {
   // ref for main panel div
   const mainPanel = React.createRef();
   // functions for changing the states from components
+
+  let auth_token = localStorage.getItem("auth_token");
+
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";
   };
@@ -163,57 +166,62 @@ export default function Dashboard(props) {
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra Color Mode
-  return (
-    <ChakraProvider theme={theme} resetCss={false}>
-      <Sidebar
-        routes={routes}
-        logoText={"HoD Portal"}
-        display="none"
-        sidebarVariant={sidebarVariant}
-        {...rest}
-      />
-      <MainPanel
-        ref={mainPanel}
-        w={{
-          base: "100%",
-          xl: "calc(100% - 275px)",
-        }}
-      >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"Hod Portal"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            rtlActive={false}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
-        {getRoute() ? (
-          <PanelContent>
-            <PanelContainer>
-              <Switch>
-                {getRoutes(routes)}
-                {getRoutes1(routes1)}
-                <Redirect from="/admin" to="/admin/dashboard" />
-              </Switch>
-            </PanelContainer>
-          </PanelContent>
-        ) : null}
 
-        <Configurator
-          secondary={getActiveNavbar(routes)}
-          isOpen={isOpen}
-          onClose={onClose}
-          isChecked={fixed}
-          onSwitch={(value) => {
-            setFixed(value);
-          }}
-          onOpaque={() => setSidebarVariant("opaque")}
-          onTransparent={() => setSidebarVariant("transparent")}
+  if (auth_token != -1) {
+    return (
+      <ChakraProvider theme={theme} resetCss={false}>
+        <Sidebar
+          routes={routes}
+          logoText={"HoD Portal"}
+          display="none"
+          sidebarVariant={sidebarVariant}
+          {...rest}
         />
-      </MainPanel>
-    </ChakraProvider>
-  );
+        <MainPanel
+          ref={mainPanel}
+          w={{
+            base: "100%",
+            xl: "calc(100% - 275px)",
+          }}
+        >
+          <Portal>
+            <AdminNavbar
+              onOpen={onOpen}
+              logoText={"Hod Portal"}
+              brandText={getActiveRoute(routes)}
+              secondary={getActiveNavbar(routes)}
+              rtlActive={false}
+              fixed={fixed}
+              {...rest}
+            />
+          </Portal>
+          {getRoute() ? (
+            <PanelContent>
+              <PanelContainer>
+                <Switch>
+                  {getRoutes(routes)}
+                  {getRoutes1(routes1)}
+                  <Redirect from="/admin" to="/admin/dashboard" />
+                </Switch>
+              </PanelContainer>
+            </PanelContent>
+          ) : null}
+
+          <Configurator
+            secondary={getActiveNavbar(routes)}
+            isOpen={isOpen}
+            onClose={onClose}
+            isChecked={fixed}
+            onSwitch={(value) => {
+              setFixed(value);
+            }}
+            onOpaque={() => setSidebarVariant("opaque")}
+            onTransparent={() => setSidebarVariant("transparent")}
+          />
+        </MainPanel>
+      </ChakraProvider>
+    );
+  } else {
+    return <Redirect to="/auth/SignIn" />;
+  }
 }

@@ -22,12 +22,13 @@ import signInImage from "assets/img/signInImage.png";
 function login(e) {
   e.preventDefault();
   console.log(document.getElementById("emailId").value);
-z}
-
+  z;
+}
 
 function SignIn() {
   const titleColor = useColorModeValue("orange.300", "orange.200");
   const textColor = useColorModeValue("gray.400", "white");
+  localStorage.setItem("auth_token", -1); // Removing session
   return (
     <Flex position="relative" mb="40px">
       <Flex

@@ -14,6 +14,7 @@ export default function handleLogin() {
       //    document.getElementById("pass-fail").classList.add("d-none");
       //    document.getElementById("email-fail").classList.remove("d-none");
       //    document.getElementById("server-fail").classList.add("d-none");
+      localStorage.setItem("auth_token", -1);
       loginButton.disabled = false;
       loginButton.innerHTML = `Login`;
     } else if (result.data === "pass-fail") {
@@ -21,9 +22,11 @@ export default function handleLogin() {
       //    document.getElementById("pass-fail").classList.remove("d-none");
       //    document.getElementById("email-fail").classList.add("d-none");
       //    document.getElementById("server-fail").classList.add("d-none");
+      localStorage.setItem("auth_token", -1);
       loginButton.disabled = false;
       loginButton.innerHTML = `Login`;
     } else if (result.data === "server-down") {
+      localStorage.setItem("auth_token", -1);
       //    document.getElementById("pass-fail").classList.add("d-none");
       //    document.getElementById("email-fail").classList.add("d-none");
       //    document.getElementById("server-fail").classList.remove("d-none");
