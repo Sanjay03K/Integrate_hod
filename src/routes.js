@@ -1,9 +1,10 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformation from "views/Dashboard/GeneralInformation";
+import GeneralInformationHOD from "views/Dashboard/GeneralInformationHOD";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import GeneralInformationdata from "views/Pages/GeneralInformationdata";
+
 import {
   HomeIcon,
   StatsIcon,
@@ -25,56 +26,23 @@ var dashRoutes = [
     path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformation,
+    component: GeneralInformationHOD,
     layout: "/admin",
   },
   {
-    name: "TEST PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/GeneralInformationdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            General Information Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: GeneralInformationdata,
-        layout: "/admin",
-      },
-    ],
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+    layout: "/admin",
   },
-
   {
-    name: "ACCOUNT PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/profile",
-        name: "Profile",
-        icon: <PersonIcon color="inherit" />,
-        secondaryNavbar: true,
-        component: Profile,
-        layout: "/admin",
-      },
-      {
-        path: "/signin",
-        name: "Sign In",
-        icon: <DocumentIcon color="inherit" />,
-        component: SignIn,
-        layout: "/auth",
-      },
-    ],
+    path: "/signin",
+    name: "Log Out",
+    icon: <DocumentIcon color="inherit" />,
+    component: SignIn,
+    layout: "/auth",
   },
 ];
 export default dashRoutes;

@@ -1,9 +1,11 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformation2 from "views/Dashboard/GeneralInformation2";
+import GeneralInformationCA from "views/Dashboard/GeneralInformationCA";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata";
+import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
+import GeneralInformationdata from "views/Pages/GeneralInformationdata1";
+
 import {
   HomeIcon,
   StatsIcon,
@@ -25,40 +27,23 @@ var dashRoutes = [
     path: "/Class-Advisor/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformation2,
+    component: GeneralInformationCA,
     layout: "/admin2",
   },
   {
-    name: "TEST PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
-      {
-        path: "/GeneralInformationdata",
-        name: (
-          <p
-            style={{
-              textAlign: "left",
-              lineHeight: "1.2rem",
-              whiteSpace: "normal",
-              wordWrap: "break-word",
-            }}
-          >
-            General Information Data
-          </p>
-        ),
-        icon: <StatsIcon color="inherit" />,
-        component: GeneralInformationdata,
-        layout: "/admin2",
-      },
-    ],
+    path: "/Class-Advisor/GeneralInformationdata",
+    name: "General Information Data",
+    icon: <StatsIcon color="inherit" />,
+    component: GeneralInformationdata,
+    layout: "/admin2",
   },
-
-  {
-    name: "ACCOUNT PAGES",
-    category: "account",
-    state: "pageCollapse",
-    views: [
+      {
+        path: "/Class-Advisor/GeneralInformationDataEdit",
+        name: "General Information Data Edit",
+        component: GeneralInformationDataEdit,
+        icon: <StatsIcon color="inherit" />,
+        layout: "/admin2",
+      },    
       {
         path: "/profile",
         name: "Profile",
@@ -74,7 +59,6 @@ var dashRoutes = [
         component: SignIn,
         layout: "/auth",
       },
-    ],
-  },
+
 ];
 export default dashRoutes;
