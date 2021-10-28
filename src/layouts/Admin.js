@@ -11,6 +11,7 @@ import routes1 from "routes1.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
+
 // Custom components
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";

@@ -48,6 +48,9 @@ export default function Dashboard(props) {
     }
     return activeRoute;
   };
+
+
+
   // This changes navbar state(fixed or not)
   const getActiveNavbar = (routes) => {
     let activeNavbar = false;
@@ -69,6 +72,10 @@ export default function Dashboard(props) {
     }
     return activeNavbar;
   };
+
+
+
+
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.collapse) {
@@ -90,6 +97,8 @@ export default function Dashboard(props) {
       }
     });
   };
+
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra Color Mode
   return (
