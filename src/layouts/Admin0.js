@@ -25,7 +25,7 @@ export default function Dashboard(props) {
   // functions for changing the states from components
   let auth_token = localStorage.getItem("auth_token");
   const getRoute = () => {
-    return window.location.pathname !== "/admin2/full-screen-maps";
+    return window.location.pathname !== "/admin0/full-screen-maps";
   };
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
@@ -128,7 +128,7 @@ export default function Dashboard(props) {
       if (prop.category === "account") {
         return getRoutes(prop.views);
       }
-      if (prop.layout === "/admin2") {
+      if (prop.layout === "/admin0") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -150,7 +150,7 @@ export default function Dashboard(props) {
       if (prop.category === "account") {
         return getRoutes1(prop.views);
       }
-      if (prop.layout === "/admin2") {
+      if (prop.layout === "/admin0") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -201,10 +201,7 @@ export default function Dashboard(props) {
                 <Switch>
                   {getRoutes(routes)}
                   {getRoutes1(routes1)}
-                  <Redirect
-                    from="/Class-Advisor"
-                    to="/Class-Advisor/dashboard"
-                  />
+                  <Redirect from="/admin0" to="/admin0/dashboard" />
                 </Switch>
               </PanelContainer>
             </PanelContent>

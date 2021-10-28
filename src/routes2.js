@@ -24,7 +24,7 @@ var dashRoutes = [
     layout: "/admin2",
   },
   {
-    path: "/Class-Advisor/GeneralInformation",
+    path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
     component: GeneralInformationCA,
@@ -41,7 +41,7 @@ var dashRoutes = [
   },
   {
     path: "/signin",
-    name: "Sign In",
+    name: "Log Out",
     icon: <DocumentIcon color="inherit" />,
     component: SignIn,
     layout: "/auth",

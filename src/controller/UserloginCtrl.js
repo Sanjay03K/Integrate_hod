@@ -48,14 +48,13 @@ export default function handleLogin() {
       } else if (check.user_type == 1) {
         localStorage.setItem("batch", check.batch);
         localStorage.setItem("dept", check.dept);
-        window.location.href = URL + "/purity-ui-dashboard#/admin2/dashboard";
+        window.location.href = URL + "/Class-Advisor#/admin2/dashboard";
       } else if (check.user_type == 0) {
         if (check.roll_no == null) {
-          window.location.href =
-            URL + "/purity-ui-dashboard#/auth/GeneralInformationdata";
+          window.location.href = URL + "/Student#/auth/GeneralInformationdata";
         } else {
           localStorage.setItem("StudentRoll", check.roll_no);
-          window.location.href = URL + "/purity-ui-dashboard#/admin/dashboard";
+          window.location.href = URL + "/Student#/admin/dashboard";
         }
       }
       localStorage.setItem("useremail", result.data[0].email);

@@ -5,9 +5,6 @@ import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import GeneralInformationdata from "views/Pages/GeneralInformationdata";
 
-import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
-import GeneralInformationdata1 from "views/Pages/GeneralInformationdata1";
-
 import {
   HomeIcon,
   StatsIcon,
@@ -23,29 +20,29 @@ var dashRoutes = [
     name: "Dashboard",
     icon: <HomeIcon color="inherit" />,
     component: Dashboard,
-    layout: "/admin",
+    layout: "/admin0",
   },
   {
-    path: "/GeneralInformationdata",
+    path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationdata,
-    layout: "/admin",
-  },
-
-  {
-    path: "/GeneralInformationdata",
-    name: "General Information Data",
-    icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationdata1,
-    layout: "/admin2",
+    component: GeneralInformationHOD,
+    layout: "/admin0",
   },
   {
-    path: "/GeneralInformationDataEdit",
-    name: "General Information Data Edit",
-    component: GeneralInformationDataEdit,
-    icon: <StatsIcon color="inherit" />,
-    layout: "/admin2",
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+    layout: "/admin0",
+  },
+  {
+    path: "/signin",
+    name: "Log Out",
+    icon: <DocumentIcon color="inherit" />,
+    component: SignIn,
+    layout: "/auth",
   },
 ];
 export default dashRoutes;

@@ -18,26 +18,26 @@ function TablesTableRow(props) {
 
   return (
     <Tr
-    cursor=""
-    variant="ghost"
-    fontSize="md"
-    color={textColor}
-    fontWeight="bold"
-    minWidth="100%"
-    onClick={() => {
-      localStorage.setItem("generalStudent", roll);
-      let params = new URLSearchParams();
-      params.append("RollNumber", localStorage.getItem("generalStudent"));
-      window.location.href =
-        "http://localhost:3000/admin#/admin/GeneralInformationdata";
-    }}
-    id={roll}
-    _hover={{
-      Radius: "20px",
-      background: "#3b4e6b",
-      color: "white",
-    }}
-  >
+      cursor=""
+      variant="ghost"
+      fontSize="md"
+      color={textColor}
+      fontWeight="bold"
+      minWidth="100%"
+      onClick={() => {
+        localStorage.setItem("generalStudent", roll);
+        let params = new URLSearchParams();
+        params.append("RollNumber", localStorage.getItem("generalStudent"));
+        window.location.href =
+          "http://localhost:3000/HoD#/admin/GeneralInformationdata";
+      }}
+      id={roll}
+      _hover={{
+        Radius: "20px",
+        background: "#3b4e6b",
+        color: "white",
+      }}
+    >
       <Td>
         <Flex direction="column">
           <Text fontSize="md" color={textColor} fontWeight="bold">
@@ -67,7 +67,7 @@ function TablesTableRow(props) {
           {email}
         </Text>
       </Td>
-     </Tr> 
+    </Tr>
   );
 }
 
