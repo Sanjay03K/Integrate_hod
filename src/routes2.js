@@ -30,35 +30,21 @@ var dashRoutes = [
     component: GeneralInformationCA,
     layout: "/admin2",
   },
+
   {
-    path: "/Class-Advisor/GeneralInformationdata",
-    name: "General Information Data",
-    icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationdata,
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
     layout: "/admin2",
   },
-      {
-        path: "/Class-Advisor/GeneralInformationDataEdit",
-        name: "General Information Data Edit",
-        component: GeneralInformationDataEdit,
-        icon: <StatsIcon color="inherit" />,
-        layout: "/admin2",
-      },    
-      {
-        path: "/profile",
-        name: "Profile",
-        icon: <PersonIcon color="inherit" />,
-        secondaryNavbar: true,
-        component: Profile,
-        layout: "/admin2",
-      },
-      {
-        path: "/signin",
-        name: "Sign In",
-        icon: <DocumentIcon color="inherit" />,
-        component: SignIn,
-        layout: "/auth",
-      },
-
+  {
+    path: "/signin",
+    name: "Sign In",
+    icon: <DocumentIcon color="inherit" />,
+    component: SignIn,
+    layout: "/auth",
+  },
 ];
 export default dashRoutes;
