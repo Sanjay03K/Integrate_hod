@@ -23,20 +23,33 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import HodListGeneral from "components/Tables/HodListGeneral";
+import TableRow2 from "components/Tables/TableRow2";
+
+var URL = "http://localhost:3000/",
+  server_URL = "http://localhost:5000/";
+
 function GeneralInformationdata({ location }) {
+  function fundelete() {
+    let params = new URLSearchParams();
+    params.append("RollNumber", localStorage.getItem("generalStudent"));
+    axios.post(server_URL + "GeneralDataDelete", params);
+    window.location.href = URL + "HoD#/admin2/GeneralInformation";
+  }
+  function newReload() {
+    window.location.href = URL + "HoD#/admin2/GeneralInformationDataEdit";
+  }
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
   params.append("RollNumber", localStorage.getItem("generalStudent"));
 
-  axios.post("http://localhost:5000/GeneralData", params).then((items) => {
+  axios.post(server_URL + "GeneralData", params).then((items) => {
     setData(items.data);
   });
 
   const textColor = useColorModeValue("gray.700", "white");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  var GData = HodListGeneral;
+  var GData = TableRow2;
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
@@ -129,7 +142,7 @@ function GeneralInformationdata({ location }) {
                 <Tr>
                   {data.map((item) => {
                     return (
-                      <GData data={item.contact_no} field="Contact Number" />
+                      <GData data={item.contant_no} field="Contact Number" />
                     );
                   })}
                 </Tr>
@@ -719,7 +732,7 @@ function GeneralInformationdata({ location }) {
                       return (
                         <GData
                           data={item.eco_backward_yn}
-                          field="Economically Backward ( Annual Income of Parents Less than 1LPA )"
+                          field="Economically Backward (Annual Income of Parents Less than 1LPA)"
                         />
                       );
                     })}
@@ -762,7 +775,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.dept_related_proficiency}
+                          data={item.dept_rel_proficiency}
                           field="Department Related Skills"
                         />
                       );
@@ -794,7 +807,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.apptitude_analytical_skills}
+                          data={item.aptitude_analytical_skills}
                           field="Aptitude / Analytical Skills"
                         />
                       );
@@ -882,7 +895,7 @@ function GeneralInformationdata({ location }) {
                     {data.map((item) => {
                       return (
                         <GData
-                          data={item.Professional_membership_name}
+                          data={item.membership_name}
                           field="Membership Name"
                         />
                       );
@@ -914,6 +927,65 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
         </SimpleGrid>
+      </SimpleGrid>
+      <SimpleGrid pt="1.5rem" columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+        <Card>
+          <CardBody>
+            <Button
+              onClick={newReload}
+              colorScheme="orange"
+              variant="solid"
+              width="100%"
+            >
+              Edit
+            </Button>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+            <Button
+              onClick={onOpen}
+              colorScheme="orange"
+              variant="solid"
+              width="100%"
+            >
+              Delete
+            </Button>
+            <Modal
+              isOpen={isOpen}
+              onClose={() => {
+                onClose();
+              }}
+            >
+              <ModalContent>
+                <ModalHeader>Confirmation</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>Delete this student ?</ModalBody>
+                <ModalFooter>
+                  <Button
+                    colorScheme="blue"
+                    mr={3}
+                    onClick={() => {
+                      onClose();
+                      fundelete();
+                    }}
+                  >
+                    Confirm
+                  </Button>
+                  <Button
+                    colorScheme="blue"
+                    mr={3}
+                    onClick={() => {
+                      onClose();
+                    }}
+                  >
+                    Close
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+          </CardBody>
+        </Card>
       </SimpleGrid>
     </Flex>
   );

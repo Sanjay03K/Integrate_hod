@@ -1,7 +1,8 @@
-// import
-import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformation0 from "views/Dashboard/GeneralInformation0";
-import Profile0 from "views/Dashboard/Profile0.js";
+// Student routes
+
+import Dashboard from "views/Dashboard/Dashboard0.js";
+import GeneralInformation from "views/Dashboard/GeneralInformation0";
+import Profile from "views/Dashboard/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
 
 import {
@@ -25,7 +26,7 @@ var dashRoutes = [
     path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformation0,
+    component: GeneralInformation,
     layout: "/admin0",
   },
   {
@@ -33,7 +34,7 @@ var dashRoutes = [
     name: "Profile",
     icon: <PersonIcon color="inherit" />,
     secondaryNavbar: true,
-    component: Profile0,
+    component: Profile,
     layout: "/admin0",
   },
   {

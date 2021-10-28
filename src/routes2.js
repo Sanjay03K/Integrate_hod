@@ -1,10 +1,9 @@
-// import
-import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformationCA from "views/Dashboard/GeneralInformationCA";
-import Profile from "views/Dashboard/Profile.js";
+// HoD routes
+
+import Dashboard from "views/Dashboard/Dashboard2.js";
+import GeneralInformation from "views/Dashboard/GeneralInformation2";
+import Profile from "views/Dashboard/Profile2.js";
 import SignIn from "views/Pages/SignIn.js";
-import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
-import GeneralInformationdata from "views/Pages/GeneralInformationdata1";
 
 import {
   HomeIcon,
@@ -27,7 +26,7 @@ var dashRoutes = [
     path: "/GeneralInformation",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationCA,
+    component: GeneralInformation,
     layout: "/admin2",
   },
 

@@ -1,3 +1,5 @@
+//Class Advisor Dashboard/General
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -22,11 +24,9 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListGeneral from "components/Tables/StudentListGeneral";
-import Upload from "components/Upload/Upload";
-import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+import StudentListGeneral from "components/Tables/StudentListGI1";
 
-function GeneralInformationCA() {
+function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(async () => {
@@ -167,4 +167,4 @@ function GeneralInformationCA() {
   );
 }
 
-export default GeneralInformationCA;
+export default GeneralInformation;

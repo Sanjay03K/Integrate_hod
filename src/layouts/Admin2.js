@@ -7,7 +7,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "routes2.js";
-import routes1 from "routes1.js";
+import routes1 from "routes.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
@@ -172,7 +172,7 @@ export default function Dashboard(props) {
       <ChakraProvider theme={theme} resetCss={false}>
         <Sidebar
           routes={routes}
-          logoText={"Class Advisor Portal"}
+          logoText={"HoD Portal"}
           display="none"
           sidebarVariant={sidebarVariant}
           {...rest}
@@ -187,7 +187,7 @@ export default function Dashboard(props) {
           <Portal>
             <AdminNavbar
               onOpen={onOpen}
-              logoText={"Class Advisor Portal"}
+              logoText={"HoD Portal"}
               brandText={getActiveRoute(routes)}
               secondary={getActiveNavbar(routes)}
               rtlActive={false}
@@ -201,10 +201,7 @@ export default function Dashboard(props) {
                 <Switch>
                   {getRoutes(routes)}
                   {getRoutes1(routes1)}
-                  <Redirect
-                    from="/Class-Advisor"
-                    to="/Class-Advisor/dashboard"
-                  />
+                  <Redirect from="/HoD" to="/HoD/dashboard" />
                 </Switch>
               </PanelContainer>
             </PanelContent>

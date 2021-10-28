@@ -1,3 +1,5 @@
+//Official - StudentList GeneralInformation
+
 import {
   Avatar,
   Badge,
@@ -9,6 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+
+var URL = "http://localhost:3000/";
 
 function GeneralParticularstablerow(props) {
   const { roll, name, reg, batch, email } = props;
@@ -28,8 +32,7 @@ function GeneralParticularstablerow(props) {
         localStorage.setItem("generalStudent", roll);
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
-        window.location.href =
-          "http://localhost:3000/HoD#/admin/GeneralInformationdata";
+        window.location.href = URL + "LICET#/admin/GeneralInformationdata";
       }}
       id={roll}
       _hover={{

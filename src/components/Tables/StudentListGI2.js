@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+//HoD - StudentList GeneralInformation
 
 import {
   Avatar,
@@ -10,10 +10,12 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import axios from "axios";
+import React from "react";
 
-function StudentListGeneral(props) {
-  const { name, email, reg, roll, dept, batch } = props;
+var URL = "http://localhost:3000/";
+
+function GeneralParticularstablerow(props) {
+  const { roll, name, reg, batch, email } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
@@ -30,8 +32,7 @@ function StudentListGeneral(props) {
         localStorage.setItem("generalStudent", roll);
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
-        window.location.href =
-          "http://localhost:3000/Class-Advisor#/admin2/GeneralInformationdata";
+        window.location.href = URL + "HoD#/admin/GeneralInformationdata";
       }}
       id={roll}
       _hover={{
@@ -73,4 +74,4 @@ function StudentListGeneral(props) {
   );
 }
 
-export default StudentListGeneral;
+export default GeneralParticularstablerow;

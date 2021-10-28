@@ -23,31 +23,34 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/GeneralParticularstablerow";
+import TableRow2 from "components/Tables/TableRow2";
+
+var URL = "http://localhost:3000/",
+  server_URL = "http://localhost:5000/";
+
 function GeneralInformationdata({ location }) {
   function fundelete() {
     let params = new URLSearchParams();
     params.append("RollNumber", localStorage.getItem("generalStudent"));
-    axios.post("http://localhost:5000/GeneralDataDelete", params);
-    window.location.href =
-      "http://localhost:3000/admin#/admin2/GeneralInformation";
+    axios.post(server_URL + "GeneralDataDelete", params);
+    window.location.href = URL + "Class-Advisor#/admin1/GeneralInformation";
   }
   function newReload() {
     window.location.href =
-      "http://localhost:3000/admin#/admin2/GeneralInformationDataEdit";
+      URL + "Class-Advisor#/admin1/GeneralInformationDataEdit";
   }
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
   params.append("RollNumber", localStorage.getItem("generalStudent"));
 
-  axios.post("http://localhost:5000/GeneralData", params).then((items) => {
+  axios.post(server_URL + "GeneralData", params).then((items) => {
     setData(items.data);
   });
 
   const textColor = useColorModeValue("gray.700", "white");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  var GData = GeneralParticularstablerow;
+  var GData = TableRow2;
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>

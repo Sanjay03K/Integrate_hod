@@ -1,3 +1,7 @@
+//Class Advisor - StudentList GeneralInformation
+
+import React, { useState, useEffect } from "react";
+
 import {
   Avatar,
   Badge,
@@ -8,10 +12,12 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
 
-function TablesTableRow(props) {
-  const { roll, name, reg, batch, email } = props;
+var URL = "http://localhost:3000/";
+
+function StudentListGeneral(props) {
+  const { name, email, reg, roll, dept, batch } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
@@ -29,7 +35,7 @@ function TablesTableRow(props) {
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
         window.location.href =
-          "http://localhost:3000/HoD#/admin/GeneralInformationdata";
+          URL + "Class-Advisor#/admin1/GeneralInformationdata";
       }}
       id={roll}
       _hover={{
@@ -71,4 +77,4 @@ function TablesTableRow(props) {
   );
 }
 
-export default TablesTableRow;
+export default StudentListGeneral;

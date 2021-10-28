@@ -1,3 +1,5 @@
+//Official Dashboard/General
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -27,9 +29,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/GeneralInformationHOD";
-import Selection from "components/Select/Selection";
-import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+import GeneralParticularstablerow from "components/Tables/StudentListGI3";
 
 function GeneralInformation3() {
   const [data, setData] = useState([]);

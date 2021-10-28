@@ -6,8 +6,8 @@ import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import routes from "routes.js";
-import routes1 from "routes1.js";
+import routes from "routes1.js";
+import routes1 from "routes.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
@@ -28,7 +28,7 @@ export default function Dashboard(props) {
   let auth_token = localStorage.getItem("auth_token");
 
   const getRoute = () => {
-    return window.location.pathname !== "/admin/full-screen-maps";
+    return window.location.pathname !== "/admin1/full-screen-maps";
   };
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
@@ -129,7 +129,7 @@ export default function Dashboard(props) {
       if (prop.category === "account") {
         return getRoutes(prop.views);
       }
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/admin1") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -151,7 +151,7 @@ export default function Dashboard(props) {
       if (prop.category === "account") {
         return getRoutes1(prop.views);
       }
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/admin1") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -172,7 +172,7 @@ export default function Dashboard(props) {
       <ChakraProvider theme={theme} resetCss={false}>
         <Sidebar
           routes={routes}
-          logoText={"HoD Portal"}
+          logoText={"Class Advisor Portal"}
           display="none"
           sidebarVariant={sidebarVariant}
           {...rest}
@@ -187,7 +187,7 @@ export default function Dashboard(props) {
           <Portal>
             <AdminNavbar
               onOpen={onOpen}
-              logoText={"Hod Portal"}
+              logoText={"Class Advisor Portal"}
               brandText={getActiveRoute(routes)}
               secondary={getActiveNavbar(routes)}
               rtlActive={false}
@@ -201,7 +201,10 @@ export default function Dashboard(props) {
                 <Switch>
                   {getRoutes(routes)}
                   {getRoutes1(routes1)}
-                  <Redirect from="/admin" to="/admin/dashboard" />
+                  <Redirect
+                    from="/Clas-Advisor"
+                    to="/Class-Advisor/dashboard"
+                  />
                 </Switch>
               </PanelContainer>
             </PanelContent>

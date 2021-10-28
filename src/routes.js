@@ -1,8 +1,9 @@
 // import
-import Dashboard from "views/Dashboard/Dashboard.js";
-import GeneralInformationHOD from "views/Dashboard/GeneralInformationHOD";
-import Profile from "views/Dashboard/Profile.js";
-import SignIn from "views/Pages/SignIn.js";
+import GeneralInformationdata1 from "views/Pages/GeneralInformationdata1";
+import GeneralInformationdata2 from "views/Pages/GeneralInformationdata2";
+import GeneralInformationdata3 from "views/Pages/GeneralInformationdata3";
+
+import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 
 import {
   HomeIcon,
@@ -15,33 +16,33 @@ import {
 
 var dashRoutes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: <HomeIcon color="inherit" />,
-    component: Dashboard,
-    layout: "/admin",
-  },
-  {
-    path: "/GeneralInformation",
+    path: "/GeneralInformationdata",
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
-    component: GeneralInformationHOD,
-    layout: "/admin",
+    component: GeneralInformationdata1,
+    layout: "/admin1",
   },
   {
-    path: "/profile",
-    name: "Profile",
-    icon: <PersonIcon color="inherit" />,
-    secondaryNavbar: true,
-    component: Profile,
-    layout: "/admin",
+    path: "/GeneralInformationdata",
+    name: "General Information Data",
+    icon: <StatsIcon color="inherit" />,
+    component: GeneralInformationdata2,
+    layout: "/admin2",
   },
   {
-    path: "/signin",
-    name: "Log Out",
-    icon: <DocumentIcon color="inherit" />,
-    component: SignIn,
-    layout: "/auth",
+    path: "/GeneralInformationdata",
+    name: "General Information",
+    icon: <StatsIcon color="inherit" />,
+    component: GeneralInformationdata3,
+    layout: "/admin3",
+  },
+
+  {
+    path: "/GeneralInformationDataEdit",
+    name: "General Information Data Edit",
+    component: GeneralInformationDataEdit,
+    icon: <StatsIcon color="inherit" />,
+    layout: "/admin1",
   },
 ];
 export default dashRoutes;
