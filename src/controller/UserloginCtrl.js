@@ -5,11 +5,14 @@ export default function handleLogin() {
   loginButton.disabled = true;
   loginButton.innerHTML = `<div class="spinner-border text-primary p-2 spinner-border-sm" role="status" aria-hidden="true"><span class="visually-hidden">Loading...</span></div>`;
 
+  let URL = "http://localhost:3000",
+    server_URL = "http://localhost:5000";
+
   let params = new URLSearchParams();
   params.append("email", document.getElementById("emailId").value);
   params.append("password", document.getElementById("password").value);
 
-  axios.post("http://localhost:5000/userlogin", params).then((result) => {
+  axios.post(server_URL + "/userlogin", params).then((result) => {
     if (result.data === "user-fail") {
       //    document.getElementById("pass-fail").classList.add("d-none");
       //    document.getElementById("email-fail").classList.remove("d-none");
@@ -41,20 +44,18 @@ export default function handleLogin() {
       console.log(check);
       if (check.user_type == 2) {
         localStorage.setItem("dept", check.dept);
-        window.location.href = "http://localhost:3000/HoD#/admin/dashboard";
+        window.location.href = URL + "/HoD#/admin/dashboard";
       } else if (check.user_type == 1) {
         localStorage.setItem("batch", check.batch);
         localStorage.setItem("dept", check.dept);
-        window.location.href =
-          "http://localhost:3000/purity-ui-dashboard#/admin2/dashboard";
+        window.location.href = URL + "/purity-ui-dashboard#/admin2/dashboard";
       } else if (check.user_type == 0) {
         if (check.roll_no == null) {
           window.location.href =
-            "http://localhost:3000/purity-ui-dashboard#/auth/GeneralInformationdata";
+            URL + "/purity-ui-dashboard#/auth/GeneralInformationdata";
         } else {
           localStorage.setItem("StudentRoll", check.roll_no);
-          window.location.href =
-            "http://localhost:3000/purity-ui-dashboard#/admin/dashboard";
+          window.location.href = URL + "/purity-ui-dashboard#/admin/dashboard";
         }
       }
       localStorage.setItem("useremail", result.data[0].email);
