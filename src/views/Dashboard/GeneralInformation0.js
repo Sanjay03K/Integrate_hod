@@ -27,7 +27,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import TableRow2 from "components/Tables/TableRow2";
 
-var sever_URL = "http://localhost:5000/";
+var server_URL = "http://localhost:5000/";
 
 function GeneralInformationdata({ location }) {
   const [data, setData] = useState([]);
