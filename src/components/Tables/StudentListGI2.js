@@ -32,7 +32,7 @@ function GeneralParticularstablerow(props) {
         localStorage.setItem("generalStudent", roll);
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
-        window.location.href = URL + "HoD#/admin/GeneralInformationdata";
+        window.location.href = URL + "HoD#/admin2/GeneralInformationdata";
       }}
       id={roll}
       _hover={{

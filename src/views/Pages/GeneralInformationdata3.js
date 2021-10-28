@@ -33,11 +33,9 @@ function GeneralInformationdata({ location }) {
     let params = new URLSearchParams();
     params.append("RollNumber", localStorage.getItem("generalStudent"));
     axios.post(server_URL + "GeneralDataDelete", params);
-    window.location.href = URL + "admin#/admin2/GeneralInformation";
+    window.location.href = URL + "LICET#/admin3/GeneralInformation";
   }
-  function newReload() {
-    window.location.href = URL + "admin#/admin2/GeneralInformationDataEdit";
-  }
+
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
@@ -927,65 +925,6 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
         </SimpleGrid>
-      </SimpleGrid>
-      <SimpleGrid pt="1.5rem" columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
-        <Card>
-          <CardBody>
-            <Button
-              onClick={newReload}
-              colorScheme="orange"
-              variant="solid"
-              width="100%"
-            >
-              Edit
-            </Button>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardBody>
-            <Button
-              onClick={onOpen}
-              colorScheme="orange"
-              variant="solid"
-              width="100%"
-            >
-              Delete
-            </Button>
-            <Modal
-              isOpen={isOpen}
-              onClose={() => {
-                onClose();
-              }}
-            >
-              <ModalContent>
-                <ModalHeader>Confirmation</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>Delete this student ?</ModalBody>
-                <ModalFooter>
-                  <Button
-                    colorScheme="blue"
-                    mr={3}
-                    onClick={() => {
-                      onClose();
-                      fundelete();
-                    }}
-                  >
-                    Confirm
-                  </Button>
-                  <Button
-                    colorScheme="blue"
-                    mr={3}
-                    onClick={() => {
-                      onClose();
-                    }}
-                  >
-                    Close
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
-          </CardBody>
-        </Card>
       </SimpleGrid>
     </Flex>
   );
