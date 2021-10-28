@@ -41,7 +41,7 @@ import avatar2 from "assets/img/avatars/avatar2.png";
 import avatar3 from "assets/img/avatars/avatar3.png";
 import avatar4 from "assets/img/avatars/avatar4.png";
 import avatar5 from "assets/img/avatars/avatar5.png";
-import avatar8 from "assets/img/avatars/avatar8.png";
+import avatar8 from "assets/img/avatars/avatar8.jpg";
 import ImageArchitect1 from "assets/img/ImageArchitect1.png";
 import ImageArchitect2 from "assets/img/ImageArchitect2.png";
 import ImageArchitect3 from "assets/img/ImageArchitect3.png";
@@ -101,10 +101,13 @@ function Profile() {
         align="center"
       >
         <Box
+          bgImage={ProfileBgImage}
           bgSize="cover"
           w="100%"
-          h="170px"
+          h="300px"
           borderRadius="25px"
+          bgPosition="50%"
+          bgRepeat="no-repeat"
           position="relative"
           display="flex"
           justifyContent="center"
@@ -112,6 +115,7 @@ function Profile() {
           <Flex
             direction={{ sm: "column", md: "row" }}
             mx="1.5rem"
+            maxH="330px"
             w={{ sm: "90%", xl: "95%" }}
             justifyContent={{ sm: "center", md: "space-between" }}
             align="center"
@@ -124,9 +128,9 @@ function Profile() {
             p="24px"
             borderRadius="20px"
             transform={{
-              sm: "translateY(100%)",
-              md: "translateY(50%)",
-              lg: "translateY(60%)",
+              sm: "translateY(45%)",
+              md: "translateY(110%)",
+              lg: "translateY(160%)",
             }}
           >
             <Flex
@@ -136,6 +140,13 @@ function Profile() {
               w={{ sm: "100%" }}
               textAlign={{ sm: "center", md: "start" }}
             >
+              <Avatar
+                me={{ md: "22px" }}
+                src={avatar8}
+                w="80px"
+                h="80px"
+                borderRadius="15px"
+              />
               <Flex direction="column" maxWidth="100%" my={{ sm: "14px" }}>
                 <Text
                   fontSize={{ sm: "lg", lg: "xl" }}

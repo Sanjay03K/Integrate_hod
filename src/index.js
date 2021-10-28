@@ -7,6 +7,7 @@ import AuthLayout from "layouts/Auth.js";
 import AdminLayout0 from "layouts/Admin0";
 import AdminLayout from "layouts/Admin.js";
 import AdminLayout2 from "layouts/Admin2.js";
+import AdminLayout3 from "layouts/Admin3.js";
 
 import "./components/Style/Style.scss";
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path={`/admin0`} component={AdminLayout0} />
       <Route path={`/admin`} component={AdminLayout} />
       <Route path={`/admin2`} component={AdminLayout2} />
+      <Route path={`/admin3`} component={AdminLayout3} />
 
       <Redirect from={`/`} to="/auth/SignIn" />
     </Switch>

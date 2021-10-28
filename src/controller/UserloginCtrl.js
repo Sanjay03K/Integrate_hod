@@ -49,6 +49,8 @@ export default function handleLogin() {
         localStorage.setItem("batch", check.batch);
         localStorage.setItem("dept", check.dept);
         window.location.href = URL + "/Class-Advisor#/admin2/dashboard";
+      } else if (check.user_type == 3) {
+        window.location.href = URL + "/Class-Advisor#/admin3/dashboard";
       } else if (check.user_type == 0) {
         if (check.roll_no == null) {
           window.location.href = URL + "/Student#/auth/GeneralInformationdata";
