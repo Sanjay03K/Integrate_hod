@@ -11,14 +11,14 @@ import {
 import React from "react";
 
 function GeneralParticularstablerow(props) {
-  const { field,data } = props;
+  const { field, data } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
 
   return (
     <Tr>
-      <Td width={{ sm: "12em" }}>
+      <Td width={{ sm: "8vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
@@ -47,7 +47,7 @@ function GeneralParticularstablerow(props) {
           </Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "65%" }}>
+      <Td minWidth={{ sm: "22vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
