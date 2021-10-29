@@ -31,10 +31,12 @@ var server_URL = "http://localhost:5000/";
 function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  let params = new URLSearchParams();
+  params.append("batch", localStorage.getItem("batch"));
+  params.append("dept", localStorage.getItem("dept"));
   useEffect(async () => {
     axios.get(server_URL + "General").then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
   }, []);
   const textColor = useColorModeValue("gray.700", "white");
