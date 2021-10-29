@@ -41,7 +41,7 @@ function GeneralInformationdata({ location }) {
   let params = new URLSearchParams();
   params.append("RollNumber", localStorage.getItem("generalStudent"));
 
-  axios.post(server_URL + "GeneralData", params).then((items) => {
+  axios.post(server_URL + "General", params).then((items) => {
     setData(items.data);
   });
 
