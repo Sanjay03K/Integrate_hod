@@ -237,6 +237,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                        <Tooltip label="Ex: 19CS048" placement="right">
                           <Input
                             id="RID"
                             borderRadius="5px"
@@ -244,6 +245,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your roll no"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -280,6 +282,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                        <Tooltip label="Ex: 311119104010" placement="right">
                           <Input
                             id="REID"
                             borderRadius="5px"
@@ -287,6 +290,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your register no"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -399,7 +403,7 @@ function GeneralInformationdata() {
                             fontWeight="bold"
                             minWidth="100%"
                           >
-                            Quota
+                            Department
                           </FormLabel>
                         </FormControl>
                       </Flex>
@@ -414,6 +418,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                         <Tooltip label="Ex: CSE" placement="right">
                           <Input
                             id="DEPT"
                             borderRadius="5px"
@@ -421,6 +426,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your Department"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -673,6 +679,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                        <Tooltip label="ALL CAPS" placement="right">
                           <Input
                             id="COMMUNITYID"
                             borderRadius="5px"
@@ -680,6 +687,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your community"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -716,6 +724,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                        <Tooltip label="Ex: AB+ve" placement="right">
                           <Input
                             id="BLOODID"
                             borderRadius="5px"
@@ -723,6 +732,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your blood group"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
@@ -1204,6 +1214,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: STATE/CBSE" placement="right">
                             <Input
                               id="BOARD1"
                               borderRadius="5px"
@@ -1211,6 +1222,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter the Board"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1333,6 +1345,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: BIO MATHS" placement="right">
                             <Input
                               id="GROUP1"
                               borderRadius="5px"
@@ -1340,6 +1353,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your group"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1419,6 +1433,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 90%" placement="right">
                             <Input
                               id="OP1"
                               borderRadius="5px"
@@ -1426,6 +1441,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your Overall Percentage"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1462,6 +1478,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 170.25" placement="right">
                             <Input
                               id="COM1"
                               borderRadius="5px"
@@ -1469,6 +1486,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your Cut-Off Marks"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1505,6 +1523,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                           <Tooltip label="Ex: 1" placement="right">
                             <Input
                               id="NOA1"
                               borderRadius="5px"
@@ -1512,6 +1531,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter the No. Of Attempts"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1605,6 +1625,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: STATE/CBSE" placement="right">
                             <Input
                               id="BOARD2"
                               borderRadius="5px"
@@ -1612,6 +1633,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter the Board"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1777,6 +1799,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 90%" placement="right">
                             <Input
                               id="OP2"
                               borderRadius="5px"
@@ -1784,6 +1807,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your Overall Percentage"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -1820,6 +1844,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 1" placement="right">
                             <Input
                               id="NOA2"
                               borderRadius="5px"
@@ -1827,6 +1852,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter the No. Of Attempts"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -2759,6 +2785,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 1" placement="right">
                             <Input
                               id="NOS"
                               borderRadius="5px"
@@ -2766,6 +2793,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter No. Of Siblings"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -3929,6 +3957,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: SAE" placement="right">
                             <Input
                               id="PMNA"
                               borderRadius="5px"
@@ -3936,6 +3965,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your Professional Membership Name"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
@@ -4011,6 +4041,7 @@ function GeneralInformationdata() {
                       >
                         <Flex direction="column">
                           <FormControl>
+                          <Tooltip label="Ex: 2MONTHS" placement="right">
                             <Input
                               id="DUR"
                               borderRadius="5px"
@@ -4018,6 +4049,7 @@ function GeneralInformationdata() {
                               type="text"
                               placeholder="Enter your Membership Duration"
                             />
+                            </Tooltip>
                           </FormControl>
                         </Flex>
                       </Flex>
