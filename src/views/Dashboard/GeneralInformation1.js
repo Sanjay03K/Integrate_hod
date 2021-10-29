@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { CSVLink } from "react-csv";
+var data2 = [];
 // Chakra imports
 import {
   Flex,
@@ -99,17 +100,18 @@ function GeneralInformation() {
             value={searchTerm}
           />
         </InputGroup>
-
-        <Button
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-          width="25%"
-        >
-          Download Report
-        </Button>
+        <CSVLink data={data2}>
+          <Button
+            mt="1em"
+            onClick="m"
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            width="25%"
+          >
+            Download Report
+          </Button>
+        </CSVLink>
       </Card>
 
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -134,6 +136,7 @@ function GeneralInformation() {
               {data
                 .filter((item) => {
                   if (searchTerm == "") {
+                    data2.push(item);
                     return item;
                   } else if (
                     item.sname
@@ -149,6 +152,7 @@ function GeneralInformation() {
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
                   ) {
+                    data2.push(item);
                     return item;
                   }
                 })
