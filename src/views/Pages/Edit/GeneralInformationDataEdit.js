@@ -287,9 +287,9 @@ function GeneralInformationDataEdit(props) {
       params.append("aadhar", aadhar_no);
     }
     if (document.getElementById("MOTHERID").value.length !== 0) {
-      params.append("mothertounge", document.getElementById("MOTHERID").value);
+      params.append("mothertongue", document.getElementById("MOTHERID").value);
     } else {
-      params.append("mothertounge", mother_tongue);
+      params.append("mothertongue", mother_tongue);
     }
     if (document.getElementById("CONTACTID").value.length !== 0) {
       params.append("contact", document.getElementById("CONTACTID").value);
