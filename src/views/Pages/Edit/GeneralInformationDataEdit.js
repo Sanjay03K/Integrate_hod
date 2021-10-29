@@ -123,7 +123,7 @@ function GeneralInformationDataEdit(props) {
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
-  params.append("RollNumber", localStorage.getItem("StudentRoll"));
+  params.append("RollNumber", localStorage.getItem("generalStudent"));
 
   axios.post(server_URL + "GeneralData", params).then((items) => {
     setData(items.data);
@@ -4438,7 +4438,15 @@ function GeneralInformationDataEdit(props) {
         </Card>
         <Card>
           <CardBody>
-            <Button colorScheme="orange" variant="solid" width="100%">
+            <Button
+              onClick={() => {
+                window.location.href =
+                  "http://localhost:3000/Class-Advisor#/admin1/GeneralInformationdata";
+              }}
+              colorScheme="orange"
+              variant="solid"
+              width="100%"
+            >
               Cancel
             </Button>
           </CardBody>
