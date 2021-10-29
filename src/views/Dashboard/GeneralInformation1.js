@@ -29,10 +29,12 @@ import StudentListGeneral from "components/Tables/StudentListGI1";
 function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  let params = new URLSearchParams;
+  params.append("batch",localStorage.getItem("batch"));
+  params.append("dept",localStorage.getItem("dept"));
   useEffect(async () => {
-    axios.get("http://localhost:5000/General").then((items) => {
+    axios.post("http://localhost:5000/General",params).then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
   }, []);
   const textColor = useColorModeValue("gray.700", "white");
