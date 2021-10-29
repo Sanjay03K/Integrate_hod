@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import change_pass from "../../controller/changepassword";
-import { MdBuild , MdCall } from "react-icons/md";
 // Chakra imports
 import {
   Avatar,
@@ -42,7 +41,7 @@ import {
   ModalCloseButton,
   Collapse,
 } from "@chakra-ui/react";
-import { SettingsIcon, EditIcon, WarningIcon } from '@chakra-ui/icons'
+import { SettingsIcon, EditIcon, WarningIcon } from "@chakra-ui/icons";
 
 import axios from "axios";
 // Custom components
@@ -50,28 +49,11 @@ import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
 // Assets
-import avatar2 from "assets/img/avatars/avatar2.png";
-import avatar3 from "assets/img/avatars/avatar3.png";
-import avatar4 from "assets/img/avatars/avatar4.png";
-import avatar5 from "assets/img/avatars/avatar5.png";
-import avatar8 from "assets/img/avatars/avatar8.jpg";
-import ImageArchitect1 from "assets/img/ImageArchitect1.png";
-import ImageArchitect2 from "assets/img/ImageArchitect2.png";
-import ImageArchitect3 from "assets/img/ImageArchitect3.png";
 import ProfileBgImage from "assets/img/ProfileBackground.png";
-import {
-  FaCube,
-  FaFacebook,
-  FaInstagram,
-  FaPenFancy,
-  FaPlus,
-  FaTwitter,
-} from "react-icons/fa";
-import { IoDocumentsSharp } from "react-icons/io5";
 
 function Profile() {
   var sname, licet_email, roll_no, dept, reg_no, batch, cell;
-  const { isOpen, onOpen,onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra color mode
   const textColor = useColorModeValue("gray.700", "white");
   const bgProfile = useColorModeValue(
@@ -170,94 +152,99 @@ function Profile() {
               </Flex>
             </Flex>
             <Popover placement="auto">
-  <PopoverTrigger>
-    <Button leftIcon={<SettingsIcon />} colorScheme="orange">Settings</Button>
-  </PopoverTrigger>
-  <Portal> 
-  <PopoverContent>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverHeader>Available Settings</PopoverHeader>
-    <PopoverBody><Button onClick={onOpen} leftIcon={<EditIcon />}>Change Password</Button></PopoverBody>
-  </PopoverContent>
-  </Portal> 
- 
-</Popover>
-<Modal size ="xl" isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Change Password</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-                <Tr>
-                <Td>
-                  <Text m="2em">Enter old Password</Text>
-                </Td>
-                <Td>
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Enter Old Password"
-                      id="old-pass"
-                    />
-                </Td>
-               </Tr> 
-               <Tr>
-               <Td>
-                  <Text m="2em">Enter new Password</Text>
-                </Td>
-                <Td>    
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Enter New Password"
-                      id="new-pass"
-                    />
-                </Td> 
-                </Tr>
-                <Tr>
-                <Td>
-                  <Text m="2em">Re enter new Password</Text>
-                </Td>
-                <Td>  
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Re-Enter New Password"
-                      id="re-pass"
-                    />
-                </Td> 
-                </Tr>   
-                    <Text color="red" id="pass-mis" display="none">
-                      Passwords Don't Match
-                    </Text>
-                    <Text color="red" id="pass-fail" display="none">
-                      Incorrect Old Password or Username or Invalid User
-                    </Text>
-                    <Text color="red" id="server-fail" display="none">
-                      Server Error. Try again after some time
-                    </Text>
-                    <Text color="green" id="pass-success" display="none">
-                      Password Changed Successfully
-                    </Text>
-                    <Button
-                      alignSelf="flex-end"
-                      marginTop="1rem"
-                      marginBottom="1rem"
-                      marginLeft="20rem"
-                      colorScheme="orange"
-                      variant="solid"
-                      id="pass-button"
-                      onClick={change_pass}
-                    >
+              <PopoverTrigger>
+                <Button leftIcon={<SettingsIcon />} colorScheme="orange">
+                  Settings
+                </Button>
+              </PopoverTrigger>
+              <Portal>
+                <PopoverContent>
+                  <PopoverArrow />
+                  <PopoverCloseButton />
+                  <PopoverHeader>Available Settings</PopoverHeader>
+                  <PopoverBody>
+                    <Button onClick={onOpen} leftIcon={<EditIcon />}>
                       Change Password
                     </Button>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+                  </PopoverBody>
+                </PopoverContent>
+              </Portal>
+            </Popover>
+            <Modal size="xl" isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Change Password</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <Tr>
+                    <Td>
+                      <Text m="2em">Enter old Password</Text>
+                    </Td>
+                    <Td>
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Enter Old Password"
+                        id="old-pass"
+                      />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>
+                      <Text m="2em">Enter new Password</Text>
+                    </Td>
+                    <Td>
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Enter New Password"
+                        id="new-pass"
+                      />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>
+                      <Text m="2em">Re enter new Password</Text>
+                    </Td>
+                    <Td>
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Re-Enter New Password"
+                        id="re-pass"
+                      />
+                    </Td>
+                  </Tr>
+                  <Button
+                    alignSelf="flex-end"
+                    marginTop="1rem"
+                    marginBottom="1rem"
+                    marginLeft="20rem"
+                    colorScheme="orange"
+                    variant="solid"
+                    id="pass-button"
+                    onClick={change_pass}
+                  >
+                    Change Password
+                  </Button>
+                  <Text color="red" id="pass-mis" display="none">
+                    Passwords Don't Match
+                  </Text>
+                  <Text color="red" id="pass-fail" display="none">
+                    Incorrect Old Password or Username or Invalid User
+                  </Text>
+                  <Text color="red" id="server-fail" display="none">
+                    Server Error. Try again after some time
+                  </Text>
+                  <Text color="green" id="pass-success" display="none">
+                    Password Changed Successfully
+                  </Text>
+                </ModalBody>
+              </ModalContent>
+            </Modal>
 
             <Flex
               direction={{ sm: "column", lg: "row" }}
