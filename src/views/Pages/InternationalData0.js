@@ -101,6 +101,7 @@ function InternationalData() {
                     <Th color="gray.400">
                       Foreign Language Courses Completed or Pursuing
                     </Th>
+                    <Th color="gray.400">Credits</Th>
                     <Th color="gray.400">Verify Status</Th>
                   </Tr>
                 </Thead>
@@ -116,7 +117,8 @@ function InternationalData() {
                         row4={item.outcome}
                         row5={item.personal_development}
                         row6={item.foreign_language_courses}
-                        row7={item.verify}
+                        row7={item.credits}
+                        row8={item.verify}
                       />
                     );
                   })}
