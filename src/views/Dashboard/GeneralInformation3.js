@@ -282,7 +282,7 @@ function GeneralInformation3() {
                       if (
                         item.batch
                           .toLowerCase()
-                          .includes(searchTerm2.toLocaleLowerCase())
+                          .includes(searchTerm1.toLocaleLowerCase())
                       ) {
                         return item;
                       }
@@ -297,7 +297,7 @@ function GeneralInformation3() {
                           .includes(searchTerm2.toLocaleLowerCase()) &&
                         item.batch
                           .toLowerCase()
-                          .includes(searchTerm2.toLocaleLowerCase())
+                          .includes(searchTerm1.toLocaleLowerCase())
                       ) {
                         return item;
                       }
