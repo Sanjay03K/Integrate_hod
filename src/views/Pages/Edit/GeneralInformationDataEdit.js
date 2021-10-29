@@ -189,6 +189,7 @@ function GeneralInformationDataEdit(props) {
       (mother_mob_no = item.mother_mob_no),
       (mother_email = item.mother_email),
       (no_of_siblings = item.no_of_siblings),
+      (name_siblings = item.name_siblings),
       (qualification_siblings = item.qualification_siblings),
       (occupation_siblings = item.occupation_siblings),
       (alumni_licet_loyola_yn = item.alumni_licet_loyola_yn),
