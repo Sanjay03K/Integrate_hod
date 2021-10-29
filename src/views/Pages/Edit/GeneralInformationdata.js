@@ -31,24 +31,27 @@ function GeneralInformationdata() {
 
   function funinsert() {
     let params = new URLSearchParams();
-    params.append("name", document.getElementById("NID").value);
     params.append("rollno", document.getElementById("RID").value);
     params.append("registerno", document.getElementById("REID").value);
+    params.append("name", document.getElementById("NID").value);
+    params.append("aadhar", document.getElementById("AADHARID").value);
+    params.append("peremail", document.getElementById("PEREMID").value);
+    params.append("offemail", document.getElementById("OFFEMID").value);
+    params.append("batch", document.getElementById("BATCH").value);
+    params.append("department", document.getElementById("DEPT").value);
+    params.append("quo", document.getElementById("QUO").value);
     params.append("sex", document.getElementById("SID").value);
     params.append("dateofbirth", document.getElementById("DOBID").value);
-    params.append("department", document.getElementById("DEPT").value);
-    params.append("batch", document.getElementById("BATCH").value);
     params.append("nationality", document.getElementById("NATIONID").value);
+    params.append("contact", document.getElementById("CONTACTID").value);
+    
     params.append("religion", document.getElementById("RELIGIONID").value);
     params.append("parish", document.getElementById("PARISHID").value);
     params.append("dalit", document.getElementById("DALITID").value);
     params.append("community", document.getElementById("COMMUNITYID").value);
     params.append("bloodgroup", document.getElementById("BLOODID").value);
-    params.append("mothertounge", document.getElementById("MOTHERID").value);
-    params.append("contact", document.getElementById("CONTACTID").value);
-    params.append("aadhar", document.getElementById("AADHARID").value);
-    params.append("offemail", document.getElementById("OFFEMID").value);
-    params.append("peremail", document.getElementById("PEREMID").value);
+    params.append("mothertongue", document.getElementById("MOTHERID").value);
+    
     params.append("preaddr", document.getElementById("PREADDRID").value);
     params.append("peraddr", document.getElementById("PERADDRID").value);
     params.append("langknown", document.getElementById("LANKNO").value);
@@ -102,7 +105,7 @@ function GeneralInformationdata() {
 
     params.append("appno", document.getElementById("AN").value);
     params.append("doa", document.getElementById("DOA").value);
-    params.append("quo", document.getElementById("QUO").value);
+    
     params.append("reglat", document.getElementById("RL").value);
     params.append("dayhos", document.getElementById("DH").value);
 
