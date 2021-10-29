@@ -29,14 +29,14 @@ var dashRoutes = [
     component: GeneralInformation,
     layout: "/admin3",
   },
-  {
-    path: "/profile",
-    name: "Profile",
-    icon: <PersonIcon color="inherit" />,
-    secondaryNavbar: true,
-    component: Profile,
-    layout: "/admin3",
-  },
+  // {
+  //   path: "/profile",
+  //   name: "Profile",
+  //   icon: <PersonIcon color="inherit" />,
+  //   secondaryNavbar: true,
+  //   component: Profile,
+  //   layout: "/admin3",
+  // },
   {
     path: "/signin",
     name: "Log Out",
