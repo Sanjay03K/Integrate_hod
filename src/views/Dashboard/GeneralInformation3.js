@@ -27,7 +27,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/GeneralInformationHOD";
+import GeneralParticularstablerow from "components/Tables/GeneralInformationOfficial";
 import Selection from "components/Select/Selection";
 import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
@@ -38,11 +38,11 @@ function GeneralInformation3() {
   const [searchTerm1, setSearchTerm1] = useState("");
   const [searchTerm2, setSearchTerm2] = useState("");
 
-  params.append("department", localStorage.getItem("dept"));
+  // params.append("department", localStorage.getItem("dept"));
   // console.log("AUTH TOKEN", localStorage.getItem("auth_token"));
   let auth_token = localStorage.getItem("auth_token");
   useEffect(async () => {
-    axios.post("http://localhost:5000/GeneralHOD", params).then((items) => {
+    axios.post("http://localhost:5000/GeneralOfficial", params).then((items) => {
       setData(items.data);
     });
   });
@@ -245,6 +245,7 @@ function GeneralInformation3() {
                   <Th color="gray.400">Roll No.</Th>
                   <Th color="gray.400">Name</Th>
                   <Th color="gray.400">Register No</Th>
+                  <Th color="gray.400">Department</Th>
                   <Th color="gray.400">Batch</Th>
                   <Th color="gray.400">Email</Th>
                   <Th></Th>
@@ -301,6 +302,7 @@ function GeneralInformation3() {
                         reg={item.reg_no}
                         batch={item.batch}
                         email={item.licet_email}
+                        dept={item.dept}
                       />
                     );
                   })}
