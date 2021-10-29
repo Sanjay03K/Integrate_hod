@@ -2,14 +2,15 @@
 
 import Dashboard from "views/Dashboard/Dashboard1.js";
 import GeneralInformation from "views/Dashboard/GeneralInformation1";
+
+import InternationalExposure from "views/Dashboard/InternationalExposure1";
+
 import Profile from "views/Dashboard/Profile1.js";
 import SignIn from "views/Pages/SignIn.js";
 
 import {
   HomeIcon,
   StatsIcon,
-  CreditIcon,
-  PersonIcon,
   DocumentIcon,
   RocketIcon,
 } from "components/Icons/Icons";
@@ -29,6 +30,15 @@ var dashRoutes = [
     component: GeneralInformation,
     layout: "/admin1",
   },
+
+  {
+    path: "/InternationalExposure",
+    name: "International Exposure",
+    icon: <RocketIcon color="inherit" />,
+    component: InternationalExposure,
+    layout: "/admin1",
+  },
+
   // {
   //   path: "/profile",
   //   name: "Profile",
