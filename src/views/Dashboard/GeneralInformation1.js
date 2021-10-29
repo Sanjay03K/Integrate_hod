@@ -36,6 +36,7 @@ function GeneralInformation() {
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
   useEffect(async () => {
+    data2 = [];
     axios.post(server_URL + "General", params).then((items) => {
       setData(items.data);
     });
