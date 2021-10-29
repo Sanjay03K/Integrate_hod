@@ -86,37 +86,37 @@ function InternationalTableRow(props) {
 
   return (
     <Tr>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row1}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row2}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row3}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row4}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row5}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18em" }}>
+      <Td minWidth={{ sm: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row6}</Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "9em" }}>
+      <Td minWidth={{ sm: "5em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row7}</Flex>
         </Flex>
@@ -143,11 +143,11 @@ function InternationalTableRow(props) {
             <ModalBody>
               <Tr>
                 <Td>
-                  <Text m="2em">Campus name</Text>
+                  <Text m="1em">Campus name</Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -158,11 +158,11 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">Date and Year</Text>
+                  <Text m="1em">Date and Year</Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -173,12 +173,12 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">Project</Text>
+                  <Text m="1em">Project</Text>
                 </Td>
 
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -189,11 +189,11 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">Outcome</Text>
+                  <Text m="1em">Outcome</Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -204,11 +204,11 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">Personal Development</Text>
+                  <Text m="1em">Personal Development</Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -219,13 +219,13 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">
+                  <Text m="1em">
                     Foreign Language Courses Completed or Pursuing
                   </Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
@@ -236,11 +236,11 @@ function InternationalTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="2em">Credits</Text>
+                  <Text m="1em">Credits</Text>
                 </Td>
                 <Td>
                   <Input
-                    minWidth="18em"
+                    minWidth="20em"
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"

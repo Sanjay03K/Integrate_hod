@@ -21,7 +21,7 @@ import CardBody from "components/Card/CardBody.js";
 import InternationalTableRow from "components/Tables/InternationalTableRow1";
 
 function InternationalData() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{ s_no: 0 }]);
 
   let params = new URLSearchParams();
   params.append("Internexroll", localStorage.getItem("International"));
@@ -31,6 +31,7 @@ function InternationalData() {
       .then((items) => {
         setData(items.data);
       });
+    console.log(data);
   });
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -40,7 +41,7 @@ function InternationalData() {
         <Card overflowX={{ sm: "scroll" }}>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Summer Program
+              Summer Program / {data[0].s_no}
             </Text>
           </CardHeader>
           <CardBody overflowX={{ sm: "scroll" }}>

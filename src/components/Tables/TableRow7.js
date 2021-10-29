@@ -20,7 +20,7 @@ function TableRow7(props) {
 
   return (
     <Tr>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
@@ -34,40 +34,40 @@ function TableRow7(props) {
           </Flex>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row2}</Flex>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row3}</Flex>
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row4}</Flex>
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row5}</Flex>
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="15em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row6}</Flex>
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="6em">
+      <Td minWidth="5em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row7}</Flex>

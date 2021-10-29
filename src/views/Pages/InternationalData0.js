@@ -129,7 +129,7 @@ function InternationalData() {
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -147,7 +147,7 @@ function InternationalData() {
                         </Flex>
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -157,13 +157,16 @@ function InternationalData() {
                         <Input
                           borderRadius="5px"
                           fontSize="sm"
-                          type="text"
+                          style={{
+                            backgroundColor: "rgb(31 39 51)",
+                          }}
+                          type="date"
                           placeholder="Enter Date and Year"
                           id="DYID"
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -179,7 +182,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -195,7 +198,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -211,7 +214,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth="15em">
                       <Flex
                         align="center"
                         py=".8rem"

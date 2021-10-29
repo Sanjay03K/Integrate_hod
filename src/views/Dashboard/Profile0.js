@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import change_pass from "../../controller/changepassword";
+import { MdBuild , MdCall } from "react-icons/md";
 // Chakra imports
 import {
   Avatar,
@@ -12,6 +13,16 @@ import {
   Image,
   Link,
   Switch,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverBody,
+  Portal,
+  PopoverFooter,
+  ButtonGroup,
   Table,
   Tbody,
   Th,
@@ -31,6 +42,8 @@ import {
   ModalCloseButton,
   Collapse,
 } from "@chakra-ui/react";
+import { SettingsIcon, EditIcon, WarningIcon } from '@chakra-ui/icons'
+
 import axios from "axios";
 // Custom components
 import Card from "components/Card/Card";
@@ -58,7 +71,7 @@ import { IoDocumentsSharp } from "react-icons/io5";
 
 function Profile() {
   var sname, licet_email, roll_no, dept, reg_no, batch, cell;
-
+  const { isOpen, onOpen,onClose } = useDisclosure()
   // Chakra color mode
   const textColor = useColorModeValue("gray.700", "white");
   const bgProfile = useColorModeValue(
@@ -70,7 +83,6 @@ function Profile() {
     "rgba(255, 255, 255, 0.31)"
   );
   const emailColor = useColorModeValue("gray.400", "gray.300");
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
@@ -139,13 +151,6 @@ function Profile() {
               w={{ sm: "100%" }}
               textAlign={{ sm: "center", md: "start" }}
             >
-              <Avatar
-                me={{ md: "22px" }}
-                src={avatar8}
-                w="80px"
-                h="80px"
-                borderRadius="15px"
-              />
               <Flex direction="column" maxWidth="100%" my={{ sm: "14px" }}>
                 <Text
                   fontSize={{ sm: "lg", lg: "xl" }}
@@ -164,35 +169,96 @@ function Profile() {
                 </Text>
               </Flex>
             </Flex>
-            <Button colorScheme="orange" variant="solid" onClick={onOpen}>
-              Settings
-            </Button>
-            <Modal isOpen={isOpen} onClose={onClose}>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>Settings</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <Button
-                    marginTop="3rem"
-                    marginBottom="1rem"
-                    marginRight="1rem"
-                    colorScheme="orange"
-                    variant="solid"
-                    id="pass-button"
-                    onClick={onOpen}
-                  >
-                    Reset Password
-                  </Button>
-                </ModalBody>
+            <Popover placement="auto">
+  <PopoverTrigger>
+    <Button leftIcon={<SettingsIcon />} colorScheme="orange">Settings</Button>
+  </PopoverTrigger>
+  <Portal> 
+  <PopoverContent>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverHeader>Available Settings</PopoverHeader>
+    <PopoverBody><Button onClick={onOpen} leftIcon={<EditIcon />}>Change Password</Button></PopoverBody>
+  </PopoverContent>
+  </Portal> 
+ 
+</Popover>
+<Modal size ="xl" isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Change Password</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+                <Tr>
+                <Td>
+                  <Text m="2em">Enter old Password</Text>
+                </Td>
+                <Td>
+                    <Input
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      placeholder="Enter Old Password"
+                      id="old-pass"
+                    />
+                </Td>
+               </Tr> 
+               <Tr>
+               <Td>
+                  <Text m="2em">Enter new Password</Text>
+                </Td>
+                <Td>    
+                    <Input
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      placeholder="Enter New Password"
+                      id="new-pass"
+                    />
+                </Td> 
+                </Tr>
+                <Tr>
+                <Td>
+                  <Text m="2em">Re enter new Password</Text>
+                </Td>
+                <Td>  
+                    <Input
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      placeholder="Re-Enter New Password"
+                      id="re-pass"
+                    />
+                </Td> 
+                </Tr>   
+                    <Text color="red" id="pass-mis" display="none">
+                      Passwords Don't Match
+                    </Text>
+                    <Text color="red" id="pass-fail" display="none">
+                      Incorrect Old Password or Username or Invalid User
+                    </Text>
+                    <Text color="red" id="server-fail" display="none">
+                      Server Error. Try again after some time
+                    </Text>
+                    <Text color="green" id="pass-success" display="none">
+                      Password Changed Successfully
+                    </Text>
+                    <Button
+                      alignSelf="flex-end"
+                      marginTop="1rem"
+                      marginBottom="1rem"
+                      marginLeft="20rem"
+                      colorScheme="orange"
+                      variant="solid"
+                      id="pass-button"
+                      onClick={change_pass}
+                    >
+                      Change Password
+                    </Button>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
 
-                <ModalFooter>
-                  <Button colorScheme="blue" mr={3} onClick={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
             <Flex
               direction={{ sm: "column", lg: "row" }}
               w={{ sm: "100%", md: "50%", lg: "auto" }}
@@ -292,90 +358,6 @@ function Profile() {
           </CardBody>
         </Card>
       </SimpleGrid>
-      <Collapse in={onOpen}>
-        <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
-          <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-            <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-              <CardHeader p="6px 0px 22px 0px">
-                <Text fontSize="xl" color={textColor} fontWeight="bold">
-                  Change password
-                </Text>
-              </CardHeader>
-
-              <CardBody>
-                <Flex
-                  flexDirection="column"
-                  align="center"
-                  justify="center"
-                  w="100%"
-                >
-                  <SimpleGrid
-                    columns={{ sm: 1, md: 3, xl: 3 }}
-                    spacing="24px"
-                    w="100%"
-                    mt="1rem"
-                  >
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Enter Old Password"
-                      id="old-pass"
-                    />
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Enter New Password"
-                      id="new-pass"
-                    />
-                    <Input
-                      borderRadius="5px"
-                      fontSize="sm"
-                      type="text"
-                      placeholder="Re-Enter New Password"
-                      id="re-pass"
-                    />
-                  </SimpleGrid>
-                  <Flex
-                    flexDirection="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    maxW="100%"
-                    mt="0px"
-                  >
-                    <Text color="red" id="pass-mis" display="none">
-                      Passwords Don't Match
-                    </Text>
-                    <Text color="red" id="pass-fail" display="none">
-                      Incorrect Old Password or Username or Invalid User
-                    </Text>
-                    <Text color="red" id="server-fail" display="none">
-                      Server Error. Try again after some time
-                    </Text>
-                    <Text color="green" id="pass-success" display="none">
-                      Password Changed Successfully
-                    </Text>
-                  </Flex>
-                  <Flex direction="column" align="flex-end" w="100%">
-                    <Button
-                      marginTop="3rem"
-                      marginBottom="1rem"
-                      marginRight="1rem"
-                      colorScheme="orange"
-                      variant="solid"
-                      id="pass-button"
-                      onClick={change_pass}
-                    >
-                      Change Password
-                    </Button>
-                  </Flex>
-                </Flex>
-              </CardBody>
-            </Card>
-          </SimpleGrid>
-        </Flex>
-      </Collapse>
     </Flex>
   );
 }
