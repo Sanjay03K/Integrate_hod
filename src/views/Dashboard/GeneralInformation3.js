@@ -308,7 +308,7 @@ function GeneralInformation3() {
                           .includes(searchTerm2.toLocaleLowerCase()) &&
                         item.batch
                           .toLowerCase()
-                          .includes(searchTerm2.toLocaleLowerCase())
+                          .includes(searchTerm1.toLocaleLowerCase())
                       ) {
                         if (
                           item.sname
