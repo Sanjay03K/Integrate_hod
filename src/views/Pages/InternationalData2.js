@@ -13,8 +13,8 @@ import {
   Td,
   Input,
   useColorModeValue,
-   SimpleGrid,
-  } from "@chakra-ui/react";
+  SimpleGrid,
+} from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -25,9 +25,9 @@ import InternationalTableRow from "components/Tables/InternationalTableRow2";
 function InternationalData() {
   const textColor = useColorModeValue("gray.700", "white");
   const [data, setData] = useState([]);
-  
-let params = new URLSearchParams();
-  params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+
+  let params = new URLSearchParams();
+  params.append("StudentDetails", localStorage.getItem("International"));
   useEffect(async () => {
     axios
       .post("http://localhost:5000/InternationalExposure", params)
@@ -87,4 +87,3 @@ let params = new URLSearchParams();
 }
 
 export default InternationalData;
-
