@@ -702,6 +702,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="NID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -743,6 +744,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Text
+                            ms="1em"
                             fontSize="md"
                             color={textColor}
                             fontWeight="bold"
@@ -785,6 +787,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="REID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -826,6 +829,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="SID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -867,6 +871,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="DOBID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -908,6 +913,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="DEPT"
                             borderRadius="5px"
                             fontSize="sm"
@@ -949,6 +955,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="BATCH"
                             borderRadius="5px"
                             fontSize="sm"
@@ -990,6 +997,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="NATIONID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1031,6 +1039,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="RELIGIONID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1072,6 +1081,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="PARISHID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1113,6 +1123,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="DALITID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1154,6 +1165,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="COMMUNITYID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1195,6 +1207,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="BLOODID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1236,6 +1249,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="MOTHERID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1277,6 +1291,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="CONTACTID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1318,6 +1333,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="AADHARID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1359,6 +1375,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Text
+                            ms="1em"
                             fontSize="md"
                             color={textColor}
                             fontWeight="bold"
@@ -1401,6 +1418,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="PEREMID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1442,6 +1460,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="PREADDRID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1483,6 +1502,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="PERADDRID"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1524,6 +1544,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="LANKNOW"
                             borderRadius="5px"
                             fontSize="sm"
@@ -1565,6 +1586,7 @@ function GeneralInformationDataEdit(props) {
                       <Flex direction="column">
                         <FormControl>
                           <Input
+                            minWidth="40em"
                             id="PAN"
                             borderRadius="5px"
                             fontSize="sm"
