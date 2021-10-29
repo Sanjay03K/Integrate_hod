@@ -15,7 +15,7 @@ import React from "react";
 var URL = "http://localhost:3000/";
 
 function GeneralParticularstablerow(props) {
-  const { roll, name, reg, batch, email } = props;
+  const { roll, name, reg, dept, batch, email } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
@@ -41,31 +41,36 @@ function GeneralParticularstablerow(props) {
         color: "white",
       }}
     >
-      <Td>
+      <Td minWidth="6em">
         <Flex direction="column">
           <Text fontSize="md" color={textColor} fontWeight="bold">
             {roll}
           </Text>
         </Flex>
       </Td>
-      <Td>
+      <Td minWidth="17em">
         <Flex direction="column">
           <Text fontSize="md" color={textColor} fontWeight="bold">
             {name}
           </Text>
         </Flex>
       </Td>
-      <Td>
+      <Td minWidth="8em">
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {reg}
         </Text>
       </Td>
-      <Td>
+      <Td minWidth="5em">
+        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+          {dept}
+        </Text>
+      </Td>
+      <Td minWidth="8em">
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {batch}
         </Text>
       </Td>
-      <Td>
+      <Td minWidth="17em">
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {email}
         </Text>
