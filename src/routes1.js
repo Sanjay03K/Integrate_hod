@@ -42,6 +42,13 @@ var dashRoutes = [
     layout: "/admin2",
   },
   {
+    path: "/GeneralInformationdata",
+    name: "General Information Data Official",
+    icon: <StatsIcon color="inherit" />,
+    component: GeneralInformationdata,
+    layout: "/admin3",
+  },
+  {
     path: "/GeneralInformationDataEdit",
     name: "General Information Data Edit",
     component: GeneralInformationDataEdit,
