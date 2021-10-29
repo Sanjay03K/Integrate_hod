@@ -18,7 +18,7 @@ function TableRow2(props) {
 
   return (
     <Tr>
-      <Td width={{ sm: "14vw" }}>
+      <Td width={{ sm: "16vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
@@ -47,7 +47,7 @@ function TableRow2(props) {
           </Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "22vw" }}>
+      <Td minWidth={{ sm: "18vw" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
