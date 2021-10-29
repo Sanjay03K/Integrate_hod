@@ -2,6 +2,9 @@
 
 import Dashboard from "views/Dashboard/Dashboard0.js";
 import GeneralInformation from "views/Dashboard/GeneralInformation0";
+
+import InternationalData from "views/Pages/InternationalData0";
+
 import Profile from "views/Dashboard/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
 
@@ -29,6 +32,15 @@ var dashRoutes = [
     component: GeneralInformation,
     layout: "/admin0",
   },
+
+  {
+    path: "/InternationalData",
+    name: "International Exposure",
+    icon: <StatsIcon color="inherit" />,
+    component: InternationalData,
+    layout: "/admin0",
+  },
+
   {
     path: "/profile",
     name: "Profile",
