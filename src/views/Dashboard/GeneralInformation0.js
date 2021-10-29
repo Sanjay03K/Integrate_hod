@@ -1,6 +1,6 @@
 // Student Dashboard/General
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 // Chakra imports
 import {
@@ -9,17 +9,8 @@ import {
   Tbody,
   Text,
   Tr,
-  Td,
   useColorModeValue,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
   SimpleGrid,
-  Button,
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
@@ -27,7 +18,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import TableRow2 from "components/Tables/TableRow2";
 
-var server_URL = "http://localhost:5000/";
+var server_URL = "http://localhost:5000/",
+  GData = TableRow2;
 
 function GeneralInformationdata({ location }) {
   const [data, setData] = useState([]);
@@ -40,8 +32,7 @@ function GeneralInformationdata({ location }) {
   });
 
   const textColor = useColorModeValue("gray.700", "white");
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  var GData = TableRow2;
+
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>

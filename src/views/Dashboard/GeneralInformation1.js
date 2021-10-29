@@ -26,14 +26,16 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import StudentListGeneral from "components/Tables/StudentListGI1";
 
+var server_URL = "http://localhost:5000/";
+
 function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  let params = new URLSearchParams;
-  params.append("batch",localStorage.getItem("batch"));
-  params.append("dept",localStorage.getItem("dept"));
+  let params = new URLSearchParams();
+  params.append("batch", localStorage.getItem("batch"));
+  params.append("dept", localStorage.getItem("dept"));
   useEffect(async () => {
-    axios.post("http://localhost:5000/General",params).then((items) => {
+    axios.get(server_URL + "General").then((items) => {
       setData(items.data);
     });
   }, []);
