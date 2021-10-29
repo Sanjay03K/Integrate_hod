@@ -75,7 +75,6 @@ function Profile() {
 
   let params = new URLSearchParams();
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
-  console.log(localStorage);
 
   axios.post("http://localhost:5000/GeneralStudent", params).then((items) => {
     setData(items.data);
