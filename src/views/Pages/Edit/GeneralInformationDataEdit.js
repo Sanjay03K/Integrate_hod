@@ -706,7 +706,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={sname}
+                            value={sname}
                           />
                         </FormControl>
                       </Flex>
@@ -789,7 +789,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={reg_no}
+                            value={reg_no}
                           />
                         </FormControl>
                       </Flex>
@@ -830,7 +830,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={gender}
+                            value={gender}
                           />
                         </FormControl>
                       </Flex>
@@ -871,7 +871,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={dob}
+                            value={dob}
                           />
                         </FormControl>
                       </Flex>
@@ -912,7 +912,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={dept}
+                            value={dept}
                           />
                         </FormControl>
                       </Flex>
@@ -953,7 +953,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={batch}
+                            value={batch}
                           />
                         </FormControl>
                       </Flex>
@@ -994,7 +994,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={nationality}
+                            value={nationality}
                           />
                         </FormControl>
                       </Flex>
@@ -1035,7 +1035,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={religion}
+                            value={religion}
                           />
                         </FormControl>
                       </Flex>
@@ -1076,7 +1076,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={if_catholic_parish}
+                            value={if_catholic_parish}
                           />
                         </FormControl>
                       </Flex>
@@ -1117,7 +1117,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={dalit_catholic_yn}
+                            value={dalit_catholic_yn}
                           />
                         </FormControl>
                       </Flex>
@@ -1158,7 +1158,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={community}
+                            value={community}
                           />
                         </FormControl>
                       </Flex>
@@ -1199,7 +1199,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={blood_group}
+                            value={blood_group}
                           />
                         </FormControl>
                       </Flex>
@@ -1240,7 +1240,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={mother_tongue}
+                            value={mother_tongue}
                           />
                         </FormControl>
                       </Flex>
@@ -1281,7 +1281,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={contact_no}
+                            value={contact_no}
                           />
                         </FormControl>
                       </Flex>
@@ -1322,7 +1322,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={aadhar_no}
+                            value={aadhar_no}
                           />
                         </FormControl>
                       </Flex>
@@ -1405,7 +1405,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={email}
+                            value={email}
                           />
                         </FormControl>
                       </Flex>
@@ -1446,7 +1446,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={present_address}
+                            value={present_address}
                           />
                         </FormControl>
                       </Flex>
@@ -1487,7 +1487,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={permanent_address}
+                            value={permanent_address}
                           />
                         </FormControl>
                       </Flex>
@@ -1528,7 +1528,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={lang_know}
+                            value={lang_know}
                           />
                         </FormControl>
                       </Flex>
@@ -1569,7 +1569,7 @@ function GeneralInformationDataEdit(props) {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder={pan}
+                            value={pan}
                           />
                         </FormControl>
                       </Flex>
@@ -1624,7 +1624,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_school_name}
+                              value={hse_school_name}
                             />
                           </FormControl>
                         </Flex>
@@ -1665,7 +1665,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_board}
+                              value={hse_board}
                             />
                           </FormControl>
                         </Flex>
@@ -1706,7 +1706,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_medium}
+                              value={hse_medium}
                             />
                           </FormControl>
                         </Flex>
@@ -1747,7 +1747,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_sec_lang}
+                              value={hse_sec_lang}
                             />
                           </FormControl>
                         </Flex>
@@ -1788,7 +1788,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_group}
+                              value={hse_group}
                             />
                           </FormControl>
                         </Flex>
@@ -1829,7 +1829,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_marks}
+                              value={hse_marks}
                             />
                           </FormControl>
                         </Flex>
@@ -1870,7 +1870,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_percentage}
+                              value={hse_percentage}
                             />
                           </FormControl>
                         </Flex>
@@ -1911,7 +1911,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_cutoff}
+                              value={hse_cutoff}
                             />
                           </FormControl>
                         </Flex>
@@ -1952,7 +1952,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={hse_attempts}
+                              value={hse_attempts}
                             />
                           </FormControl>
                         </Flex>
@@ -2007,7 +2007,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_school_name}
+                              value={sslc_school_name}
                             />
                           </FormControl>
                         </Flex>
@@ -2048,7 +2048,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_board}
+                              value={sslc_board}
                             />
                           </FormControl>
                         </Flex>
@@ -2089,7 +2089,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_medium}
+                              value={sslc_medium}
                             />
                           </FormControl>
                         </Flex>
@@ -2130,7 +2130,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_sec_lang}
+                              value={sslc_sec_lang}
                             />
                           </FormControl>
                         </Flex>
@@ -2171,7 +2171,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_marks}
+                              value={sslc_marks}
                             />
                           </FormControl>
                         </Flex>
@@ -2212,7 +2212,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_percentage}
+                              value={sslc_percentage}
                             />
                           </FormControl>
                         </Flex>
@@ -2253,7 +2253,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={sslc_attempts}
+                              value={sslc_attempts}
                             />
                           </FormControl>
                         </Flex>
@@ -2308,7 +2308,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_name}
+                              value={father_name}
                             />
                           </FormControl>
                         </Flex>
@@ -2349,7 +2349,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_qualification}
+                              value={father_qualification}
                             />
                           </FormControl>
                         </Flex>
@@ -2390,7 +2390,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_occupation}
+                              value={father_occupation}
                             />
                           </FormControl>
                         </Flex>
@@ -2431,7 +2431,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_office_address}
+                              value={father_office_address}
                             />
                           </FormControl>
                         </Flex>
@@ -2472,7 +2472,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_annual_income}
+                              value={father_annual_income}
                             />
                           </FormControl>
                         </Flex>
@@ -2513,7 +2513,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_mob_no}
+                              value={father_mob_no}
                             />
                           </FormControl>
                         </Flex>
@@ -2554,7 +2554,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={father_email}
+                              value={father_email}
                             />
                           </FormControl>
                         </Flex>
@@ -2595,7 +2595,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_name}
+                              value={guardian_name}
                             />
                           </FormControl>
                         </Flex>
@@ -2636,7 +2636,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_qualification}
+                              value={guardian_qualification}
                             />
                           </FormControl>
                         </Flex>
@@ -2677,7 +2677,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_occupation}
+                              value={guardian_occupation}
                             />
                           </FormControl>
                         </Flex>
@@ -2718,7 +2718,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_office_address}
+                              value={guardian_office_address}
                             />
                           </FormControl>
                         </Flex>
@@ -2759,7 +2759,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_annual_income}
+                              value={guardian_annual_income}
                             />
                           </FormControl>
                         </Flex>
@@ -2800,7 +2800,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_mob_no}
+                              value={guardian_mob_no}
                             />
                           </FormControl>
                         </Flex>
@@ -2841,7 +2841,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={guardian_email}
+                              value={guardian_email}
                             />
                           </FormControl>
                         </Flex>
@@ -2896,7 +2896,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_name}
+                              value={mother_name}
                             />
                           </FormControl>
                         </Flex>
@@ -2937,7 +2937,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_qualification}
+                              value={mother_qualification}
                             />
                           </FormControl>
                         </Flex>
@@ -2978,7 +2978,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_occupation}
+                              value={mother_occupation}
                             />
                           </FormControl>
                         </Flex>
@@ -3019,7 +3019,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_office_address}
+                              value={mother_office_address}
                             />
                           </FormControl>
                         </Flex>
@@ -3060,7 +3060,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_annual_income}
+                              value={mother_annual_income}
                             />
                           </FormControl>
                         </Flex>
@@ -3101,7 +3101,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_mob_no}
+                              value={mother_mob_no}
                             />
                           </FormControl>
                         </Flex>
@@ -3142,7 +3142,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={mother_email}
+                              value={mother_email}
                             />
                           </FormControl>
                         </Flex>
@@ -3183,7 +3183,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={no_of_siblings}
+                              value={no_of_siblings}
                             />
                           </FormControl>
                         </Flex>
@@ -3224,7 +3224,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={name_siblings}
+                              value={name_siblings}
                             />
                           </FormControl>
                         </Flex>
@@ -3265,7 +3265,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={qualification_siblings}
+                              value={qualification_siblings}
                             />
                           </FormControl>
                         </Flex>
@@ -3306,7 +3306,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={occupation_siblings}
+                              value={occupation_siblings}
                             />
                           </FormControl>
                         </Flex>
@@ -3347,7 +3347,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={alumni_licet_loyola_yn}
+                              value={alumni_licet_loyola_yn}
                             />
                           </FormControl>
                         </Flex>
@@ -3402,7 +3402,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={application_no}
+                              value={application_no}
                             />
                           </FormControl>
                         </Flex>
@@ -3443,7 +3443,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={date_of_ad}
+                              value={date_of_ad}
                             />
                           </FormControl>
                         </Flex>
@@ -3484,7 +3484,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={quota}
+                              value={quota}
                             />
                           </FormControl>
                         </Flex>
@@ -3525,7 +3525,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={regular_lateral_rl}
+                              value={regular_lateral_rl}
                             />
                           </FormControl>
                         </Flex>
@@ -3566,7 +3566,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={dayschl_hosteller_dh}
+                              value={dayschl_hosteller_dh}
                             />
                           </FormControl>
                         </Flex>
@@ -3621,7 +3621,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={scholarship_name}
+                              value={scholarship_name}
                             />
                           </FormControl>
                         </Flex>
@@ -3662,7 +3662,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={scholarship_amount}
+                              value={scholarship_amount}
                             />
                           </FormControl>
                         </Flex>
@@ -3703,7 +3703,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={first_graduate_yn}
+                              value={first_graduate_yn}
                             />
                           </FormControl>
                         </Flex>
@@ -3745,7 +3745,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={eco_backward_yn}
+                              value={eco_backward_yn}
                             />
                           </FormControl>
                         </Flex>
@@ -3800,7 +3800,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={programming_languages}
+                              value={programming_languages}
                             />
                           </FormControl>
                         </Flex>
@@ -3841,7 +3841,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={software_proficiency}
+                              value={software_proficiency}
                             />
                           </FormControl>
                         </Flex>
@@ -3882,7 +3882,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={dept_rel_proficiency}
+                              value={dept_rel_proficiency}
                             />
                           </FormControl>
                         </Flex>
@@ -3923,7 +3923,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={certifications}
+                              value={certifications}
                             />
                           </FormControl>
                         </Flex>
@@ -3964,7 +3964,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={other_skills}
+                              value={other_skills}
                             />
                           </FormControl>
                         </Flex>
@@ -4005,7 +4005,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={aptitude_analytical_skills}
+                              value={aptitude_analytical_skills}
                             />
                           </FormControl>
                         </Flex>
@@ -4046,7 +4046,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={communication_skills}
+                              value={communication_skills}
                             />
                           </FormControl>
                         </Flex>
@@ -4087,7 +4087,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={social_media_exposure}
+                              value={social_media_exposure}
                             />
                           </FormControl>
                         </Flex>
@@ -4128,7 +4128,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={leadership_skills}
+                              value={leadership_skills}
                             />
                           </FormControl>
                         </Flex>
@@ -4169,7 +4169,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={other_interpersonal_skills}
+                              value={other_interpersonal_skills}
                             />
                           </FormControl>
                         </Flex>
@@ -4224,7 +4224,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={short_term_goal}
+                              value={short_term_goal}
                             />
                           </FormControl>
                         </Flex>
@@ -4265,7 +4265,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={long_term_goal}
+                              value={long_term_goal}
                             />
                           </FormControl>
                         </Flex>
@@ -4306,7 +4306,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={membership_name}
+                              value={membership_name}
                             />
                           </FormControl>
                         </Flex>
@@ -4347,7 +4347,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={membership_no}
+                              value={membership_no}
                             />
                           </FormControl>
                         </Flex>
@@ -4388,7 +4388,7 @@ function GeneralInformationDataEdit(props) {
                               borderRadius="5px"
                               fontSize="sm"
                               type="text"
-                              placeholder={membership_duration}
+                              value={membership_duration}
                             />
                           </FormControl>
                         </Flex>
