@@ -234,7 +234,7 @@ function GeneralInformation3() {
             Download Report
           </Button>
         </Card>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+        <Card overflowX={{ sm: "scroll", md: "scroll", xl: "scroll" }}>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Students List
@@ -247,6 +247,7 @@ function GeneralInformation3() {
                   <Th color="gray.400">Roll No.</Th>
                   <Th color="gray.400">Name</Th>
                   <Th color="gray.400">Register No</Th>
+                  <Th color="gray.400">Department</Th>
                   <Th color="gray.400">Batch</Th>
                   <Th color="gray.400">Email</Th>
                   <Th></Th>
@@ -303,6 +304,7 @@ function GeneralInformation3() {
                         reg={item.reg_no}
                         batch={item.batch}
                         email={item.licet_email}
+                        dept={item.dept}
                       />
                     );
                   })}

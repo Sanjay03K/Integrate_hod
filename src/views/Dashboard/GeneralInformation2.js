@@ -31,6 +31,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import GeneralParticularstablerow from "components/Tables/StudentListGI2";
 
+var server_URL = "http://localhost:5000/";
+
 function GeneralInformationHOD() {
   const [data, setData] = useState([]);
   let params = new URLSearchParams();
@@ -41,7 +43,7 @@ function GeneralInformationHOD() {
   // console.log("AUTH TOKEN", localStorage.getItem("auth_token"));
   let auth_token = localStorage.getItem("auth_token");
   useEffect(async () => {
-    axios.post("http://localhost:5000/GeneralHOD", params).then((items) => {
+    axios.post(server_URL + "GeneralHOD", params).then((items) => {
       setData(items.data);
     });
   });
