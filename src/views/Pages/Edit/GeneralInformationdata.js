@@ -45,14 +45,14 @@ function GeneralInformationdata() {
     params.append("dateofbirth", document.getElementById("DOBID").value);
     params.append("nationality", document.getElementById("NATIONID").value);
     params.append("contact", document.getElementById("CONTACTID").value);
-    
+
     params.append("religion", document.getElementById("RELIGIONID").value);
     params.append("parish", document.getElementById("PARISHID").value);
     params.append("dalit", document.getElementById("DALITID").value);
     params.append("community", document.getElementById("COMMUNITYID").value);
     params.append("bloodgroup", document.getElementById("BLOODID").value);
     params.append("mothertongue", document.getElementById("MOTHERID").value);
-    
+
     params.append("preaddr", document.getElementById("PREADDRID").value);
     params.append("peraddr", document.getElementById("PERADDRID").value);
     params.append("langknown", document.getElementById("LANKNO").value);
@@ -106,7 +106,7 @@ function GeneralInformationdata() {
 
     params.append("appno", document.getElementById("AN").value);
     params.append("doa", document.getElementById("DOA").value);
-    
+
     params.append("reglat", document.getElementById("RL").value);
     params.append("dayhos", document.getElementById("DH").value);
 
@@ -137,7 +137,7 @@ function GeneralInformationdata() {
     axios.post("http://localhost:5000/insertroll", params);
     axios.post("http://localhost:5000/studentinsert", params);
     window.location.href =
-      "http://localhost:3000/student-portal#/admin/dashboard";
+      "http://localhost:3000/student-portal#/admin0/dashboard";
   }
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -321,9 +321,9 @@ function GeneralInformationdata() {
                             placeholder="Select Option"
                             isRequired
                           >
-                            <option value="option1">Male</option>
-                            <option value="option2">Female</option>
-                            <option value="option3">Other</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                           </Select>
                         </FormControl>
                       </Flex>
@@ -444,14 +444,14 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
-                        <Tooltip label="Ex: 2019-2023" placement="right">
-                          <Input
-                            id="BATCH"
-                            borderRadius="5px"
-                            fontSize="sm"
-                            type="text"
-                            placeholder="Enter your Batch"
-                          />
+                          <Tooltip label="Ex: 2019-2023" placement="right">
+                            <Input
+                              id="BATCH"
+                              borderRadius="5px"
+                              fontSize="sm"
+                              type="text"
+                              placeholder="Enter your Batch"
+                            />
                           </Tooltip>
                         </FormControl>
                       </Flex>
@@ -615,8 +615,8 @@ function GeneralInformationdata() {
                             placeholder="Select Option"
                             isRequired
                           >
-                            <option value="option1">Y</option>
-                            <option value="option2">N</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
                           </Select>
                         </FormControl>
                       </Flex>
@@ -2845,8 +2845,8 @@ function GeneralInformationdata() {
                               placeholder="Select Option"
                               isRequired
                             >
-                              <option value="option1">Y</option>
-                              <option value="option2">N</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
                             </Select>
                           </FormControl>
                         </Flex>
@@ -2988,8 +2988,12 @@ function GeneralInformationdata() {
                               placeholder="Select Option"
                               isRequired
                             >
-                              <option value="option1">GQ</option>
-                              <option value="option2">MQ</option>
+                              <option value="Government Quota">
+                                Government Quota
+                              </option>
+                              <option value="Management Quota">
+                                Management Quota
+                              </option>
                             </Select>
                           </FormControl>
                         </Flex>
@@ -3026,8 +3030,8 @@ function GeneralInformationdata() {
                         <Flex direction="column">
                           <FormControl>
                             <Select id="RL" placeholder="Select Option">
-                              <option value="option1">R</option>
-                              <option value="option2">L</option>
+                              <option value="Regular">Regular</option>
+                              <option value="Lateral">Lateral</option>
                             </Select>
                           </FormControl>
                         </Flex>
@@ -3068,8 +3072,8 @@ function GeneralInformationdata() {
                               placeholder="Select Option"
                               isRequired
                             >
-                              <option value="option1">D</option>
-                              <option value="option2">H</option>
+                              <option value="Day Scholar">Day Scholar</option>
+                              <option value="Hosteller">Hosteller</option>
                             </Select>
                           </FormControl>
                         </Flex>
@@ -3206,8 +3210,8 @@ function GeneralInformationdata() {
                               placeholder="Select Option"
                               isRequired
                             >
-                              <option value="option1">Y</option>
-                              <option value="option2">N</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">N0</option>
                             </Select>
                           </FormControl>
                         </Flex>
@@ -3249,8 +3253,8 @@ function GeneralInformationdata() {
                               placeholder="Select Option"
                               isRequired
                             >
-                              <option value="option1">Y</option>
-                              <option value="option2">N</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
                             </Select>
                           </FormControl>
                         </Flex>

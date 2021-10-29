@@ -274,11 +274,41 @@ function GeneralInformation3() {
                       ) {
                         return item;
                       }
-                    } else {
+                    } else if (
+                      searchTerm2 == "" &&
+                      searchTerm1 !== "" &&
+                      searchTerm == ""
+                    ) {
                       if (
                         item.batch
                           .toLowerCase()
-                          .includes(searchTerm1.toLocaleLowerCase())
+                          .includes(searchTerm2.toLocaleLowerCase())
+                      ) {
+                        return item;
+                      }
+                    } else if (
+                      searchTerm2 !== "" &&
+                      searchTerm1 !== "" &&
+                      searchTerm == ""
+                    ) {
+                      if (
+                        item.dept
+                          .toLowerCase()
+                          .includes(searchTerm2.toLocaleLowerCase()) &&
+                        item.batch
+                          .toLowerCase()
+                          .includes(searchTerm2.toLocaleLowerCase())
+                      ) {
+                        return item;
+                      }
+                    } else {
+                      if (
+                        item.dept
+                          .toLowerCase()
+                          .includes(searchTerm2.toLocaleLowerCase()) &&
+                        item.batch
+                          .toLowerCase()
+                          .includes(searchTerm2.toLocaleLowerCase())
                       ) {
                         if (
                           item.sname
