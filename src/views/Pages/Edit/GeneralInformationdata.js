@@ -173,14 +173,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Student Name
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Student Name
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -214,14 +217,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Roll No
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Roll Number
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -255,14 +261,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Register No
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Register Number
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -296,14 +305,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Gender
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Gender
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -315,7 +327,7 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <FormControl>
+                        <FormControl isRequired>
                           <Select
                             id="SID"
                             placeholder="Select Option"
@@ -339,14 +351,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Date Of Birth
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Date Of Birth
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -383,14 +398,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Department
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Quota
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -424,14 +442,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Batch
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Batch
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -467,14 +488,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Nationality
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Nationality
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -508,14 +532,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Religion
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Religion
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -590,14 +617,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Dalit Catholic
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Dalit Catholic
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -632,14 +662,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Community
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Community
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -673,14 +706,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Blood Group
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Blood Group
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -714,14 +750,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Mother Tongue
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Mother Tongue
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -755,14 +794,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Contact Number
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Contact Number
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -796,14 +838,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Aadhar No.
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Aadhar Number
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -837,14 +882,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Official Email ID
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Official Email ID
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -878,14 +926,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Personal Email ID
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Personal Email ID
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -919,14 +970,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Present Address
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Present Address
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -960,14 +1014,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Permanent Address
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Permanent Address
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -1001,14 +1058,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          Languages Known
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Languages Known
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -1026,7 +1086,7 @@ function GeneralInformationdata() {
                             borderRadius="5px"
                             fontSize="sm"
                             type="text"
-                            placeholder="Enter your Permanent address"
+                            placeholder="Enter the languages known"
                           />
                         </FormControl>
                       </Flex>
@@ -1042,14 +1102,17 @@ function GeneralInformationdata() {
                       flexWrap="nowrap"
                     >
                       <Flex direction="column">
-                        <Text
-                          fontSize="md"
-                          color={textColor}
-                          fontWeight="bold"
-                          minWidth="100%"
-                        >
-                          PAN
-                        </Text>
+                      <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              PAN
+                            </FormLabel>
+                          </FormControl>
+
                       </Flex>
                     </Flex>
                   </Td>
@@ -1098,14 +1161,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Name of the School
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Name Of School
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1139,14 +1205,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Board
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Board
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1180,14 +1249,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Medium Of Instruction
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Medium Of Instruction
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1221,14 +1293,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Second Language
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Second Language
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1262,14 +1337,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Group
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Group
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1303,14 +1381,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Total Marks
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Total Marks
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1344,14 +1425,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Overall Percentage
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Overall Percentage
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1385,14 +1469,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Cut-Off Marks
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Cut-Off Marks
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1426,14 +1513,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            No. Of Attempts
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Number Of Attempts
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1481,14 +1571,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Name of the School
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Name Of School
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1522,14 +1615,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Board
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Board
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1563,14 +1659,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Medium Of Instruction
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Medium Of Instruction
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1604,14 +1703,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Second Language
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Second Language
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1645,14 +1747,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Total Marks
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Total Marks
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1686,14 +1791,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Overall Percentage
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Overall Percentage
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1727,14 +1835,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            No. Of Attempts
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Number Of Attempts
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1782,14 +1893,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Father's Name
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Father's Name
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -1987,14 +2101,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Father's Mobile No.
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Father's Mobile Number
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -2369,14 +2486,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Mother's Name
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Mother's Name
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -2574,14 +2694,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Mother's Mobile No.
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Mother's Mobile Number
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -2656,14 +2779,16 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            No. Of Siblings
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Number Of Siblings
+                            </FormLabel>
+                          </FormControl>
                         </Flex>
                       </Flex>
                     </Td>
@@ -2826,7 +2951,8 @@ function GeneralInformationdata() {
                             fontWeight="bold"
                             minWidth="100%"
                           >
-                            Alumni Of LICET Or LOYOLA
+                            Alumni Of 
+                            LICET Or LOYOLA
                           </Text>
                         </Flex>
                       </Flex>
@@ -2876,14 +3002,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Application No.
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Application Number
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -2917,14 +3046,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Date Of Admission
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Date Of Admission
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -3005,14 +3137,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Regular / Lateral Entry
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Regular/Lateral Entry
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -3043,14 +3178,17 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <Text
-                            fontSize="md"
-                            color={textColor}
-                            fontWeight="bold"
-                            minWidth="100%"
-                          >
-                            Day Scholar / Hosteller
-                          </Text>
+                        <FormControl isRequired>
+                            <FormLabel
+                              fontSize="md"
+                              color={textColor}
+                              fontWeight="bold"
+                              minWidth="100%"
+                            >
+                              Day Scholar/Hosteller
+                            </FormLabel>
+                          </FormControl>
+
                         </Flex>
                       </Flex>
                     </Td>
@@ -3200,7 +3338,7 @@ function GeneralInformationdata() {
                         flexWrap="nowrap"
                       >
                         <Flex direction="column">
-                          <FormControl>
+                          <FormControl isRequired>
                             <Select
                               id="FG"
                               placeholder="Select Option"
