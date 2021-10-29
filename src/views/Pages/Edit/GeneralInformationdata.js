@@ -23,6 +23,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import { Tooltip } from "@chakra-ui/react";
 
 function GeneralInformationdata() {
   function logout() {
@@ -443,6 +444,7 @@ function GeneralInformationdata() {
                     >
                       <Flex direction="column">
                         <FormControl>
+                        <Tooltip label="Ex: 2019-2023" placement="right">
                           <Input
                             id="BATCH"
                             borderRadius="5px"
@@ -450,6 +452,7 @@ function GeneralInformationdata() {
                             type="text"
                             placeholder="Enter your Batch"
                           />
+                          </Tooltip>
                         </FormControl>
                       </Flex>
                     </Flex>
