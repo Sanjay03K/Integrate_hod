@@ -1,3 +1,5 @@
+//Student create page
+
 import React from "react";
 import axios from "axios";
 // Chakra imports
@@ -6,8 +8,6 @@ import {
   Table,
   Tbody,
   Text,
-  Th,
-  Thead,
   Tr,
   Td,
   Input,
@@ -15,40 +15,14 @@ import {
   Button,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Select,
   SimpleGrid,
-  Grid,
-  GridItem,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
 } from "@chakra-ui/react";
 
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/GeneralParticularstablerow";
-import { GeneralParticulars } from "variables/general";
-import { HigherSecondaryDetails } from "variables/general";
-import { SecondaryDetails } from "variables/general";
-import { Father, Mother } from "variables/general";
-import { AdmissionDetails } from "variables/general";
-import { ScholarshipDetails } from "variables/general";
-import { TechnicalSkills } from "variables/general";
-import { NonTechnicalSkills } from "variables/general";
-import { Goals } from "variables/general";
-import { ProfessionalMembership } from "variables/general";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 
 function GeneralInformationdata() {
   function logout() {
