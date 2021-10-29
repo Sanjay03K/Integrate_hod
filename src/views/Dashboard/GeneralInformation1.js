@@ -26,11 +26,13 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import StudentListGeneral from "components/Tables/StudentListGI1";
 
+var server_URL = "http://localhost:5000/";
+
 function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(async () => {
-    axios.get("http://localhost:5000/General").then((items) => {
+    axios.get(server_URL + "General").then((items) => {
       setData(items.data);
       console.log(items.data);
     });

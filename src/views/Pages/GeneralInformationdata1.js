@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+//Class Advisor GeneralInformationData
+
+import React, { useState } from "react";
 import axios from "axios";
 // Chakra imports
 import {
@@ -7,7 +9,6 @@ import {
   Tbody,
   Text,
   Tr,
-  Td,
   useColorModeValue,
   Modal,
   ModalContent,
