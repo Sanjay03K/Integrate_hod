@@ -238,6 +238,7 @@ function InternationalExposure() {
                 <Th color="gray.400">Roll No.</Th>
                 <Th color="gray.400">Name</Th>
                 <Th color="gray.400">Register No</Th>
+                <Th color="gray.400">Department</Th>
                 <Th color="gray.400">Batch</Th>
                 <Th color="gray.400">Email</Th>
               </Tr>
