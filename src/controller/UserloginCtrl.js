@@ -3,7 +3,10 @@ import axios from "axios";
 export default function handleLogin() {
   const loginButton = document.getElementById("login_btn");
   loginButton.disabled = true;
-  loginButton.innerHTML = `<div class="spinner-border text-primary p-2 spinner-border-sm" role="status" aria-hidden="true"><span class="visually-hidden">Loading...</span></div>`;
+  loginButton.innerHTML = `<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>`;
+  document.getElementById("pass-fail").style.display = "none";
+  document.getElementById("email-fail").style.display = "none";
+  document.getElementById("server-fail").style.display = "none";
 
   let URL = "http://localhost:3000",
     server_URL = "http://localhost:5000";
@@ -14,31 +17,22 @@ export default function handleLogin() {
 
   axios.post(server_URL + "/userlogin", params).then((result) => {
     if (result.data === "user-fail") {
-      //    document.getElementById("pass-fail").classList.add("d-none");
-      //    document.getElementById("email-fail").classList.remove("d-none");
-      //    document.getElementById("server-fail").classList.add("d-none");
+      document.getElementById("email-fail").style.display = "block";
       localStorage.setItem("auth_token", -1);
       loginButton.disabled = false;
       loginButton.innerHTML = `Login`;
     } else if (result.data === "pass-fail") {
       console.log("Incorrect password");
-      //    document.getElementById("pass-fail").classList.remove("d-none");
-      //    document.getElementById("email-fail").classList.add("d-none");
-      //    document.getElementById("server-fail").classList.add("d-none");
+      document.getElementById("pass-fail").style.display = "block";
       localStorage.setItem("auth_token", -1);
       loginButton.disabled = false;
       loginButton.innerHTML = `Login`;
     } else if (result.data === "server-down") {
       localStorage.setItem("auth_token", -1);
-      //    document.getElementById("pass-fail").classList.add("d-none");
-      //    document.getElementById("email-fail").classList.add("d-none");
-      //    document.getElementById("server-fail").classList.remove("d-none");
+      document.getElementById("server-fail").style.display = "block";
       loginButton.disabled = false;
       loginButton.innerHTML = `Login`;
     } else {
-      //    document.getElementById("pass-fail").classList.add("d-none");
-      //    document.getElementById("email-fail").classList.add("d-none");
-      //    document.getElementById("server-fail").classList.add("d-none");
       console.log("Logged In");
       var check = result.data[0];
       console.log(check);
