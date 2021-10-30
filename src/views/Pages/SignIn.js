@@ -124,7 +124,7 @@ function SignIn() {
                   <Text color="red" id="pass-fail" display="none">
                     Incorrect Password
                   </Text>
-                  <Text color="red" id="serror-fail" display="none">
+                  <Text color="red" id="server-fail" display="none">
                     Server Error. Try again after some time
                   </Text>
                 </Flex>
