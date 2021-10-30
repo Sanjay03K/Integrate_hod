@@ -1,18 +1,8 @@
 //Class Advisor - StudentList GeneralInformation
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import {
-  Avatar,
-  Badge,
-  Button,
-  Flex,
-  Td,
-  Text,
-  Tr,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import axios from "axios";
+import { Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
 
 var URL = "http://localhost:3000/";
 

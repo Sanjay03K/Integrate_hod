@@ -4,6 +4,7 @@ import Dashboard from "views/Dashboard/Dashboard1.js";
 import GeneralInformation from "views/Dashboard/GeneralInformation1";
 
 import InternationalExposure from "views/Dashboard/InternationalExposure1";
+import Extracurricular from "views/Dashboard/Extracurricular1";
 
 import Profile from "views/Dashboard/Profile1.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -13,6 +14,7 @@ import {
   StatsIcon,
   DocumentIcon,
   RocketIcon,
+  CreditIcon,
 } from "components/Icons/Icons";
 
 var dashRoutes = [
@@ -47,6 +49,13 @@ var dashRoutes = [
     ),
     icon: <RocketIcon color="inherit" />,
     component: InternationalExposure,
+    layout: "/admin1",
+  },
+  {
+    path: "/Extracurricular",
+    name: "Extracurricular",
+    icon: <CreditIcon color="inherit" />,
+    component: Extracurricular,
     layout: "/admin1",
   },
 

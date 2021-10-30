@@ -1,4 +1,4 @@
-//Class Advisor International Exposure - Student List
+//Class Advisor Extracurricular - Student List
 
 import React from "react";
 
@@ -6,7 +6,7 @@ import { Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
 
 var URL = "http://localhost:3000/";
 
-function StudentListInternational(props) {
+function StudentListExtraCurricular(props) {
   const { name, email, reg, roll, batch } = props;
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -19,10 +19,11 @@ function StudentListInternational(props) {
       fontWeight="bold"
       minWidth="100%"
       onClick={() => {
-        localStorage.setItem("International", roll);
+        localStorage.setItem("generalStudent", roll);
         let params = new URLSearchParams();
-        params.append("RollNumber", localStorage.getItem("International"));
-        window.location.href = URL + "Class-Advisor#/admin1/InternationalData";
+        params.append("RollNumber", localStorage.getItem("generalStudent"));
+        window.location.href =
+          URL + "class-advisor-portal#/admin1/ExtracurricularData";
       }}
       id={roll}
       _hover={{
@@ -64,4 +65,4 @@ function StudentListInternational(props) {
   );
 }
 
-export default StudentListInternational;
+export default StudentListExtraCurricular;

@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { CSVLink } from "react-csv";
-var data2 = [];
 // Chakra imports
 import {
   Flex,
@@ -27,12 +25,13 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import StudentListInternational from "components/Tables/StudentListInternational1";
 
+var server_URL = "http://localhost:5000/";
+
 function InternationalExposure() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   let params = new URLSearchParams();
-  var server_URL = "http://localhost:5000/";
 
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
@@ -43,19 +42,6 @@ function InternationalExposure() {
       console.log(items.data);
     });
   }, []);
-
-  data2 = data.filter((item) => {
-    if (searchTerm == "") {
-      return item;
-    } else if (
-      item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-      item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-      item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-      item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-    ) {
-      return item;
-    }
-  });
 
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
@@ -119,7 +105,7 @@ function InternationalExposure() {
             value={searchTerm}
           />
         </InputGroup>
-        <CSVLink data={data2}>
+
         <Button
           mt="1em"
           onClick="m"
@@ -130,7 +116,6 @@ function InternationalExposure() {
         >
           Download Report
         </Button>
-        </CSVLink>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">

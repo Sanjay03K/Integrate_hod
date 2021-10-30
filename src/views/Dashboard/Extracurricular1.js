@@ -1,3 +1,5 @@
+//Class Advisor Extracurricular
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Chakra imports
@@ -21,16 +23,21 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListExtraCurricular from "components/Tables/StudentListExtraCurricular";
-import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
+import StudentListExtraCurricular from "components/Tables/StudentListExtraCurricular1";
 
 var server_URL = "http://localhost:5000/";
 
 function Extracurricular() {
+  let params = new URLSearchParams();
+
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  params.append("batch", localStorage.getItem("batch"));
+  params.append("dept", localStorage.getItem("dept"));
+
   useEffect(async () => {
-    axios.get(server_URL + "General").then((items) => {
+    axios.get(server_URL + "ExtracurricularCA").then((items) => {
       setData(items.data);
       console.log(items.data);
     });
