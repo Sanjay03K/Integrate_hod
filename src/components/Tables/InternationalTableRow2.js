@@ -69,14 +69,14 @@ function InternationalTableRow(props) {
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="6em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row7}</Flex>
           </FormControl>
         </Flex>
       </Td>
-      <Td minWidth="14em">
+      <Td minWidth="9em">
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <FormControl>
             <Flex direction="column">{row8}</Flex>
