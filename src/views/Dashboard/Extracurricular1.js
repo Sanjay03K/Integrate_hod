@@ -37,7 +37,7 @@ function Extracurricular() {
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.get(server_URL + "ExtracurricularCA").then((items) => {
+    axios.post(server_URL + "ExtracurricularCA", params).then((items) => {
       setData(items.data);
       console.log(items.data);
     });
