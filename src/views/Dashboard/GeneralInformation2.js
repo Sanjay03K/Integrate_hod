@@ -242,7 +242,7 @@ function GeneralInformationHOD() {
                   .filter((item) => {
                     if (searchTerm == "" && searchTerm1 == "") {
                       return item;
-                    } else if (searchTerm1 !== "" && searchTerm == "") {
+                    } else if (searchTerm1 != "" && searchTerm == "") {
                       if (
                         item.batch
                           .toLowerCase()

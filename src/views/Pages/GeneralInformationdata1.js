@@ -766,6 +766,14 @@ function GeneralInformationdata({ location }) {
                   <Tr>
                     {data.map((item) => {
                       return (
+                        <GData data={item.lang_know} field="Languages Known" />
+                      );
+                    })}
+                  </Tr>
+
+                  <Tr>
+                    {data.map((item) => {
+                      return (
                         <GData
                           data={item.software_proficiency}
                           field="Software Proficieny"
