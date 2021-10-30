@@ -35,7 +35,18 @@ var dashRoutes = [
 
   {
     path: "/InternationalData",
-    name: "International Exposure",
+    name: (
+      <p
+        style={{
+          textAlign: "left",
+
+          whiteSpace: "normal",
+          wordWrap: "break-word",
+        }}
+      >
+        International Exposure
+      </p>
+    ),
     icon: <StatsIcon color="inherit" />,
     component: InternationalData,
     layout: "/admin0",
