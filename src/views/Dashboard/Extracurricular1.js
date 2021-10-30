@@ -28,16 +28,14 @@ import StudentListExtraCurricular from "components/Tables/StudentListExtraCurric
 var server_URL = "http://localhost:5000/";
 
 function Extracurricular() {
-  let params = new URLSearchParams();
-
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  let params = new URLSearchParams();
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.get(server_URL + "ExtracurricularCA").then((items) => {
+    axios.post(server_URL + "ExtracurricularCA", params).then((items) => {
       setData(items.data);
       console.log(items.data);
     });
