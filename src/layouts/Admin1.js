@@ -6,8 +6,10 @@ import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+
 import routes from "routes1.js";
 import routes1 from "routes.js";
+
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
