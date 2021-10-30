@@ -40,7 +40,6 @@ var dashRoutes = [
       <p
         style={{
           textAlign: "left",
-
           whiteSpace: "normal",
           wordWrap: "break-word",
         }}
