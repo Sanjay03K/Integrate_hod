@@ -14,6 +14,7 @@ import {
   Tr,
   Td,
   Input,
+  Box,
   useColorModeValue,
   Modal,
   ModalOverlay,
@@ -27,6 +28,8 @@ import {
   SimpleGrid,
   Collapse,
   SlideFade,
+  FormControl,
+  Select,
 } from "@chakra-ui/react";
 
 import { AddIcon } from "@chakra-ui/icons";
@@ -36,6 +39,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import TableRow5 from "components/Tables/TableRow5";
 import TableRow4 from "components/Tables/TableRow4";
+
+var server_URL = "http://localhost:5000/";
 
 var resul;
 
@@ -48,17 +53,15 @@ function ExtraCurricularData() {
     params.append("Clubnoutcome", document.getElementById("OUTCOMID").value);
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
     params.append("status", "Pending");
-    axios
-      .post("http://localhost:5000/insertstudextraclub", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "insertstudextraclub", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
   function substudextraoutreach() {
     let params = new URLSearchParams();
@@ -73,17 +76,15 @@ function ExtraCurricularData() {
     );
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
     params.append("status", "Pending");
-    axios
-      .post("http://localhost:5000/insertstudextraoutreach", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "insertstudextraoutreach", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
   function substudextrasport() {
     let params = new URLSearchParams();
@@ -93,17 +94,15 @@ function ExtraCurricularData() {
     params.append("position", document.getElementById("SPID").value);
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
     params.append("status", "Pending");
-    axios
-      .post("http://localhost:5000/insertstudextrasports", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "insertstudextrasports", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
 
   function substudextracultural() {
@@ -113,17 +112,15 @@ function ExtraCurricularData() {
     params.append("eventposition", document.getElementById("EPSID").value);
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
     params.append("status", "Pending");
-    axios
-      .post("http://localhost:5000/insertstudextracultural", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "insertstudextracultural", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -149,10 +146,10 @@ function ExtraCurricularData() {
   useEffect(async () => {
     axios
       .all([
-        axios.post("http://localhost:5000/ExtraClubStudentDisplay", params),
-        axios.post("http://localhost:5000/ExtraOutreachStudentDisplay", params),
-        axios.post("http://localhost:5000/ExtraSportsStudentDisplay", params),
-        axios.post("http://localhost:5000/ExtraCulturalStudentDisplay", params),
+        axios.post(server_URL + "ExtraClubStudentDisplay", params),
+        axios.post(server_URL + "ExtraOutreachStudentDisplay", params),
+        axios.post(server_URL + "ExtraSportsStudentDisplay", params),
+        axios.post(server_URL + "ExtraCulturalStudentDisplay", params),
       ])
       .then(
         axios.spread((data1, data2, data3, data4) => {
@@ -167,139 +164,160 @@ function ExtraCurricularData() {
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll" }}>
+        <Card>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Clubs
             </Text>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Name Of The Club</Th>
-                  <Th color="gray.400">Activity</Th>
-                  <Th color="gray.400">Date & Year</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Cdata.map((item1) => {
-                  return (
-                    <TableRow5
-                      row1={item1.club_name}
-                      row2={item1.activity_name}
-                      row3={item1.date}
-                      row4={item1.outcome}
-                      row5={item1.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show}>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td width={{ sm: "21.5%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Club Name"
-                        id="CLUBNID"
+          <Box overflowX={{ sm: "scroll" }}>
+            <CardBody>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Name Of The Club</Th>
+                    <Th color="gray.400">Date</Th>
+                    <Th color="gray.400">Activity</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {Cdata.map((item1) => {
+                    return (
+                      <TableRow5
+                        row1={item1.club_name}
+                        row2={item1.date}
+                        row3={item1.activity_name}
+                        row4={item1.outcome}
+                        row5={item1.verified}
                       />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "21.5%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Club Activity"
-                        id="CLUBAID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "21.5%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Date and Year"
-                        id="EDYEARID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "21.5%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Outcome"
-                        id="OUTCOMID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
 
-                        <ModalFooter>
+            <Collapse in={show}>
+              <Table variant="simple" color={textColor}>
+                <Tbody>
+                  <Tr>
+                    <Td minWidth="15em">
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Club Name"
+                          id="CLUBNID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth="15em">
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="date"
+                          id="EDYEARID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth="15em">
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Club Activity"
+                          id="CLUBAID"
+                        />
+                      </Flex>
+                    </Td>
+
+                    <Td minWidth="15em">
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Outcome"
+                          id="OUTCOMID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <SlideFade in={show}>
                           <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
+                            onClick={substudextraclub}
+                            bg="orange.300"
+                            width="fit-content"
                           >
-                            Close
+                            Submit
                           </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
+                        </SlideFade>
+                      </Flex>
+                    </Td>
+                    <Td>
+                      <Modal
+                        isOpen={isOpen}
+                        onClose={() => {
+                          onClose();
+                          window.location.reload(false);
+                        }}
+                      >
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader>Result</ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody>{resul}</ModalBody>
+
+                          <ModalFooter>
+                            <Button
+                              colorScheme="blue"
+                              mr={3}
+                              onClick={() => {
+                                onClose();
+                                window.location.reload(false);
+                              }}
+                            >
+                              Close
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </Collapse>
+          </Box>
         </Card>
         <SimpleGrid
           marginLeft="auto"
@@ -308,17 +326,7 @@ function ExtraCurricularData() {
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
         >
-          <div>
-            <SlideFade in={show}>
-              <Button
-                onClick={substudextraclub}
-                bg="orange.300"
-                width="fit-content"
-              >
-                Submit
-              </Button>
-            </SlideFade>
-          </div>
+          <div></div>
           <Button
             ms="5"
             bg="orange.300"
@@ -335,115 +343,127 @@ function ExtraCurricularData() {
               Outreach Activity
             </Text>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Activity</Th>
-                  <Th color="gray.400">Date & Year</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Odata.map((item) => {
-                  return (
-                    <TableRow4
-                      row1={item.outreach_activity_name}
-                      row2={item.outreach_date}
-                      row3={item.outreach_outcome}
-                      row4={item.outreach_verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show2} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Outreach Activity"
-                        id="OUTREACTID"
+          <Box overflowX={{ sm: "scroll" }}>
+            <CardBody>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Activity</Th>
+                    <Th color="gray.400">Date</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {Odata.map((item) => {
+                    return (
+                      <TableRow4
+                        row1={item.outreach_activity_name}
+                        row2={item.outreach_date}
+                        row3={item.outreach_outcome}
+                        row4={item.outreach_verified}
                       />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Date and Year"
-                        id="OUTREADAYID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Outcome"
-                        id="OUTREAOUTCOMID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+            <Collapse in={show2} animateOpacity>
+              <Table variant="simple" color={textColor}>
+                <Tbody>
+                  <Tr>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Outreach Activity"
+                          id="OUTREACTID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="date"
+                          id="OUTREADAYID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Outcome"
+                          id="OUTREAOUTCOMID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td>
+                      <SlideFade in={show2}>
+                        <Button
+                          onClick={substudextraoutreach}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
+                          Submit
+                        </Button>
+                      </SlideFade>
+                    </Td>
+                    <Td>
+                      <Modal
+                        isOpen={isOpen}
+                        onClose={() => {
+                          onClose();
+                          window.location.reload(false);
+                        }}
+                      >
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader>Result</ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody>{resul}</ModalBody>
 
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
-                          >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
+                          <ModalFooter>
+                            <Button
+                              colorScheme="blue"
+                              mr={3}
+                              onClick={() => {
+                                onClose();
+                                window.location.reload(false);
+                              }}
+                            >
+                              Close
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </Collapse>
+          </Box>
         </Card>
         <SimpleGrid
           marginLeft="auto"
@@ -452,17 +472,7 @@ function ExtraCurricularData() {
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
         >
-          <div>
-            <SlideFade in={show2}>
-              <Button
-                onClick={substudextraoutreach}
-                bg="orange.300"
-                width="fit-content"
-              >
-                Submit
-              </Button>
-            </SlideFade>
-          </div>
+          <div></div>
           <Button
             ms="5"
             bg="orange.300"
@@ -479,136 +489,155 @@ function ExtraCurricularData() {
               Sports Achievements
             </Text>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Name Of The Sport</Th>
-                  <Th color="gray.400">
-                    Representation <br />
-                    (ZONES/DISTRICT/NATIONAL/INTER-NATIONAL)
-                  </Th>
-                  <Th color="gray.400">Date & Year</Th>
-                  <Th color="gray.400">Position Secured</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Sdata.map((item) => {
-                  return (
-                    <TableRow5
-                      row1={item.sport_name}
-                      row2={item.representation}
-                      row3={item.date}
-                      row4={item.position_secures}
-                      row5={item.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show3} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td width={{ sm: "19.2%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Sport Name"
-                        id="SSID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "27.3%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Representation"
-                        id="SRID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "20%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Date and Year"
-                        id="SDID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "20%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Position Secured"
-                        id="SPID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
+          <Box overflowX={{ sm: "scroll" }}>
+            <CardBody>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Name Of The Sport</Th>
 
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
+                    <Th color="gray.400">Date</Th>
+                    <Th color="gray.400">Representation</Th>
+                    <Th color="gray.400">Position Secured</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {Sdata.map((item) => {
+                    return (
+                      <TableRow5
+                        row1={item.sport_name}
+                        row2={item.date}
+                        row3={item.representation}
+                        row4={item.position_secures}
+                        row5={item.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+            <Collapse in={show3} animateOpacity>
+              <Table variant="simple" color={textColor}>
+                <Tbody>
+                  <Tr>
+                    <Td minWidth={{ sm: "14em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Sport Name"
+                          id="SSID"
+                        />
+                      </Flex>
+                    </Td>
+
+                    <Td minWidth={{ sm: "14em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="date"
+                          id="SDID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "14em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <FormControl isRequired>
+                          <Select
+                            borderRadius="5px"
+                            fontSize="sm"
+                            id="SRID"
+                            placeholder="Select Representation"
+                            isRequired
                           >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
+                            <option value="ZONE">ZONE</option>
+                            <option value="DISTRICT">DISTRICT</option>
+                            <option value="STATE">STATE</option>
+                            <option value="NATIONAL">NATIONAL</option>
+                            <option value="INTERNATIONAL">INTERNATIONAL</option>
+                          </Select>
+                        </FormControl>
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "14em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Position Secured"
+                          id="SPID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td>
+                      <SlideFade in={show3}>
+                        <Button
+                          onClick={substudextrasport}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
+                          Submit
+                        </Button>
+                      </SlideFade>
+                    </Td>
+                    <Td>
+                      <Modal
+                        isOpen={isOpen}
+                        onClose={() => {
+                          onClose();
+                          window.location.reload(false);
+                        }}
+                      >
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader>Result</ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody>{resul}</ModalBody>
+
+                          <ModalFooter>
+                            <Button
+                              colorScheme="blue"
+                              mr={3}
+                              onClick={() => {
+                                onClose();
+                                window.location.reload(false);
+                              }}
+                            >
+                              Close
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </Collapse>
+          </Box>
         </Card>
         <SimpleGrid
           marginLeft="auto"
@@ -617,17 +646,7 @@ function ExtraCurricularData() {
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
         >
-          <div>
-            <SlideFade in={show3}>
-              <Button
-                onClick={substudextrasport}
-                bg="orange.300"
-                width="fit-content"
-              >
-                Submit
-              </Button>
-            </SlideFade>
-          </div>
+          <div></div>
           <Button
             ms="5"
             bg="orange.300"
@@ -644,115 +663,128 @@ function ExtraCurricularData() {
               Culturals
             </Text>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Name Of The Event Participated</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Position Secured</Th>
-                  <Th color="gray.400">verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Fdata.map((row) => {
-                  return (
-                    <TableRow4
-                      row1={row.event_name}
-                      row2={row.date}
-                      row3={row.position_secures}
-                      row4={row.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show4} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Event Name"
-                        id="ENID"
+          <Box overflowX={{ sm: "scroll" }}>
+            <CardBody>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Name Of The Event Participated</Th>
+                    <Th color="gray.400">Date</Th>
+                    <Th color="gray.400">Position Secured</Th>
+                    <Th color="gray.400">verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {Fdata.map((row) => {
+                    return (
+                      <TableRow4
+                        row1={row.event_name}
+                        row2={row.date}
+                        row3={row.position_secures}
+                        row4={row.verified}
                       />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Date and Year"
-                        id="EDAYID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td width={{ sm: "28.8%" }}>
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Position Secured"
-                        id="EPSID"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+            <Collapse in={show4} animateOpacity>
+              <Table variant="simple" color={textColor}>
+                <Tbody>
+                  <Tr>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Event Name"
+                          id="ENID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="date"
+                          id="EDAYID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td minWidth={{ sm: "20em" }}>
+                      <Flex
+                        align="center"
+                        py=".8rem"
+                        minWidth="100%"
+                        flexWrap="nowrap"
+                      >
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Position Secured"
+                          id="EPSID"
+                        />
+                      </Flex>
+                    </Td>
+                    <Td>
+                      {" "}
+                      <SlideFade in={show4}>
+                        <Button
+                          onClick={substudextracultural}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
+                          Submit
+                        </Button>
+                      </SlideFade>
+                    </Td>
+                    <Td>
+                      <Modal
+                        isOpen={isOpen}
+                        onClose={() => {
+                          onClose();
+                          window.location.reload(false);
+                        }}
+                      >
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader>Result</ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody>{resul}</ModalBody>
 
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
-                          >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
+                          <ModalFooter>
+                            <Button
+                              colorScheme="blue"
+                              mr={3}
+                              onClick={() => {
+                                onClose();
+                                window.location.reload(false);
+                              }}
+                            >
+                              Close
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </Collapse>
+          </Box>
         </Card>
         <SimpleGrid
           marginLeft="auto"
@@ -761,17 +793,7 @@ function ExtraCurricularData() {
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
         >
-          <div>
-            <SlideFade in={show4}>
-              <Button
-                onClick={substudextracultural}
-                bg="orange.300"
-                width="fit-content"
-              >
-                Submit
-              </Button>
-            </SlideFade>
-          </div>
+          <div></div>
           <Button
             ms="5"
             bg="orange.300"

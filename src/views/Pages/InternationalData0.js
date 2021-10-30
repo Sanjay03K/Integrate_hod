@@ -136,15 +136,13 @@ function InternationalData() {
                         minWidth="100%"
                         flexWrap="nowrap"
                       >
-                        <Flex direction="column">
-                          <Input
-                            borderRadius="5px"
-                            fontSize="sm"
-                            type="text"
-                            placeholder="Enter Campus"
-                            id="CampusID"
-                          />
-                        </Flex>
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Enter Campus"
+                          id="CampusID"
+                        />
                       </Flex>
                     </Td>
                     <Td minWidth="15em">
@@ -157,11 +155,7 @@ function InternationalData() {
                         <Input
                           borderRadius="5px"
                           fontSize="sm"
-                          style={{
-                            backgroundColor: "rgb(31 39 51)",
-                          }}
                           type="date"
-                          placeholder="Enter Date and Year"
                           id="DYID"
                         />
                       </Flex>
@@ -230,37 +224,45 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-
-                    <Td>
-                      <Modal
-                        isOpen={isOpen}
-                        onClose={() => {
-                          onClose();
-                          window.location.reload(false);
-                        }}
-                      >
-                        <ModalOverlay />
-                        <ModalContent>
-                          <ModalHeader>Result</ModalHeader>
-                          <ModalCloseButton />
-                          <ModalBody>{resul}</ModalBody>
-
-                          <ModalFooter>
-                            <Button
-                              colorScheme="blue"
-                              mr={3}
-                              onClick={() => {
-                                onClose();
-                                window.location.reload(false);
-                              }}
-                            >
-                              Close
-                            </Button>
-                          </ModalFooter>
-                        </ModalContent>
-                      </Modal>
+                    <Td minWidth="15em">
+                      <SlideFade in={show}>
+                        <Button
+                          onClick={substudinter}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
+                          Submit
+                        </Button>
+                      </SlideFade>
                     </Td>
                   </Tr>
+                  <Modal
+                    isOpen={isOpen}
+                    onClose={() => {
+                      onClose();
+                      window.location.reload(false);
+                    }}
+                  >
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Result</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>{resul}</ModalBody>
+
+                      <ModalFooter>
+                        <Button
+                          colorScheme="blue"
+                          mr={3}
+                          onClick={() => {
+                            onClose();
+                            window.location.reload(false);
+                          }}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </Tbody>
               </Table>
             </Collapse>
@@ -275,13 +277,7 @@ function InternationalData() {
         columns={{ sm: 2, md: 2, xl: 2 }}
         gap={5}
       >
-        <div>
-          <SlideFade in={show}>
-            <Button onClick={substudinter} bg="orange.300" width="fit-content">
-              Submit
-            </Button>
-          </SlideFade>
-        </div>
+        <div></div>
         <Button
           ms="5"
           bg="orange.300"

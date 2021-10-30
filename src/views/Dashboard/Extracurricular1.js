@@ -1,5 +1,3 @@
-////Class Advisor International Exposure
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Chakra imports
@@ -18,30 +16,25 @@ import {
   InputGroup,
   InputLeftElement,
 } from "@chakra-ui/react";
-// Custom components
 import { SearchIcon } from "@chakra-ui/icons";
+// Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentListInternational1";
+import StudentListExtraCurricular from "components/Tables/StudentListExtraCurricular";
+import { SearchBar } from "components/Navbars/SearchBar/SearchBar";
 
-function InternationalExposure() {
+var server_URL = "http://localhost:5000/";
+
+function Extracurricular() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  let params = new URLSearchParams();
-  var server_URL = "http://localhost:5000/";
-
-  params.append("batch", localStorage.getItem("batch"));
-  params.append("dept", localStorage.getItem("dept"));
-
   useEffect(async () => {
-    axios.post(server_URL + "InternationalExpo", params).then((items) => {
+    axios.get(server_URL + "General").then((items) => {
       setData(items.data);
       console.log(items.data);
     });
   }, []);
-
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -53,11 +46,10 @@ function InternationalExposure() {
         <CardBody>
           <Flex flexDirection="column" align="center" justify="center" w="100%">
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
-              International Exposure
+              Extracurricular
             </Text>
           </Flex>
         </CardBody>
-
         <CardHeader mt="1em">
           <Text fontSize="lg" color={textColor} fontWeight="semi">
             Search Student
@@ -126,11 +118,14 @@ function InternationalExposure() {
           <Table variant="simple" color={textColor}>
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
-                <Th color="gray.400">Roll No.</Th>
-                <Th color="gray.400">Name</Th>
-                <Th color="gray.400">Register No</Th>
-                <Th color="gray.400">Batch</Th>
+                <Th color="gray.400">S.No.</Th>
+                <Th pl="0px" color="gray.400">
+                  Name
+                </Th>
+                <Th color="gray.400">Resitration Number</Th>
+                <Th color="gray.400">Roll Number</Th>
                 <Th color="gray.400">Email</Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -157,7 +152,7 @@ function InternationalExposure() {
                 })
                 .map((item) => {
                   return (
-                    <StudentListInternational
+                    <StudentListExtraCurricular
                       roll={item.roll_no}
                       name={item.sname}
                       reg={item.reg_no}
@@ -174,4 +169,4 @@ function InternationalExposure() {
   );
 }
 
-export default InternationalExposure;
+export default Extracurricular;
