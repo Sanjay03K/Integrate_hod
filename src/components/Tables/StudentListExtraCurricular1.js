@@ -23,7 +23,7 @@ function StudentListExtraCurricular(props) {
         let params = new URLSearchParams();
         params.append("RollNumber", localStorage.getItem("generalStudent"));
         window.location.href =
-          URL + "class-advisor-portal#/admin1/ExtracurricularData";
+          URL + "Class-Advisor#/admin1/ExtracurricularData";
       }}
       id={roll}
       _hover={{
