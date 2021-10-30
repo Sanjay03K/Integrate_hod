@@ -1,4 +1,4 @@
-////Class Advisor International Exposure
+//Class Advisor Dashboard/General
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -20,32 +20,31 @@ import {
   InputGroup,
   InputLeftElement,
 } from "@chakra-ui/react";
-// Custom components
 import { SearchIcon } from "@chakra-ui/icons";
+// Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentListInternational1";
+import StudentListGeneral from "components/Tables/StudentListGI1";
 
-function InternationalExposure() {
+var server_URL = "http://localhost:5000/";
+
+function GeneralInformation() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
   let params = new URLSearchParams();
-  var server_URL = "http://localhost:5000/";
-
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.post(server_URL + "InternationalExpo", params).then((items) => {
+    axios.post(server_URL + "General", params).then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
   }, []);
 
   data2 = data.filter((item) => {
     if (searchTerm == "") {
+      data2.push(item);
       return item;
     } else if (
       item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
@@ -53,6 +52,7 @@ function InternationalExposure() {
       item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
       item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
     ) {
+      data2.push(item);
       return item;
     }
   });
@@ -68,17 +68,15 @@ function InternationalExposure() {
         <CardBody>
           <Flex flexDirection="column" align="center" justify="center" w="100%">
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
-              International Exposure
+              General Information
             </Text>
           </Flex>
         </CardBody>
-
         <CardHeader mt="1em">
           <Text fontSize="lg" color={textColor} fontWeight="semi">
             Search Student
           </Text>
         </CardHeader>
-
         <InputGroup
           bg={inputBg}
           mt="1rem"
@@ -120,18 +118,19 @@ function InternationalExposure() {
           />
         </InputGroup>
         <CSVLink data={data2}>
-        <Button
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-          width="25%"
-        >
-          Download Report
-        </Button>
+          <Button
+            mt="1em"
+            onClick="m"
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            width="25%"
+          >
+            Download Report
+          </Button>
         </CSVLink>
       </Card>
+
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
@@ -147,6 +146,7 @@ function InternationalExposure() {
                 <Th color="gray.400">Register No</Th>
                 <Th color="gray.400">Batch</Th>
                 <Th color="gray.400">Email</Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -173,7 +173,7 @@ function InternationalExposure() {
                 })
                 .map((item) => {
                   return (
-                    <StudentListInternational
+                    <StudentListGeneral
                       roll={item.roll_no}
                       name={item.sname}
                       reg={item.reg_no}
@@ -190,4 +190,4 @@ function InternationalExposure() {
   );
 }
 
-export default InternationalExposure;
+export default GeneralInformation;

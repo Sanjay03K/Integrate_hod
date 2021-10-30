@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { CSVLink } from "react-csv";
+var data2 = [];
 // Chakra imports
 import {
   Flex,
@@ -46,6 +48,80 @@ function InternationalExposure() {
         console.log(items.data);
       });
   }, []);
+
+  data2=data
+  .filter((item) => {
+    if (
+      searchTerm2 == "" &&
+      searchTerm == "" &&
+      searchTerm1 == ""
+    ) {
+      return item;
+    } else if (
+      searchTerm2 !== "" &&
+      searchTerm1 == "" &&
+      searchTerm == ""
+    ) {
+      if (
+        item.dept
+          .toLowerCase()
+          .includes(searchTerm2.toLocaleLowerCase())
+      ) {
+        return item;
+      }
+    } else if (
+      searchTerm2 == "" &&
+      searchTerm1 !== "" &&
+      searchTerm == ""
+    ) {
+      if (
+        item.batch
+          .toLowerCase()
+          .includes(searchTerm1.toLocaleLowerCase())
+      ) {
+        return item;
+      }
+    } else if (
+      searchTerm2 !== "" &&
+      searchTerm1 !== "" &&
+      searchTerm == ""
+    ) {
+      if (
+        item.dept
+          .toLowerCase()
+          .includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch
+          .toLowerCase()
+          .includes(searchTerm1.toLocaleLowerCase())
+      ) {
+        return item;
+      }
+    } else {
+      if (
+        item.dept
+          .toLowerCase()
+          .includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch
+          .toLowerCase()
+          .includes(searchTerm1.toLocaleLowerCase())
+      ) {
+        if (
+          item.sname
+            .toLowerCase()
+            .includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no
+            .toLowerCase()
+            .includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no
+            .toLowerCase()
+            .includes(searchTerm.toLocaleLowerCase())
+        ) {
+          return item;
+        }
+      }
+    }
+  });
+    console.log(data2);
 
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
@@ -214,6 +290,7 @@ function InternationalExposure() {
             </InputGroup>
           </Box>
         </SimpleGrid>
+        <CSVLink data={data2}>
         <Button
           mt="1em"
           onClick="m"
@@ -224,6 +301,7 @@ function InternationalExposure() {
         >
           Download Report
         </Button>
+        </CSVLink>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
