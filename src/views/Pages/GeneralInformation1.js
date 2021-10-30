@@ -44,6 +44,7 @@ function GeneralInformation() {
 
   data2 = data.filter((item) => {
     if (searchTerm == "") {
+      data2.push(item);
       return item;
     } else if (
       item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
@@ -51,9 +52,11 @@ function GeneralInformation() {
       item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
       item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
     ) {
+      data2.push(item);
       return item;
     }
   });
+
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -150,7 +153,6 @@ function GeneralInformation() {
               {data
                 .filter((item) => {
                   if (searchTerm == "") {
-                    //data2.push(item);
                     return item;
                   } else if (
                     item.sname
@@ -166,7 +168,6 @@ function GeneralInformation() {
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
                   ) {
-                    //data2.push(item);
                     return item;
                   }
                 })

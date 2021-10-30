@@ -4,6 +4,7 @@ import Dashboard from "views/Dashboard/Dashboard0.js";
 import GeneralInformation from "views/Dashboard/GeneralInformation0";
 
 import InternationalData from "views/Pages/InternationalData0";
+import ExtraCurricularData from "views/Pages/ExtraCurricularData0";
 
 import Profile from "views/Dashboard/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -35,9 +36,26 @@ var dashRoutes = [
 
   {
     path: "/InternationalData",
-    name: "International Exposure",
+    name: (
+      <p
+        style={{
+          textAlign: "left",
+          whiteSpace: "normal",
+          wordWrap: "break-word",
+        }}
+      >
+        International Exposure
+      </p>
+    ),
     icon: <StatsIcon color="inherit" />,
     component: InternationalData,
+    layout: "/admin0",
+  },
+  {
+    path: "/ExtracurricularData",
+    name: "ExtraCurricular",
+    icon: <StatsIcon color="inherit" />,
+    component: ExtraCurricularData,
     layout: "/admin0",
   },
 

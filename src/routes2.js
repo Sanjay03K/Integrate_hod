@@ -33,11 +33,23 @@ var dashRoutes = [
   },
   {
     path: "/InternationalExposure",
-    name: "International Exposure",
+    name: (
+      <p
+        style={{
+          textAlign: "left",
+
+          whiteSpace: "normal",
+          wordWrap: "break-word",
+        }}
+      >
+        International Exposure
+      </p>
+    ),
     icon: <RocketIcon color="inherit" />,
     component: InternationalExposure2,
     layout: "/admin2",
   },
+
   // {
   //   path: "/profile",
   //   name: "Profile",
