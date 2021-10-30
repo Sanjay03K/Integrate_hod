@@ -54,7 +54,6 @@ function GeneralInformation() {
       return item;
     }
   });
-
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -151,7 +150,7 @@ function GeneralInformation() {
               {data
                 .filter((item) => {
                   if (searchTerm == "") {
-                    data2.push(item);
+                    //data2.push(item);
                     return item;
                   } else if (
                     item.sname
@@ -167,7 +166,7 @@ function GeneralInformation() {
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
                   ) {
-                    data2.push(item);
+                    //data2.push(item);
                     return item;
                   }
                 })
