@@ -41,7 +41,7 @@ function InternationalData() {
         <Card overflowX={{ sm: "scroll" }}>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Summer Program / {data[0].s_no}
+              Summer Program
             </Text>
           </CardHeader>
           <CardBody overflowX={{ sm: "scroll" }}>

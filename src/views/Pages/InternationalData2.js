@@ -27,7 +27,7 @@ function InternationalData() {
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
-  params.append("StudentDetails", localStorage.getItem("International"));
+  params.append("Internexroll", localStorage.getItem("International"));
   useEffect(async () => {
     axios
       .post("http://localhost:5000/InternationalExposure", params)

@@ -35,12 +35,26 @@ function GeneralInformation() {
   let params = new URLSearchParams();
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
+
   useEffect(async () => {
-    data2 = [];
     axios.post(server_URL + "General", params).then((items) => {
       setData(items.data);
     });
   }, []);
+
+  data2 = data.filter((item) => {
+    if (searchTerm == "") {
+      return item;
+    } else if (
+      item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ) {
+      return item;
+    }
+  });
+
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
