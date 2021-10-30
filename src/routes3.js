@@ -2,6 +2,8 @@
 
 import Dashboard from "views/Dashboard/Dashboard3";
 import GeneralInformation from "views/Dashboard/GeneralInformation3";
+import InternationalExposure3 from "views/Dashboard/InternationalExposure3";
+
 import Profile from "views/Dashboard/Profile3.js";
 import SignIn from "views/Pages/SignIn.js";
 
@@ -27,6 +29,13 @@ var dashRoutes = [
     name: "General Information",
     icon: <StatsIcon color="inherit" />,
     component: GeneralInformation,
+    layout: "/admin3",
+  },
+  {
+    path: "/InternationalExposure",
+    name: "International Exposure",
+    icon: <RocketIcon color="inherit" />,
+    component: InternationalExposure3,
     layout: "/admin3",
   },
   // {

@@ -2,9 +2,11 @@
 
 import Dashboard from "views/Dashboard/Dashboard2.js";
 import GeneralInformation from "views/Dashboard/GeneralInformation2";
+import InternationalExposure2 from "views/Dashboard/InternationalExposure2";
+
 import Profile from "views/Dashboard/Profile2.js";
 import SignIn from "views/Pages/SignIn.js";
-import InternationalExposure2 from "views/Dashboard/InternationalExposure2";
+
 import {
   HomeIcon,
   StatsIcon,

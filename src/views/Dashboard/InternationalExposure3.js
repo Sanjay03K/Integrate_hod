@@ -1,4 +1,4 @@
-//Hod International Exposure
+//Official International Exposure
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -25,7 +25,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentListInternational2";
+import StudentListInternational from "components/Tables/StudentListInternational3";
 
 var server_URL = "http://localhost:5000/";
 
@@ -33,15 +33,18 @@ function InternationalExposure() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTerm1, setSearchTerm1] = useState("");
+  const [searchTerm2, setSearchTerm2] = useState("");
 
   let params = new URLSearchParams();
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.post(server_URL + "InternationalExpoHOD", params).then((items) => {
-      setData(items.data);
-      console.log(items.data);
-    });
+    axios
+      .post(server_URL + "InternationalExpoofficial", params)
+      .then((items) => {
+        setData(items.data);
+        console.log(items.data);
+      });
   }, []);
 
   const textColor = useColorModeValue("gray.700", "white");
@@ -59,7 +62,57 @@ function InternationalExposure() {
             </Text>
           </Flex>
         </CardBody>
-        <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+        <SimpleGrid columns={{ sm: 1, md: 3, xl: 3 }} gap={5}>
+          <Box>
+            <CardHeader mt="1em">
+              <Text fontSize="lg" color={textColor} fontWeight="semi">
+                Search Department
+              </Text>
+            </CardHeader>
+
+            <InputGroup
+              bg={inputBg}
+              mt="1rem"
+              borderRadius="15px"
+              w="cover"
+              _focus={{
+                borderColor: { mainorange },
+              }}
+              _active={{
+                borderColor: { mainorange },
+              }}
+            >
+              <InputLeftElement
+                children={
+                  <IconButton
+                    bg="inherit"
+                    borderRadius="inherit"
+                    _hover="none"
+                    _active={{
+                      bg: "inherit",
+                      transform: "none",
+                      borderColor: "transparent",
+                    }}
+                    _focus={{
+                      boxShadow: "none",
+                    }}
+                    icon={
+                      <SearchIcon color={searchIconColor} w="15px" h="15px" />
+                    }
+                  ></IconButton>
+                }
+              />
+
+              <Input
+                onChange={(event) => setSearchTerm2(event.target.value)}
+                fontSize="xs"
+                py="11px"
+                placeholder="Type department"
+                borderRadius="inherit"
+                value={searchTerm2}
+              />
+            </InputGroup>
+          </Box>
           <Box>
             <CardHeader mt="1em">
               <Text fontSize="lg" color={textColor} fontWeight="semi">
@@ -192,10 +245,45 @@ function InternationalExposure() {
             <Tbody>
               {data
                 .filter((item) => {
-                  if (searchTerm == "" && searchTerm1 == "") {
+                  if (
+                    searchTerm2 == "" &&
+                    searchTerm == "" &&
+                    searchTerm1 == ""
+                  ) {
                     return item;
-                  } else if (searchTerm1 !== "" && searchTerm == "") {
+                  } else if (
+                    searchTerm2 !== "" &&
+                    searchTerm1 == "" &&
+                    searchTerm == ""
+                  ) {
                     if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase())
+                    ) {
+                      return item;
+                    }
+                  } else if (
+                    searchTerm2 == "" &&
+                    searchTerm1 !== "" &&
+                    searchTerm == ""
+                  ) {
+                    if (
+                      item.batch
+                        .toLowerCase()
+                        .includes(searchTerm1.toLocaleLowerCase())
+                    ) {
+                      return item;
+                    }
+                  } else if (
+                    searchTerm2 !== "" &&
+                    searchTerm1 !== "" &&
+                    searchTerm == ""
+                  ) {
+                    if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase()) &&
                       item.batch
                         .toLowerCase()
                         .includes(searchTerm1.toLocaleLowerCase())
@@ -204,6 +292,9 @@ function InternationalExposure() {
                     }
                   } else {
                     if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase()) &&
                       item.batch
                         .toLowerCase()
                         .includes(searchTerm1.toLocaleLowerCase())
@@ -232,6 +323,7 @@ function InternationalExposure() {
                       reg={item.reg_no}
                       batch={item.batch}
                       email={item.licet_email}
+                      dept={item.dept}
                     />
                   );
                 })}

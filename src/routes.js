@@ -6,6 +6,7 @@ import GeneralInformationdata3 from "views/Pages/GeneralInformationdata3";
 
 import InternationalData1 from "views/Pages/InternationalData1";
 import InternationalData2 from "views/Pages/InternationalData2";
+import InternationalData3 from "views/Pages/InternationalData3";
 
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
@@ -43,6 +44,12 @@ var dashRoutes = [
     component: InternationalData2,
     layout: "/admin2",
   },
+  {
+    path: "/InternationalData",
+    component: InternationalData3,
+    layout: "/admin3",
+  },
+
   {
     path: "/GeneralInformationdata",
     component: GeneralInformationdata,
