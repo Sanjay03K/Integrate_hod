@@ -49,6 +49,7 @@ var dashRoutes = [
     component: InternationalExposure3,
     layout: "/admin3",
   },
+
   // {
   //   path: "/profile",
   //   name: "Profile",
