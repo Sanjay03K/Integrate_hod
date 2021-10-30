@@ -40,6 +40,8 @@ export default function change_pass() {
         document.getElementById("pass-mis").style.display = "none";
         document.getElementById("server-fail").style.display = "none";
         document.getElementById("pass-success").style.display = "block";
+        pcbtn.innerHTML = `Change Password`;
+        pcbtn.disabled = false;
       }
     });
   } else {

@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { CSVLink } from "react-csv";
+var data2 = [];
 // Chakra imports
 import {
   Flex,
@@ -34,11 +35,26 @@ function GeneralInformation() {
   let params = new URLSearchParams();
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
+
   useEffect(async () => {
     axios.post(server_URL + "General", params).then((items) => {
       setData(items.data);
     });
   }, []);
+
+  data2 = data.filter((item) => {
+    if (searchTerm == "") {
+      return item;
+    } else if (
+      item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ) {
+      return item;
+    }
+  });
+
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -99,17 +115,18 @@ function GeneralInformation() {
             value={searchTerm}
           />
         </InputGroup>
-
-        <Button
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-          width="25%"
-        >
-          Download Report
-        </Button>
+        <CSVLink data={data2}>
+          <Button
+            mt="1em"
+            onClick="m"
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            width="25%"
+          >
+            Download Report
+          </Button>
+        </CSVLink>
       </Card>
 
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -134,6 +151,7 @@ function GeneralInformation() {
               {data
                 .filter((item) => {
                   if (searchTerm == "") {
+                    data2.push(item);
                     return item;
                   } else if (
                     item.sname
@@ -149,6 +167,7 @@ function GeneralInformation() {
                       .toLowerCase()
                       .includes(searchTerm.toLocaleLowerCase())
                   ) {
+                    data2.push(item);
                     return item;
                   }
                 })
