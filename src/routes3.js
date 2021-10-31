@@ -3,6 +3,7 @@
 import Dashboard from "views/Home/DashBoard/Dashboard3";
 import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation3";
 import InternationalExposure3 from "views/Home/InternationalExposure/InternationalExposure3";
+import Extracurricular from "views/Home/ExtraCurricular/Extracurricular3";
 
 import Profile from "views/Home/Profile/Profile3.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -47,6 +48,13 @@ var dashRoutes = [
     ),
     icon: <RocketIcon color="inherit" />,
     component: InternationalExposure3,
+    layout: "/admin3",
+  },
+  {
+    path: "/Extracurricular",
+    name: "Extracurricular",
+    icon: <CreditIcon color="inherit" />,
+    component: Extracurricular,
     layout: "/admin3",
   },
 
