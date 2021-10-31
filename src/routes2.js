@@ -1,10 +1,10 @@
 // HoD routes
 
-import Dashboard from "views/Dashboard/Dashboard2.js";
-import GeneralInformation from "views/Dashboard/GeneralInformation2";
-import InternationalExposure2 from "views/Dashboard/InternationalExposure2";
+import Dashboard from "views/Home/DashBoard/Dashboard2.js";
+import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation2";
+import InternationalExposure2 from "views/Home/InternationalExposure/InternationalExposure2";
 
-import Profile from "views/Dashboard/Profile2.js";
+import Profile from "views/Home/Profile/Profile2.js";
 import SignIn from "views/Pages/SignIn.js";
 
 import {
@@ -50,14 +50,14 @@ var dashRoutes = [
     layout: "/admin2",
   },
 
-  // {
-  //   path: "/profile",
-  //   name: "Profile",
-  //   icon: <PersonIcon color="inherit" />,
-  //   secondaryNavbar: true,
-  //   component: Profile,
-  //   layout: "/admin2",
-  // },
+  {
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+    layout: "/admin2",
+  },
   {
     path: "/signin",
     name: "Log Out",

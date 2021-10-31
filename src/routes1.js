@@ -1,18 +1,18 @@
 // Class Advisor routes
 
-import Dashboard from "views/Dashboard/Dashboard1.js";
-import GeneralInformation from "views/Dashboard/GeneralInformation1";
+import Dashboard from "views/Home/DashBoard/Dashboard1.js";
+import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation1";
+import InternationalExposure from "views/Home/InternationalExposure/InternationalExposure1";
+import Extracurricular from "views/Home/ExtraCurricular/Extracurricular1";
 
-import InternationalExposure from "views/Dashboard/InternationalExposure1";
-import Extracurricular from "views/Dashboard/Extracurricular1";
-
-import Profile from "views/Dashboard/Profile1.js";
+import Profile from "views/Home/Profile/Profile1.js";
 import SignIn from "views/Pages/SignIn.js";
 
 import {
   HomeIcon,
   StatsIcon,
   DocumentIcon,
+  PersonIcon,
   RocketIcon,
   CreditIcon,
 } from "components/Icons/Icons";
@@ -59,14 +59,14 @@ var dashRoutes = [
     layout: "/admin1",
   },
 
-  // {
-  //   path: "/profile",
-  //   name: "Profile",
-  //   icon: <PersonIcon color="inherit" />,
-  //   secondaryNavbar: true,
-  //   component: Profile,
-  //   layout: "/admin1",
-  // },
+  {
+    path: "/profile",
+    name: "Profile",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+    layout: "/admin1",
+  },
   {
     path: "/signin",
     name: "Log Out",

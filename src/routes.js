@@ -1,14 +1,14 @@
 // Invisible Routes
 
-import GeneralInformationdata1 from "views/Pages/GeneralInformationdata1";
-import GeneralInformationdata2 from "views/Pages/GeneralInformationdata2";
-import GeneralInformationdata3 from "views/Pages/GeneralInformationdata3";
+import GeneralInformationdata1 from "views/Pages/GeneralInformationData/GeneralInformationdata1";
+import GeneralInformationdata2 from "views/Pages/GeneralInformationData/GeneralInformationdata2";
+import GeneralInformationdata3 from "views/Pages/GeneralInformationData/GeneralInformationdata3";
 
-import InternationalData1 from "views/Pages/InternationalData1";
-import InternationalData2 from "views/Pages/InternationalData2";
-import InternationalData3 from "views/Pages/InternationalData3";
+import InternationalData1 from "views/Pages/InternationalData/InternationalData1";
+import InternationalData2 from "views/Pages/InternationalData/InternationalData2";
+import InternationalData3 from "views/Pages/InternationalData/InternationalData3";
 
-import ExtraCurricularData1 from "views/Pages/ExtraCurricularData1";
+import ExtraCurricularData1 from "views/Pages/ExtraCurricularData/ExtraCurricularData1";
 
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
