@@ -27,7 +27,8 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
-var server_URL = "http://localhost:5000/";
+var server_URL = "http://localhost:5000/",
+  URL = "http://localhost:3000/";
 
 function GeneralInformationDataEdit(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -654,9 +655,8 @@ function GeneralInformationDataEdit(props) {
       params.append("memd", membership_duration);
     }
 
-    axios.post("http://localhost:5000/GeneralDataEdit", params);
-    window.location.href =
-      "http://localhost:3000/Class-Advisor#/admin1/GeneralInformationdata";
+    axios.post(server_URL + "GeneralDataEdit", params);
+    window.location.href = URL + "Class-Advisor#/admin1/GeneralInformationdata";
   }
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -4463,7 +4463,7 @@ function GeneralInformationDataEdit(props) {
             <Button
               onClick={() => {
                 window.location.href =
-                  "http://localhost:3000/Class-Advisor#/admin1/GeneralInformationdata";
+                  URl + "Class-Advisor#/admin1/GeneralInformationdata";
               }}
               colorScheme="orange"
               variant="solid"

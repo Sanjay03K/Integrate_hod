@@ -1,5 +1,7 @@
 import axios from "axios";
 
+var server_URL = "http://localhost:5000/";
+
 export default function change_pass() {
   document.getElementById("pass-fail").style.display = "none";
   document.getElementById("pass-mis").style.display = "none";
@@ -19,7 +21,7 @@ export default function change_pass() {
     params.append("email", localStorage.useremail);
     params.append("auth_token", localStorage.auth_token);
     console.log(localStorage.auth_token);
-    axios.post("http://localhost:5000/passchange", params).then((result) => {
+    axios.post(server_URL + "passchange", params).then((result) => {
       console.log(result.data);
       if (result.data === "pass-fail") {
         document.getElementById("pass-fail").style.display = "block";

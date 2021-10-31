@@ -20,7 +20,7 @@ function StudentListInternational(props) {
       minWidth="100%"
       onClick={() => {
         localStorage.setItem("International", roll);
-        window.location.href = URL + "hod#/admin2/InternationalData";
+        window.location.href = URL + "HoD#/admin2/InternationalData";
       }}
       id={roll}
       _hover={{

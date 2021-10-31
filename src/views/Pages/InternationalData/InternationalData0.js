@@ -39,6 +39,8 @@ import TableRow7 from "components/Tables/TableRow/TableRow7";
 
 var resul;
 
+var server_URL = "http://localhost:5000/";
+
 function InternationalData() {
   function substudinter() {
     let params = new URLSearchParams();
@@ -50,17 +52,15 @@ function InternationalData() {
     params.append("ForLCC", document.getElementById("FLCCID").value);
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
     params.append("status", "Pending");
-    axios
-      .post("http://localhost:5000/insertstudinter", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "insertstudinter", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
 
   const textColor = useColorModeValue("gray.700", "white");
@@ -71,7 +71,7 @@ function InternationalData() {
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
   useEffect(async () => {
     axios
-      .post("http://localhost:5000/InternationalExposureStudent", params)
+      .post(server_URL + "InternationalExposureStudent", params)
       .then((items) => {
         setData(items.data);
       });

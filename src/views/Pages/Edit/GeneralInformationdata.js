@@ -25,9 +25,12 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import { Tooltip } from "@chakra-ui/react";
 
+var server_URL = "http://localhost:5000/",
+  URL = "http://localhost:3000/";
+
 function GeneralInformationdata() {
   function logout() {
-    window.location.href = "http://localhost:3000/student-portal#/auth/SignIn";
+    window.location.href = URL + "Student#/auth/SignIn";
   }
 
   function funinsert() {
@@ -134,9 +137,9 @@ function GeneralInformationdata() {
     params.append("promemno", document.getElementById("PMNA").value);
     params.append("promemdur", document.getElementById("DUR").value);
 
-    axios.post("http://localhost:5000/insertroll", params);
-    axios.post("http://localhost:5000/studentinsert", params);
-    window.location.href = "http://localhost:3000/student-portal#/auth/signin";
+    axios.post(server_URL + "insertroll", params);
+    axios.post(server_URL + "studentinsert", params);
+    window.location.href = URL + "Student#/auth/signin";
   }
   const textColor = useColorModeValue("gray.700", "white");
 

@@ -53,6 +53,8 @@ import CardHeader from "components/Card/CardHeader";
 // Assets
 import ProfileBgImage from "assets/img/ProfileBackground.png";
 
+var server_URL = "http://localhost:5000/";
+
 function Profile() {
   var sname, licet_email, roll_no, dept, reg_no, batch, cell;
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -72,7 +74,7 @@ function Profile() {
   let params = new URLSearchParams();
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
 
-  axios.post("http://localhost:5000/GeneralStudent", params).then((items) => {
+  axios.post(server_URL + "GeneralStudent", params).then((items) => {
     setData(items.data);
   });
   data.map((item) => {

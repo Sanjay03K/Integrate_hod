@@ -20,24 +20,24 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import InternationalTableRow from "components/Tables/InternationalTableRow/InternationalTableRow1";
 
+var server_URL = "http://localhost:5000/";
+
 function InternationalData() {
   const [data, setData] = useState([]);
 
   let params = new URLSearchParams();
   params.append("Internexroll", localStorage.getItem("International"));
   useEffect(async () => {
-    axios
-      .post("http://localhost:5000/InternationalExposure", params)
-      .then((items) => {
-        setData(items.data);
-      });
+    axios.post(server_URL + "InternationalExposure", params).then((items) => {
+      setData(items.data);
+    });
   });
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll" }}>
+        <Card>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Summer Program
