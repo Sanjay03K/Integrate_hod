@@ -1,3 +1,5 @@
+//Student Profile
+
 import React, { useState, useEffect } from "react";
 import change_pass from "../../../controller/changepassword";
 // Chakra imports

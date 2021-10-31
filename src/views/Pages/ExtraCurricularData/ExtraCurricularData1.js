@@ -11,12 +11,6 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Select,
-  SimpleGrid,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
