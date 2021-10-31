@@ -16,7 +16,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import TableRow2 from "components/Tables/TableRow2";
+import TableRow2 from "components/Tables/TableRow/TableRow2";
 
 var server_URL = "http://localhost:5000/",
   GData = TableRow2;

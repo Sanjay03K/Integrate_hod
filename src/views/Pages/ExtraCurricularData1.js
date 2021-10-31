@@ -1,3 +1,5 @@
+//Class Advisor ExtraCurricularData
+
 import React from "react";
 // Chakra imports
 import {
@@ -22,7 +24,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import ExtraCurricualarTableRow from "components/Tables/ExtraCurricularTableRow1/ExtraCurricularClubTableRow1";
+import ExtraCurricualarTableRow from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularClubTableRow1";
 import { IndustrialVist } from "variables/general";
 import { InplantTraining } from "variables/general";
 import { GuestLecture } from "variables/general";

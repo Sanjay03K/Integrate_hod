@@ -25,7 +25,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListGeneral from "components/Tables/StudentListGI1";
+import StudentListGeneral from "components/Tables/StudentList/StudentListGI1";
 
 var server_URL = "http://localhost:5000/";
 

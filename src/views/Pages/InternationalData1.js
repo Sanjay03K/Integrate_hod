@@ -18,7 +18,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import InternationalTableRow from "components/Tables/InternationalTableRow1";
+import InternationalTableRow from "components/Tables/InternationalTableRow/InternationalTableRow1";
 
 function InternationalData() {
   const [data, setData] = useState([]);

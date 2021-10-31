@@ -35,7 +35,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
-import TableRow7 from "components/Tables/TableRow7";
+import TableRow7 from "components/Tables/TableRow/TableRow7";
 
 var resul;
 
