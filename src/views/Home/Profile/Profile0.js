@@ -192,7 +192,7 @@ function Profile() {
                       <Input
                         borderRadius="5px"
                         fontSize="sm"
-                        type="text"
+                        type="password"
                         placeholder="Enter Old Password"
                         id="old-pass"
                       />
@@ -206,7 +206,7 @@ function Profile() {
                       <Input
                         borderRadius="5px"
                         fontSize="sm"
-                        type="text"
+                        type="password"
                         placeholder="Enter New Password"
                         id="new-pass"
                       />
@@ -220,7 +220,7 @@ function Profile() {
                       <Input
                         borderRadius="5px"
                         fontSize="sm"
-                        type="text"
+                        type="password"
                         placeholder="Re-Enter New Password"
                         id="re-pass"
                       />
