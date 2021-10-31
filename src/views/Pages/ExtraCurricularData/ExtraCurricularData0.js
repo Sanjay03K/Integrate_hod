@@ -704,7 +704,7 @@ function ExtraCurricularData() {
             <Table variant="simple" color={textColor}>
               <Thead>
                 <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Name Of The Event Participated</Th>
+                  <Th color="gray.400">Name Of The Event</Th>
                   <Th color="gray.400">Date</Th>
                   <Th color="gray.400">Position Secured</Th>
                   <Th color="gray.400">Credits</Th>

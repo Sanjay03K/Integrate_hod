@@ -18,7 +18,10 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import ExtraCurricualarTableRow from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularClubTableRow1";
+import ExtraCurricualarTableRow1 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularClubTableRow1";
+import ExtraCurricualarTableRow2 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularOutreachTableRow1";
+import ExtraCurricualarTableRow3 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularSportsTableRow1";
+import ExtraCurricualarTableRow4 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularCulturalsTableRow1";
 import { IndustrialVist } from "variables/general";
 import { InplantTraining } from "variables/general";
 import { GuestLecture } from "variables/general";
@@ -48,16 +51,20 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Activity</Th>
                     <Th color="gray.400">Date & Year</Th>
                     <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
                   {Clubs.map((row) => {
                     return (
-                      <ExtraCurricualarTableRow
+                      <ExtraCurricualarTableRow1
                         row1={row.row1}
                         row2={row.row2}
                         row3={row.row3}
                         row4={row.row4}
+                        row5={row.row5}
+                        row6={row.row6}
                       />
                     );
                   })}
@@ -80,15 +87,19 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Activity</Th>
                     <Th color="gray.400">Date & Year</Th>
                     <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
                   {OutReachActivity.map((row) => {
                     return (
-                      <ExtraCurricualarTableRow
+                      <ExtraCurricualarTableRow2
                         row1={row.row1}
                         row2={row.row2}
                         row3={row.row3}
+                        row4={row.row4}
+                        row5={row.row5}
                       />
                     );
                   })}
@@ -109,22 +120,23 @@ function ExtraCurricularData() {
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Name Of The Sport</Th>
-                    <Th color="gray.400">
-                      Representation <br />
-                      (ZONES/DISTRICT/NATIONAL/INTER-NATIONAL)
-                    </Th>
+                    <Th color="gray.400">Representation</Th>
                     <Th color="gray.400">Position Secured</Th>
                     <Th color="gray.400">Date & Year</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
                   {SportsAchievements.map((row) => {
                     return (
-                      <ExtraCurricualarTableRow
+                      <ExtraCurricualarTableRow3
                         row1={row.row1}
                         row2={row.row2}
                         row3={row.row3}
                         row4={row.row4}
+                        row5={row.row5}
+                        row6={row.row6}
                       />
                     );
                   })}
@@ -144,18 +156,22 @@ function ExtraCurricularData() {
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
-                    <Th color="gray.400">Name Of The Event Participated</Th>
+                    <Th color="gray.400">Name Of The Event</Th>
                     <Th color="gray.400">Date and Year</Th>
                     <Th color="gray.400">Position Secured</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
                   {Culturals.map((row) => {
                     return (
-                      <ExtraCurricualarTableRow
+                      <ExtraCurricualarTableRow4
                         row1={row.row1}
                         row2={row.row2}
                         row3={row.row3}
+                        row4={row.row4}
+                        row5={row.row5}
                       />
                     );
                   })}
