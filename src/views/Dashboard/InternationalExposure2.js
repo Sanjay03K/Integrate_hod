@@ -27,7 +27,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentListInternational2";
+import StudentListInternational from "components/Tables/StudentList/StudentListInternational2";
 
 var server_URL = "http://localhost:5000/";
 
@@ -46,42 +46,27 @@ function InternationalExposure() {
     });
   }, []);
 
-  data2=data
-    .filter((item) => {
-      if (searchTerm == "" && searchTerm1 == "") {
+  data2 = data.filter((item) => {
+    if (searchTerm == "" && searchTerm1 == "") {
+      return item;
+    } else if (searchTerm1 !== "" && searchTerm == "") {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
         return item;
-      } else if (searchTerm1 !== "" && searchTerm == "") {
+      }
+    } else {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
         if (
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
+          item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
         ) {
           return item;
         }
-      } else {
-        if (
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
-        ) {
-          if (
-            item.sname
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.roll_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.reg_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase())
-          ) {
-            return item;
-          }
-        }
       }
-    });
-    console.log(data2);
-  
+    }
+  });
+  console.log(data2);
+
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -200,16 +185,16 @@ function InternationalExposure() {
           </Box>
         </SimpleGrid>
         <CSVLink data={data2}>
-        <Button
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-          width="25%"
-        >
-          Download Report
-        </Button>
+          <Button
+            mt="1em"
+            onClick="m"
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            width="25%"
+          >
+            Download Report
+          </Button>
         </CSVLink>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

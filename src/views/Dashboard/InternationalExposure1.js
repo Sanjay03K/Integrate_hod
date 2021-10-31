@@ -23,7 +23,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentListInternational1";
+import StudentListInternational from "components/Tables/StudentList/StudentListInternational1";
 
 var server_URL = "http://localhost:5000/";
 

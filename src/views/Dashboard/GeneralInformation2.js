@@ -30,7 +30,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/StudentListGI2";
+import GeneralParticularstablerow from "components/Tables/StudentList/StudentListGI2";
 
 var server_URL = "http://localhost:5000/";
 
@@ -48,40 +48,25 @@ function GeneralInformationHOD() {
       setData(items.data);
     });
   });
-  data2 = data
-    .filter((item) => {
-      if (searchTerm == "" && searchTerm1 == "") {
+  data2 = data.filter((item) => {
+    if (searchTerm == "" && searchTerm1 == "") {
+      return item;
+    } else if (searchTerm1 !== "" && searchTerm == "") {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
         return item;
-      } else if (searchTerm1 !== "" && searchTerm == "") {
+      }
+    } else {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
         if (
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
+          item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
         ) {
           return item;
         }
-      } else {
-        if (
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
-        ) {
-          if (
-            item.sname
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.roll_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.reg_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase())
-          ) {
-            return item;
-          }
-        }
       }
-    });
+    }
+  });
   console.log(data2);
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");

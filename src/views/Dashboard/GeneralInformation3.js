@@ -30,7 +30,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import GeneralParticularstablerow from "components/Tables/StudentListGI3";
+import GeneralParticularstablerow from "components/Tables/StudentList/StudentListGI3";
 
 var server_URL = "http://localhost:5000/";
 
@@ -49,78 +49,39 @@ function GeneralInformation3() {
       setData(items.data);
     });
   });
-  data2 = data
-    .filter((item) => {
+  data2 = data.filter((item) => {
+    if (searchTerm2 == "" && searchTerm == "" && searchTerm1 == "") {
+      return item;
+    } else if (searchTerm2 !== "" && searchTerm1 == "" && searchTerm == "") {
+      if (item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase())) {
+        return item;
+      }
+    } else if (searchTerm2 == "" && searchTerm1 !== "" && searchTerm == "") {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
+        return item;
+      }
+    } else if (searchTerm2 !== "" && searchTerm1 !== "" && searchTerm == "") {
       if (
-        searchTerm2 == "" &&
-        searchTerm == "" &&
-        searchTerm1 == ""
+        item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())
       ) {
         return item;
-      } else if (
-        searchTerm2 !== "" &&
-        searchTerm1 == "" &&
-        searchTerm == ""
+      }
+    } else {
+      if (
+        item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())
       ) {
         if (
-          item.dept
-            .toLowerCase()
-            .includes(searchTerm2.toLocaleLowerCase())
+          item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
         ) {
           return item;
-        }
-      } else if (
-        searchTerm2 == "" &&
-        searchTerm1 !== "" &&
-        searchTerm == ""
-      ) {
-        if (
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
-        ) {
-          return item;
-        }
-      } else if (
-        searchTerm2 !== "" &&
-        searchTerm1 !== "" &&
-        searchTerm == ""
-      ) {
-        if (
-          item.dept
-            .toLowerCase()
-            .includes(searchTerm2.toLocaleLowerCase()) &&
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
-        ) {
-          return item;
-        }
-      } else {
-        if (
-          item.dept
-            .toLowerCase()
-            .includes(searchTerm2.toLocaleLowerCase()) &&
-          item.batch
-            .toLowerCase()
-            .includes(searchTerm1.toLocaleLowerCase())
-        ) {
-          if (
-            item.sname
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.roll_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase()) ||
-            item.reg_no
-              .toLowerCase()
-              .includes(searchTerm.toLocaleLowerCase())
-          ) {
-            return item;
-          }
         }
       }
-    })
+    }
+  });
 
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
