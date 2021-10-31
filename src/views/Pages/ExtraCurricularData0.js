@@ -37,8 +37,8 @@ import { AddIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import TableRow6 from "components/Tables/TableRow6";
 import TableRow5 from "components/Tables/TableRow5";
-import TableRow4 from "components/Tables/TableRow4";
 
 var server_URL = "http://localhost:5000/";
 
@@ -170,39 +170,51 @@ function ExtraCurricularData() {
               Clubs
             </Text>
           </CardHeader>
-          <Box overflowX={{ sm: "scroll" }}>
-            <CardBody>
+          <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Name Of The Club</Th>
+                  <Th color="gray.400">Date</Th>
+                  <Th color="gray.400">Activity</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {Cdata.map((item1) => {
+                  return (
+                    <TableRow6
+                      row1={item1.club_name}
+                      row2={item1.date}
+                      row3={item1.activity_name}
+                      row4={item1.outcome}
+                      row5={item1.credits}
+                      row6={item1.verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+        </Card>
+
+        <Collapse in={show}>
+          <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
-                  <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Tr>
                     <Th color="gray.400">Name Of The Club</Th>
                     <Th color="gray.400">Date</Th>
                     <Th color="gray.400">Activity</Th>
                     <Th color="gray.400">Outcome</Th>
-                    <Th color="gray.400">Verify Status</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {Cdata.map((item1) => {
-                    return (
-                      <TableRow5
-                        row1={item1.club_name}
-                        row2={item1.date}
-                        row3={item1.activity_name}
-                        row4={item1.outcome}
-                        row5={item1.verified}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-
-            <Collapse in={show}>
-              <Table variant="simple" color={textColor}>
-                <Tbody>
                   <Tr>
-                    <Td minWidth="15em">
+                    <Td minWidth="14em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -218,7 +230,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="14em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -233,7 +245,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="14em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -250,7 +262,7 @@ function ExtraCurricularData() {
                       </Flex>
                     </Td>
 
-                    <Td minWidth="15em">
+                    <Td minWidth="14em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -284,44 +296,43 @@ function ExtraCurricularData() {
                         </SlideFade>
                       </Flex>
                     </Td>
-                    <Td>
-                      <Modal
-                        isOpen={isOpen}
-                        onClose={() => {
-                          onClose();
-                          window.location.reload(false);
-                        }}
-                      >
-                        <ModalOverlay />
-                        <ModalContent>
-                          <ModalHeader>Result</ModalHeader>
-                          <ModalCloseButton />
-                          <ModalBody>{resul}</ModalBody>
-
-                          <ModalFooter>
-                            <Button
-                              colorScheme="blue"
-                              mr={3}
-                              onClick={() => {
-                                onClose();
-                                window.location.reload(false);
-                              }}
-                            >
-                              Close
-                            </Button>
-                          </ModalFooter>
-                        </ModalContent>
-                      </Modal>
-                    </Td>
                   </Tr>
+                  <Modal
+                    isOpen={isOpen}
+                    onClose={() => {
+                      onClose();
+                      window.location.reload(false);
+                    }}
+                  >
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Result</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>{resul}</ModalBody>
+
+                      <ModalFooter>
+                        <Button
+                          colorScheme="blue"
+                          mr={3}
+                          onClick={() => {
+                            onClose();
+                            window.location.reload(false);
+                          }}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </Tbody>
               </Table>
-            </Collapse>
-          </Box>
-        </Card>
+            </CardBody>
+          </Card>
+        </Collapse>
+
         <SimpleGrid
           marginLeft="auto"
-          width="10em"
+          width="13em"
           me="2.5rem"
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
@@ -343,33 +354,45 @@ function ExtraCurricularData() {
               Outreach Activity
             </Text>
           </CardHeader>
-          <Box overflowX={{ sm: "scroll" }}>
-            <CardBody>
+
+          <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Activity</Th>
+                  <Th color="gray.400">Date</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {Odata.map((item) => {
+                  return (
+                    <TableRow5
+                      row1={item.outreach_activity_name}
+                      row2={item.outreach_date}
+                      row3={item.outreach_outcome}
+                      row4={item.outreach_credits}
+                      row5={item.outreach_verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+        </Card>
+        <Collapse in={show2} animateOpacity>
+          <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Activity</Th>
                     <Th color="gray.400">Date</Th>
                     <Th color="gray.400">Outcome</Th>
-                    <Th color="gray.400">Verify Status</Th>
                   </Tr>
                 </Thead>
-                <Tbody>
-                  {Odata.map((item) => {
-                    return (
-                      <TableRow4
-                        row1={item.outreach_activity_name}
-                        row2={item.outreach_date}
-                        row3={item.outreach_outcome}
-                        row4={item.outreach_verified}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-            <Collapse in={show2} animateOpacity>
-              <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
                     <Td minWidth={{ sm: "20em" }}>
@@ -430,44 +453,44 @@ function ExtraCurricularData() {
                         </Button>
                       </SlideFade>
                     </Td>
-                    <Td>
-                      <Modal
-                        isOpen={isOpen}
-                        onClose={() => {
-                          onClose();
-                          window.location.reload(false);
-                        }}
-                      >
-                        <ModalOverlay />
-                        <ModalContent>
-                          <ModalHeader>Result</ModalHeader>
-                          <ModalCloseButton />
-                          <ModalBody>{resul}</ModalBody>
 
-                          <ModalFooter>
-                            <Button
-                              colorScheme="blue"
-                              mr={3}
-                              onClick={() => {
-                                onClose();
-                                window.location.reload(false);
-                              }}
-                            >
-                              Close
-                            </Button>
-                          </ModalFooter>
-                        </ModalContent>
-                      </Modal>
-                    </Td>
+                    <Modal
+                      isOpen={isOpen}
+                      onClose={() => {
+                        onClose();
+                        window.location.reload(false);
+                      }}
+                    >
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Result</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>{resul}</ModalBody>
+
+                        <ModalFooter>
+                          <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={() => {
+                              onClose();
+                              window.location.reload(false);
+                            }}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
                   </Tr>
                 </Tbody>
               </Table>
-            </Collapse>
-          </Box>
-        </Card>
+            </CardBody>
+          </Card>
+        </Collapse>
+
         <SimpleGrid
           marginLeft="auto"
-          width="10em"
+          width="13em"
           me="2.5rem"
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
@@ -489,36 +512,49 @@ function ExtraCurricularData() {
               Sports Achievements
             </Text>
           </CardHeader>
-          <Box overflowX={{ sm: "scroll" }}>
-            <CardBody>
+
+          <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Name Of The Sport</Th>
+
+                  <Th color="gray.400">Date</Th>
+                  <Th color="gray.400">Representation</Th>
+                  <Th color="gray.400">Position Secured</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {Sdata.map((item) => {
+                  return (
+                    <TableRow6
+                      row1={item.sport_name}
+                      row2={item.date}
+                      row3={item.representation}
+                      row4={item.position_secures}
+                      row5={item.credits}
+                      row6={item.verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+        </Card>
+        <Collapse in={show3} animateOpacity>
+          <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Name Of The Sport</Th>
-
                     <Th color="gray.400">Date</Th>
                     <Th color="gray.400">Representation</Th>
                     <Th color="gray.400">Position Secured</Th>
-                    <Th color="gray.400">Verify Status</Th>
                   </Tr>
                 </Thead>
-                <Tbody>
-                  {Sdata.map((item) => {
-                    return (
-                      <TableRow5
-                        row1={item.sport_name}
-                        row2={item.date}
-                        row3={item.representation}
-                        row4={item.position_secures}
-                        row5={item.verified}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-            <Collapse in={show3} animateOpacity>
-              <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
                     <Td minWidth={{ sm: "14em" }}>
@@ -604,44 +640,44 @@ function ExtraCurricularData() {
                         </Button>
                       </SlideFade>
                     </Td>
-                    <Td>
-                      <Modal
-                        isOpen={isOpen}
-                        onClose={() => {
-                          onClose();
-                          window.location.reload(false);
-                        }}
-                      >
-                        <ModalOverlay />
-                        <ModalContent>
-                          <ModalHeader>Result</ModalHeader>
-                          <ModalCloseButton />
-                          <ModalBody>{resul}</ModalBody>
 
-                          <ModalFooter>
-                            <Button
-                              colorScheme="blue"
-                              mr={3}
-                              onClick={() => {
-                                onClose();
-                                window.location.reload(false);
-                              }}
-                            >
-                              Close
-                            </Button>
-                          </ModalFooter>
-                        </ModalContent>
-                      </Modal>
-                    </Td>
+                    <Modal
+                      isOpen={isOpen}
+                      onClose={() => {
+                        onClose();
+                        window.location.reload(false);
+                      }}
+                    >
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Result</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>{resul}</ModalBody>
+
+                        <ModalFooter>
+                          <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={() => {
+                              onClose();
+                              window.location.reload(false);
+                            }}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
                   </Tr>
                 </Tbody>
               </Table>
-            </Collapse>
-          </Box>
-        </Card>
+            </CardBody>
+          </Card>
+        </Collapse>
+
         <SimpleGrid
           marginLeft="auto"
-          width="10em"
+          width="13em"
           me="2.5rem"
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
@@ -663,33 +699,45 @@ function ExtraCurricularData() {
               Culturals
             </Text>
           </CardHeader>
-          <Box overflowX={{ sm: "scroll" }}>
-            <CardBody>
+
+          <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Name Of The Event Participated</Th>
+                  <Th color="gray.400">Date</Th>
+                  <Th color="gray.400">Position Secured</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {Fdata.map((row) => {
+                  return (
+                    <TableRow5
+                      row1={row.event_name}
+                      row2={row.date}
+                      row3={row.position_secures}
+                      row4={row.credits}
+                      row5={row.verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+        </Card>
+        <Collapse in={show4} animateOpacity>
+          <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Name Of The Event Participated</Th>
                     <Th color="gray.400">Date</Th>
                     <Th color="gray.400">Position Secured</Th>
-                    <Th color="gray.400">verify Status</Th>
                   </Tr>
                 </Thead>
-                <Tbody>
-                  {Fdata.map((row) => {
-                    return (
-                      <TableRow4
-                        row1={row.event_name}
-                        row2={row.date}
-                        row3={row.position_secures}
-                        row4={row.verified}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-            <Collapse in={show4} animateOpacity>
-              <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
                     <Td minWidth={{ sm: "20em" }}>
@@ -751,44 +799,44 @@ function ExtraCurricularData() {
                         </Button>
                       </SlideFade>
                     </Td>
-                    <Td>
-                      <Modal
-                        isOpen={isOpen}
-                        onClose={() => {
-                          onClose();
-                          window.location.reload(false);
-                        }}
-                      >
-                        <ModalOverlay />
-                        <ModalContent>
-                          <ModalHeader>Result</ModalHeader>
-                          <ModalCloseButton />
-                          <ModalBody>{resul}</ModalBody>
 
-                          <ModalFooter>
-                            <Button
-                              colorScheme="blue"
-                              mr={3}
-                              onClick={() => {
-                                onClose();
-                                window.location.reload(false);
-                              }}
-                            >
-                              Close
-                            </Button>
-                          </ModalFooter>
-                        </ModalContent>
-                      </Modal>
-                    </Td>
+                    <Modal
+                      isOpen={isOpen}
+                      onClose={() => {
+                        onClose();
+                        window.location.reload(false);
+                      }}
+                    >
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Result</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>{resul}</ModalBody>
+
+                        <ModalFooter>
+                          <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={() => {
+                              onClose();
+                              window.location.reload(false);
+                            }}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
                   </Tr>
                 </Tbody>
               </Table>
-            </Collapse>
-          </Box>
-        </Card>
+            </CardBody>
+          </Card>
+        </Collapse>
+
         <SimpleGrid
           marginLeft="auto"
-          width="10em"
+          width="13em"
           me="2.5rem"
           columns={{ sm: 2, md: 2, xl: 2 }}
           gap={5}
