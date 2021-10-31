@@ -8,6 +8,8 @@ import InternationalData1 from "views/Pages/InternationalData1";
 import InternationalData2 from "views/Pages/InternationalData2";
 import InternationalData3 from "views/Pages/InternationalData3";
 
+import ExtraCurricularData1 from "views/Pages/ExtraCurricularData1";
+
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
 
@@ -48,6 +50,12 @@ var dashRoutes = [
     path: "/InternationalData",
     component: InternationalData3,
     layout: "/admin3",
+  },
+
+  {
+    path: "/ExtracurricularData",
+    component: ExtraCurricularData1,
+    layout: "/admin1",
   },
 
   {

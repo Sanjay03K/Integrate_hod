@@ -85,7 +85,7 @@ function Profile() {
   return (
     <Flex direction="column">
       <Box
-        mb={{ sm: "205px", md: "75px", xl: "70px" }}
+        mb={{ sm: "75px", md: "70px", xl: "70px" }}
         borderRadius="15px"
         px="0px"
         display="flex"
@@ -110,7 +110,7 @@ function Profile() {
             mx="1.5rem"
             maxH="330px"
             w={{ sm: "90%", xl: "95%" }}
-            justifyContent={{ sm: "center", md: "space-between" }}
+            justifyContent={{ sm: "space-between", md: "space-between" }}
             align="center"
             backdropFilter="saturate(200%) blur(50px)"
             position="absolute"
@@ -153,7 +153,11 @@ function Profile() {
             </Flex>
             <Popover placement="auto">
               <PopoverTrigger>
-                <Button leftIcon={<SettingsIcon />} colorScheme="orange">
+                <Button
+                  minWidth="-moz-fit-content"
+                  leftIcon={<SettingsIcon />}
+                  colorScheme="orange"
+                >
                   Settings
                 </Button>
               </PopoverTrigger>

@@ -269,15 +269,7 @@ function InternationalData() {
           </Box>
         </Card>
       </SimpleGrid>
-      <SimpleGrid
-        alignSelf="flex-end"
-        mt="1rem"
-        width="10em"
-        me="2.5rem"
-        columns={{ sm: 2, md: 2, xl: 2 }}
-        gap={5}
-      >
-        <div></div>
+      <Box alignSelf="flex-end" mt="1rem" width="10em">
         <Button
           ms="5"
           bg="orange.300"
@@ -287,7 +279,7 @@ function InternationalData() {
           <AddIcon w={4} h={4} me="3" />
           Add
         </Button>
-      </SimpleGrid>
+      </Box>
     </Flex>
   );
 }
