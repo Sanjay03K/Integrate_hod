@@ -88,7 +88,46 @@ function InternationalData() {
               Summer Program Details
             </Text>
           </CardHeader>
-          <Box overflowX={{ sm: "scroll" }}>
+
+          <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Campus</Th>
+                  <Th color="gray.400">Date and Year</Th>
+                  <Th color="gray.400">Project</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Personal Development</Th>
+                  <Th color="gray.400">
+                    Foreign Language Courses Completed or Pursuing
+                  </Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+
+              <Tbody>
+                {data.map((item) => {
+                  return (
+                    <TableRow7
+                      id={item.s_no}
+                      row1={item.foreign_campus}
+                      row2={item.duration}
+                      row3={item.project}
+                      row4={item.outcome}
+                      row5={item.personal_development}
+                      row6={item.foreign_language_courses}
+                      row7={item.credits}
+                      row8={item.verify}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+        </Card>
+        <Collapse in={show} animateOpacity>
+          <Card overflowX={{ sm: "scroll" }}>
             <CardBody>
               <Table variant="simple" color={textColor}>
                 <Thead>
@@ -101,35 +140,11 @@ function InternationalData() {
                     <Th color="gray.400">
                       Foreign Language Courses Completed or Pursuing
                     </Th>
-                    <Th color="gray.400">Credits</Th>
-                    <Th color="gray.400">Verify Status</Th>
                   </Tr>
                 </Thead>
-
-                <Tbody>
-                  {data.map((item) => {
-                    return (
-                      <TableRow7
-                        id={item.s_no}
-                        row1={item.foreign_campus}
-                        row2={item.duration}
-                        row3={item.project}
-                        row4={item.outcome}
-                        row5={item.personal_development}
-                        row6={item.foreign_language_courses}
-                        row7={item.credits}
-                        row8={item.verify}
-                      />
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </CardBody>
-            <Collapse in={show} animateOpacity>
-              <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -145,7 +160,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -160,7 +175,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -176,7 +191,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -192,7 +207,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -208,7 +223,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="16em">
                       <Flex
                         align="center"
                         py=".8rem"
@@ -224,7 +239,7 @@ function InternationalData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="15em">
+                    <Td minWidth="10em">
                       <SlideFade in={show}>
                         <Button
                           onClick={substudinter}
@@ -265,21 +280,29 @@ function InternationalData() {
                   </Modal>
                 </Tbody>
               </Table>
-            </Collapse>
-          </Box>
-        </Card>
-      </SimpleGrid>
-      <Box alignSelf="flex-end" mt="1rem" width="10em">
-        <Button
-          ms="5"
-          bg="orange.300"
-          width="fit-content"
-          onClick={handleToggle}
+            </CardBody>
+          </Card>
+        </Collapse>
+
+        <SimpleGrid
+          marginLeft="auto"
+          width="13em"
+          me="2.5rem"
+          columns={{ sm: 2, md: 2, xl: 2 }}
+          gap={5}
         >
-          <AddIcon w={4} h={4} me="3" />
-          Add
-        </Button>
-      </Box>
+          <div></div>
+          <Button
+            ms="5"
+            bg="orange.300"
+            width="fit-content"
+            onClick={handleToggle}
+          >
+            <AddIcon w={4} h={4} me="3" />
+            Add
+          </Button>
+        </SimpleGrid>
+      </SimpleGrid>
     </Flex>
   );
 }
