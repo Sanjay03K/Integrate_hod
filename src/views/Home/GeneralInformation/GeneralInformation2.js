@@ -219,7 +219,6 @@ function GeneralInformationHOD() {
                   <Th color="gray.400">Register No</Th>
                   <Th color="gray.400">Batch</Th>
                   <Th color="gray.400">Email</Th>
-                  <Th></Th>
                 </Tr>
               </Thead>
               <Tbody>

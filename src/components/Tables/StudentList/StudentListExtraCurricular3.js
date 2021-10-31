@@ -7,7 +7,7 @@ import { Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
 var URL = "http://localhost:3000/";
 
 function StudentListExtraCurricular(props) {
-  const { name, email, reg, roll, batch } = props;
+  const { name, email, reg, dept, roll, batch } = props;
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
@@ -48,6 +48,11 @@ function StudentListExtraCurricular(props) {
       <Td>
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {reg}
+        </Text>
+      </Td>
+      <Td>
+        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+          {dept}
         </Text>
       </Td>
       <Td>

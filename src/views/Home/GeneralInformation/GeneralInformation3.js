@@ -286,7 +286,6 @@ function GeneralInformation3() {
                   <Th color="gray.400">Department</Th>
                   <Th color="gray.400">Batch</Th>
                   <Th color="gray.400">Email</Th>
-                  <Th></Th>
                 </Tr>
               </Thead>
               <Tbody>
