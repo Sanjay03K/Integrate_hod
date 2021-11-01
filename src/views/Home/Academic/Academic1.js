@@ -1,4 +1,4 @@
-////Class Advisor International Exposure
+//Class Advisor Academic
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -17,31 +17,29 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  SimpleGrid,
 } from "@chakra-ui/react";
-// Custom components
 import { SearchIcon } from "@chakra-ui/icons";
+// Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListInternational from "components/Tables/StudentList/StudentListInternational1";
+import StudentListAcademic from "components/Tables/StudentList/StudentListAcademic1";
 
 var server_URL = "http://localhost:5000/";
 
-function InternationalExposure() {
+function Academic() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
   let params = new URLSearchParams();
-
   params.append("batch", localStorage.getItem("batch"));
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.post(server_URL + "InternationalExpo", params).then((items) => {
+    axios.get(server_URL + "Academic").then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
-  }, []);
+  });
 
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
@@ -54,7 +52,7 @@ function InternationalExposure() {
         <CardBody>
           <Flex flexDirection="column" align="center" justify="center" w="100%">
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
-              International Exposure
+              Academic Results
             </Text>
           </Flex>
         </CardBody>
@@ -64,10 +62,10 @@ function InternationalExposure() {
             Search Student
           </Text>
         </CardHeader>
-
         <InputGroup
           bg={inputBg}
           mt="1rem"
+          mb="1rem"
           borderRadius="15px"
           w="cover"
           _focus={{
@@ -105,10 +103,8 @@ function InternationalExposure() {
             value={searchTerm}
           />
         </InputGroup>
-
         <Button
           minWidth="fit-content"
-          mt="1em"
           onClick="m"
           colorScheme="orange"
           alignSelf="flex-end"
@@ -124,14 +120,15 @@ function InternationalExposure() {
           </Text>
         </CardHeader>
         <CardBody>
-          <Table variant="simple" color={textColor}>
+          <Table variant="simple" color={textColor} id="dataTable">
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
                 <Th color="gray.400">Roll No.</Th>
                 <Th color="gray.400">Name</Th>
-                <Th color="gray.400">Register No</Th>
-                <Th color="gray.400">Batch</Th>
+                <Th color="gray.400">Register No.</Th>
+                <Th color="gray.400">batch</Th>
                 <Th color="gray.400">Email</Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -158,7 +155,7 @@ function InternationalExposure() {
                 })
                 .map((item) => {
                   return (
-                    <StudentListInternational
+                    <StudentListAcademic
                       roll={item.roll_no}
                       name={item.sname}
                       reg={item.reg_no}
@@ -175,4 +172,4 @@ function InternationalExposure() {
   );
 }
 
-export default InternationalExposure;
+export default Academic;

@@ -4,6 +4,7 @@ import Dashboard from "views/Home/DashBoard/Dashboard2.js";
 import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation2";
 import InternationalExposure from "views/Home/InternationalExposure/InternationalExposure2";
 import Extracurricular from "views/Home/ExtraCurricular/Extracurricular2";
+import Academic from "views/Home/Academic/Academic2";
 
 import Profile from "views/Home/Profile/Profile2.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -55,6 +56,13 @@ var dashRoutes = [
     name: "Extracurricular",
     icon: <CreditIcon color="inherit" />,
     component: Extracurricular,
+    layout: "/admin2",
+  },
+  {
+    path: "/Academics",
+    name: "Academics",
+    icon: <DocumentIcon color="inherit" />,
+    component: Academic,
     layout: "/admin2",
   },
 

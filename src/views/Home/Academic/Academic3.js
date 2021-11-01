@@ -1,4 +1,4 @@
-//Official Extracurricular
+//Official Academic
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -25,26 +25,23 @@ import { SearchIcon } from "@chakra-ui/icons";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import StudentListExtraCurricular from "components/Tables/StudentList/StudentListExtraCurricular3";
+import StudentListAcademic from "components/Tables/StudentList/StudentListAcademic3";
 
 var server_URL = "http://localhost:5000/";
 
-function Extracurricular() {
+function Academic() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTerm1, setSearchTerm1] = useState("");
   const [searchTerm2, setSearchTerm2] = useState("");
-
   let params = new URLSearchParams();
-  params.append("batch", localStorage.getItem("batch"));
-  params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.post(server_URL + "ExtracurricularCA", params).then((items) => {
+    axios.get(server_URL + "Academic").then((items) => {
       setData(items.data);
-      console.log(items.data);
     });
-  }, []);
+  });
+
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -56,10 +53,11 @@ function Extracurricular() {
         <CardBody>
           <Flex flexDirection="column" align="center" justify="center" w="100%">
             <Text fontSize="xl" color={textColor} fontWeight="bold" mr="auto">
-              Extracurricular
+              Academic Results
             </Text>
           </Flex>
         </CardBody>
+
         <SimpleGrid columns={{ sm: 1, md: 3, xl: 3 }} gap={5}>
           <Box>
             <CardHeader mt="1em">
@@ -111,7 +109,6 @@ function Extracurricular() {
               />
             </InputGroup>
           </Box>
-
           <Box>
             <CardHeader mt="1em">
               <Text fontSize="lg" color={textColor} fontWeight="semi">
@@ -213,10 +210,9 @@ function Extracurricular() {
             </InputGroup>
           </Box>
         </SimpleGrid>
-
         <Button
-          minWidth="fit-content"
           mt="1em"
+          minWidth="fit-content"
           onClick="m"
           colorScheme="orange"
           alignSelf="flex-end"
@@ -225,22 +221,23 @@ function Extracurricular() {
           Download Report
         </Button>
       </Card>
-      <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+      <Card>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
             Students List
           </Text>
         </CardHeader>
-        <CardBody>
-          <Table variant="simple" color={textColor}>
+        <CardBody overflowX={{ sm: "scroll" }}>
+          <Table variant="simple" color={textColor} id="dataTable">
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
                 <Th color="gray.400">Roll No.</Th>
                 <Th color="gray.400">Name</Th>
-                <Th color="gray.400">Register No</Th>
+                <Th color="gray.400">Register No.</Th>
                 <Th color="gray.400">Department</Th>
-                <Th color="gray.400">Batch</Th>
+                <Th color="gray.400">batch</Th>
                 <Th color="gray.400">Email</Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -318,7 +315,7 @@ function Extracurricular() {
                 })
                 .map((item) => {
                   return (
-                    <StudentListExtraCurricular
+                    <StudentListAcademic
                       roll={item.roll_no}
                       name={item.sname}
                       reg={item.reg_no}
@@ -336,4 +333,4 @@ function Extracurricular() {
   );
 }
 
-export default Extracurricular;
+export default Academic;

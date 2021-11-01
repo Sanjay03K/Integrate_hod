@@ -163,12 +163,12 @@ function Extracurricular() {
         </SimpleGrid>
 
         <Button
+          minWidth="fit-content"
           mt="1em"
           onClick="m"
           colorScheme="orange"
           alignSelf="flex-end"
           variant="solid"
-          width="25%"
         >
           Download Report
         </Button>

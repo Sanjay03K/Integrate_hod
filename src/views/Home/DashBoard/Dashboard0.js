@@ -10,7 +10,7 @@ import LineChart from "components/Charts/LineChart";
 export default function Dashboard() {
   return (
     <Flex flexDirection="column" pt={{ base: "500px", md: "75px" }}>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} spacing="24px">
+      <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
         <Card minH="300px">
           <CardBody>
             <Flex

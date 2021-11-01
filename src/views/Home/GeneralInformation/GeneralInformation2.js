@@ -36,11 +36,11 @@ var server_URL = "http://localhost:5000/";
 
 function GeneralInformationHOD() {
   const [data, setData] = useState([]);
-  let params = new URLSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTerm1, setSearchTerm1] = useState("");
-
+  let params = new URLSearchParams();
   params.append("department", localStorage.getItem("dept"));
+
   // console.log("AUTH TOKEN", localStorage.getItem("auth_token"));
   let auth_token = localStorage.getItem("auth_token");
   useEffect(async () => {
@@ -191,18 +191,20 @@ function GeneralInformationHOD() {
               </InputGroup>
             </Box>
           </SimpleGrid>
-          <CSVLink data={data2}>
-            <Button
-              mt="1em"
-              onClick="m"
-              colorScheme="orange"
-              alignSelf="flex-end"
-              variant="solid"
-              width="25%"
-            >
-              Download Report
-            </Button>
-          </CSVLink>
+          <Box alignSelf="flex-end">
+            <CSVLink data={data2}>
+              <Button
+                minWidth="fit-content"
+                mt="1em"
+                onClick="m"
+                colorScheme="orange"
+                alignSelf="flex-end"
+                variant="solid"
+              >
+                Download Report
+              </Button>
+            </CSVLink>
+          </Box>
         </Card>
         <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
           <CardHeader p="6px 0px 22px 0px">

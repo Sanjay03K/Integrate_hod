@@ -257,18 +257,20 @@ function GeneralInformation3() {
               </InputGroup>
             </Box>
           </SimpleGrid>
-          <CSVLink data={data2}>
-            <Button
-              mt="1em"
-              onClick="m"
-              colorScheme="orange"
-              alignSelf="flex-end"
-              variant="solid"
-              width="25%"
-            >
-              Download Report
-            </Button>
-          </CSVLink>
+          <Box alignSelf="flex-end">
+            <CSVLink data={data2}>
+              <Button
+                minWidth="fit-content"
+                mt="1em"
+                onClick="m"
+                colorScheme="orange"
+                alignSelf="flex-end"
+                variant="solid"
+              >
+                Download Report
+              </Button>
+            </CSVLink>
+          </Box>
         </Card>
         <Card overflowX={{ sm: "scroll", md: "scroll", xl: "scroll" }}>
           <CardHeader p="6px 0px 22px 0px">

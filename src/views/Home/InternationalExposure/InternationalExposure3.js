@@ -251,26 +251,28 @@ function InternationalExposure() {
             </InputGroup>
           </Box>
         </SimpleGrid>
-        <CSVLink data={data2}>
-          <Button
-            mt="1em"
-            onClick="m"
-            colorScheme="orange"
-            alignSelf="flex-end"
-            variant="solid"
-            width="25%"
-          >
-            Download Report
-          </Button>
-        </CSVLink>
+        <Box alignSelf="flex-end">
+          <CSVLink data={data2}>
+            <Button
+              minWidth="fit-content"
+              mt="1em"
+              onClick="m"
+              colorScheme="orange"
+              alignSelf="flex-end"
+              variant="solid"
+            >
+              Download Report
+            </Button>
+          </CSVLink>
+        </Box>
       </Card>
-      <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+      <Card>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
             Students List
           </Text>
         </CardHeader>
-        <CardBody>
+        <CardBody overflowX={{ sm: "scroll" }}>
           <Table variant="simple" color={textColor}>
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">

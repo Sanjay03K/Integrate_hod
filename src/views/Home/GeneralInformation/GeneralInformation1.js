@@ -19,6 +19,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Box,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
@@ -114,18 +115,19 @@ function GeneralInformation() {
             value={searchTerm}
           />
         </InputGroup>
-        <CSVLink data={data2}>
-          <Button
-            mt="1em"
-            onClick="m"
-            colorScheme="orange"
-            alignSelf="flex-end"
-            variant="solid"
-            width="25%"
-          >
-            Download Report
-          </Button>
-        </CSVLink>
+        <Box alignSelf="flex-end">
+          <CSVLink data={data2}>
+            <Button
+              minWidth="fit-content"
+              mt="1em"
+              onClick="m"
+              colorScheme="orange"
+              variant="solid"
+            >
+              Download Report
+            </Button>
+          </CSVLink>
+        </Box>
       </Card>
 
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

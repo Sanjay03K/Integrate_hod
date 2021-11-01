@@ -4,6 +4,7 @@ import Dashboard from "views/Home/DashBoard/Dashboard1.js";
 import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation1";
 import InternationalExposure from "views/Home/InternationalExposure/InternationalExposure1";
 import Extracurricular from "views/Home/ExtraCurricular/Extracurricular1";
+import Academic from "views/Home/Academic/Academic1";
 
 import Profile from "views/Home/Profile/Profile1.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -39,7 +40,6 @@ var dashRoutes = [
       <p
         style={{
           textAlign: "left",
-
           whiteSpace: "normal",
           wordWrap: "break-word",
         }}
@@ -56,6 +56,13 @@ var dashRoutes = [
     name: "Extracurricular",
     icon: <CreditIcon color="inherit" />,
     component: Extracurricular,
+    layout: "/admin1",
+  },
+  {
+    path: "/Academics",
+    name: "Academics",
+    icon: <DocumentIcon color="inherit" />,
+    component: Academic,
     layout: "/admin1",
   },
 
