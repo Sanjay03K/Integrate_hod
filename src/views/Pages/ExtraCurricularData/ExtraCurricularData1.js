@@ -1,6 +1,6 @@
 //Class Advisor ExtraCurricularData
 
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Chakra imports
 import {
@@ -32,20 +32,27 @@ import { SportsAchievements } from "variables/general";
 import { Culturals } from "variables/general";
 
 function ExtraCurricularData() {
-  const [data, setData] = useState([]);
+  const [Cdata, setCdata] = useState([]);
+  const [Odata, setOdata] = useState([]);
 
   const textColor = useColorModeValue("gray.700", "white");
+  var server_URL = "http://localhost:5000/";
 
-  let params = new URLSearchParams;
+  let params = new URLSearchParams();
   params.append("RollNumber", localStorage.getItem("generalStudent"));
   useEffect(async () => {
     axios
-      .post("http://localhost:5000/ExtraClubCADisplay", params)
-      .then((items) => {
-        setData(items.data);
-      });
-  });
-  //console.log(data);
+      .all([
+        axios.post(server_URL + "ExtraClubCADisplay", params),
+        axios.post(server_URL + "ExtraOutreachCADisplay", params),
+      ])
+      .then(
+        axios.spread((data1, data2, data3, data4) => {
+          setCdata(data1.data);
+          setOdata(data2.data);
+        })
+      );
+  }, []);
 
   return (
     <Flex direction="column" pt={{ base: "400px", md: "75px" }}>
@@ -73,10 +80,10 @@ function ExtraCurricularData() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {data.map((item) => {
+                  {Cdata.map((item) => {
                     return (
                       <ExtraCurricualarTableRow1
-                        id = {item.s_no}
+                        id={item.s_no}
                         row1={item.club_name}
                         row2={item.activity_name}
                         row3={item.date}
@@ -106,22 +113,26 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Date & Year</Th>
                     <Th color="gray.400">Outcome</Th>
                     <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">verify Status</Th>
+                    <Th color="gray.400">Edit</Th>
+                    <Th color="gray.400">Delete</Th>
                     <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {OutReachActivity.map((row) => {
+                  {Odata.map((item) => {
                     return (
                       <ExtraCurricualarTableRow2
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
+                        id={item.s_no}
+                        row1={item.outreach_activity_name}
+                        row2={item.outreach_date}
+                        row3={item.outreach_outcome}
+                        row4={item.outreach_credits}
+                        row5={item.outreach_verified}
                       />
                     );
                   })}
-                </Tbody> 
+                </Tbody>
               </Table>
             </CardBody>
           </Card>

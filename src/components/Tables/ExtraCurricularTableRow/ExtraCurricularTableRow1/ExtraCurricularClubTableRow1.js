@@ -24,7 +24,7 @@ var server_URL = "http://localhost:5000/";
 function ExtraCurricularTableRow(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { id,row1, row2, row3, row4, row5, row6 } = props;
+  const { id, row1, row2, row3, row4, row5, row6 } = props;
   const textColor = useColorModeValue("gray.700", "white");
 
   function funedit() {
@@ -200,7 +200,7 @@ function ExtraCurricularTableRow(props) {
       </Td>
       <Td>
         <Button
-          onClick = {fundelete}
+          onClick={fundelete}
           bg="orange.300"
           alignSelf="flex-end"
           width="fit-content"
@@ -214,7 +214,7 @@ function ExtraCurricularTableRow(props) {
           bg="orange.300"
           alignSelf="flex-end"
           width="fit-content"
-          disabled={{ row6}.row6 == "Verified" ? true : false}
+          disabled={{ row6 }.row6 == "Verified" ? true : false}
         >
           Verify
         </Button>
