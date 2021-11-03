@@ -1,6 +1,7 @@
 //Official ExtraCurricularData
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Chakra imports
 import {
   Flex,
@@ -29,7 +30,32 @@ import { Culturals } from "variables/general";
 
 function ExtraCurricularData() {
   const textColor = useColorModeValue("gray.700", "white");
+  const [Cdata, setCdata] = useState([]);
+  const [Odata, setOdata] = useState([]);
+  const [Sdata, setSdata] = useState([]);
+  const [CUdata, setCudata] = useState([]);
 
+  var server_URL = "http://localhost:5000/";
+
+  let params = new URLSearchParams();
+  params.append("RollNumber", localStorage.getItem("generalStudent"));
+  useEffect(async () => {
+    axios
+      .all([
+        axios.post(server_URL + "ExtraClubCADisplay", params),
+        axios.post(server_URL + "ExtraOutreachCADisplay", params),
+        axios.post(server_URL + "ExtraSportsStudentDisplay", params),
+        axios.post(server_URL + "ExtraCulturalStudentDisplay", params),
+      ])
+      .then(
+        axios.spread((data1, data2, data3, data4) => {
+          setCdata(data1.data);
+          setOdata(data2.data);
+          setSdata(data3.data);
+          setCudata(data4.data);
+        })
+      );
+  }, []);
   return (
     <Flex direction="column" pt={{ base: "400px", md: "75px" }}>
       <Grid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
@@ -53,15 +79,16 @@ function ExtraCurricularData() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {Clubs.map((row) => {
+                  {Cdata.map((item) => {
                     return (
                       <ExtraCurricualarTableRow1
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
-                        row6={row.row6}
+                        id={item.s_no}
+                        row1={item.club_name}
+                        row2={item.activity_name}
+                        row3={item.date}
+                        row4={item.outcome}
+                        row5={item.credits}
+                        row6={item.verified}
                       />
                     );
                   })}
@@ -89,14 +116,15 @@ function ExtraCurricularData() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {OutReachActivity.map((row) => {
+                  {Odata.map((item) => {
                     return (
                       <ExtraCurricualarTableRow2
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
+                        id={item.s_no}
+                        row1={item.outreach_activity_name}
+                        row2={item.outreach_date}
+                        row3={item.outreach_outcome}
+                        row4={item.outreach_credits}
+                        row5={item.outreach_verified}
                       />
                     );
                   })}
@@ -125,15 +153,15 @@ function ExtraCurricularData() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {SportsAchievements.map((row) => {
+                  {Sdata.map((row) => {
                     return (
                       <ExtraCurricualarTableRow3
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
-                        row6={row.row6}
+                        row1={row.sport_name}
+                        row2={row.representation}
+                        row3={row.position_secures}
+                        row4={row.date}
+                        row5={row.date}
+                        row6={row.verified}
                       />
                     );
                   })}
@@ -161,14 +189,14 @@ function ExtraCurricularData() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {Culturals.map((row) => {
+                  {CUdata.map((row) => {
                     return (
                       <ExtraCurricualarTableRow4
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
+                        row1={row.event_name}
+                        row2={row.date}
+                        row3={row.position_secures}
+                        row4={row.date}
+                        row5={row.verified}
                       />
                     );
                   })}
