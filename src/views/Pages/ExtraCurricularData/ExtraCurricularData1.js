@@ -34,6 +34,8 @@ import { Culturals } from "variables/general";
 function ExtraCurricularData() {
   const [Cdata, setCdata] = useState([]);
   const [Odata, setOdata] = useState([]);
+  const [Sdata, setSdata] = useState([]);
+  const [CUdata, setCudata] = useState([]);
 
   const textColor = useColorModeValue("gray.700", "white");
   var server_URL = "http://localhost:5000/";
@@ -45,11 +47,15 @@ function ExtraCurricularData() {
       .all([
         axios.post(server_URL + "ExtraClubCADisplay", params),
         axios.post(server_URL + "ExtraOutreachCADisplay", params),
+        axios.post(server_URL + "ExtraSportsStudentDisplay", params),
+        axios.post(server_URL + "ExtraCulturalStudentDisplay", params),
       ])
       .then(
         axios.spread((data1, data2, data3, data4) => {
           setCdata(data1.data);
           setOdata(data2.data);
+          setSdata(data3.data);
+          setCudata(data4.data);
         })
       );
   }, []);
@@ -153,19 +159,22 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Position Secured</Th>
                     <Th color="gray.400">Date & Year</Th>
                     <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                    <Th color="gray.400">Edit</Th>
+                    <Th color="gray.400">Delete</Th>
                     <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {SportsAchievements.map((row) => {
+                  {Sdata.map((row) => {
                     return (
                       <ExtraCurricualarTableRow3
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
-                        row6={row.row6}
+                        row1={row.sport_name}
+                        row2={row.representation}
+                        row3={row.position_secures}
+                        row4={row.date}
+                        row5={row.date}
+                        row6={row.verified}
                       />
                     );
                   })}
@@ -189,18 +198,21 @@ function ExtraCurricularData() {
                     <Th color="gray.400">Date and Year</Th>
                     <Th color="gray.400">Position Secured</Th>
                     <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                    <Th color="gray.400">Edit</Th>
+                    <Th color="gray.400">Delete</Th>
                     <Th color="gray.400">Verify</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {Culturals.map((row) => {
+                  {CUdata.map((row) => {
                     return (
                       <ExtraCurricualarTableRow4
-                        row1={row.row1}
-                        row2={row.row2}
-                        row3={row.row3}
-                        row4={row.row4}
-                        row5={row.row5}
+                        row1={row.event_name}
+                        row2={row.date}
+                        row3={row.position_secures}
+                        row4={row.date}
+                        row5={row.verified}
                       />
                     );
                   })}

@@ -1,11 +1,54 @@
 //Class Advisor ExtraCurricular Sports TableRow
 
-import { Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Td,
+  Text,
+  Input,
+  Tr,
+  useColorModeValue,
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import React from "react";
 
 function ExtraCurricularTableRow(props) {
-  const { row1, row2, row3, row4, row5, row6 } = props;
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { id, row1, row2, row3, row4, row5, row6 } = props;
   const textColor = useColorModeValue("gray.700", "white");
+
+  function funedit() {
+    let cid = { id };
+    let params = new URLSearchParams();
+    params.append("columnid", cid.id);
+    params.append("outreachname", document.getElementById("ECID").value);
+    params.append("date", document.getElementById("EPID").value);
+    params.append("outcome", document.getElementById("EOID").value);
+    params.append("credits", document.getElementById("EPDID").value);
+    // axios.post(server_URL + "OutreachEdit", params);
+  }
+
+  function fundelete() {
+    let cid = { id };
+    let params = new URLSearchParams();
+    params.append("columnid", cid.id);
+    // axios.post(server_URL + "OutreachDelete", params);
+  }
+
+  function funverify() {
+    let cid = { id };
+    let params = new URLSearchParams();
+    params.append("columnid", cid.id);
+    params.append("verify", "Verified");
+    // axios.post(server_URL + "OutreachVerify", params);
+  }
 
   return (
     <Tr>
@@ -42,6 +85,119 @@ function ExtraCurricularTableRow(props) {
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">{row6}</Flex>
         </Flex>
+      </Td>
+      <Td>
+        <Button
+          onClick={onOpen}
+          bg="orange.300"
+          alignSelf="flex-end"
+          width="fit-content"
+        >
+          Edit
+        </Button>
+        <Modal size="xl" isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Edit Details</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Tr>
+                <Td>
+                  <Text m="1em">Activity</Text>
+                </Td>
+                <Td>
+                  <Input
+                    minWidth="20em"
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    defaultValue={row1}
+                    id="ECID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="1em">Date</Text>
+                </Td>
+                <Td>
+                  <Input
+                    minWidth="20em"
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    defaultValue={row2}
+                    id="EPID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="1em">Outcome</Text>
+                </Td>
+                <Td>
+                  <Input
+                    minWidth="20em"
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    defaultValue={row3}
+                    id="EOID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="1em">Credits</Text>
+                </Td>
+                <Td>
+                  <Input
+                    minWidth="20em"
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    defaultValue={row4}
+                    id="EPDID"
+                  />
+                </Td>
+              </Tr>
+            </ModalBody>
+
+            <ModalFooter>
+              <Button
+                colorScheme="blue"
+                mr={3}
+                onClick={() => {
+                  funedit();
+                  onClose();
+                }}
+              >
+                Submit
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </Td>
+      <Td>
+        <Button
+          onClick={fundelete}
+          bg="orange.300"
+          alignSelf="flex-end"
+          width="fit-content"
+        >
+          Delete
+        </Button>
+      </Td>
+      <Td>
+        <Button
+          onClick={funverify}
+          bg="orange.300"
+          alignSelf="flex-end"
+          width="fit-content"
+          disabled={{ row5 }.row5 == "Verified" ? true : false}
+        >
+          Verify
+        </Button>
       </Td>
     </Tr>
   );
