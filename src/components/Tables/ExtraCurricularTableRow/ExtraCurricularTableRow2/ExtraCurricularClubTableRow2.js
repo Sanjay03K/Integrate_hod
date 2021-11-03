@@ -35,12 +35,12 @@ function ExtraCurricularTableRow(props) {
       </Td>
       <Td minWidth={{ sm: "5em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-          <Flex direction="column">{row4}</Flex>
+          <Flex direction="column">{row5}</Flex>
         </Flex>
       </Td>
       <Td minWidth={{ sm: "9em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-          <Flex direction="column">{row4}</Flex>
+          <Flex direction="column">{row6}</Flex>
         </Flex>
       </Td>
     </Tr>
