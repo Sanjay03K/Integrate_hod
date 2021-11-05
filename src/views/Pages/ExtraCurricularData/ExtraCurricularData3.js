@@ -39,6 +39,7 @@ function ExtraCurricularData() {
 
   let params = new URLSearchParams();
   params.append("RollNumber", localStorage.getItem("generalStudent"));
+  params.append("StudentDetails", localStorage.getItem("generalStudent"));
   useEffect(async () => {
     axios
       .all([
