@@ -47,8 +47,8 @@ function ExtraCurricularData() {
       .all([
         axios.post(server_URL + "ExtraClubCADisplay", params),
         axios.post(server_URL + "ExtraOutreachCADisplay", params),
-        axios.post(server_URL + "ExtraSportsStudentDisplay", params),
-        axios.post(server_URL + "ExtraCulturalStudentDisplay", params),
+        axios.post(server_URL + "ExtraSportsCADisplay", params),
+        axios.post(server_URL + "ExtraCulturalCADisplay", params),
       ])
       .then(
         axios.spread((data1, data2, data3, data4) => {
