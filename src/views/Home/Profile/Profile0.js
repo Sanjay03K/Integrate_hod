@@ -56,6 +56,83 @@ import ProfileBgImage from "assets/img/ProfileBackground.png";
 var server_URL = "http://localhost:5000/";
 
 function Profile() {
+
+  function validation(){
+    var oldpass = document.getElementById("old-pass").value;
+    var newpass = document.getElementById("new-pass").value;
+    var repass = document.getElementById("re-pass").value;
+    var numbers = /[0-9]/g;
+    var lowercase = /[a-z]/g;
+    var uppercase = /[A-Z]/g;
+    var symbol = /[!@#$%^&*]/g;
+    var checknum = newpass.match(numbers);
+    var checklower =  newpass.match(lowercase);
+    var checkupper =  newpass.match(uppercase);
+    var checksymbol = newpass.match(symbol);
+    var passlen = newpass.length;
+   // var repass = document.getElementById("repassword").value;
+   if(oldpass==newpass || passlen<8 || checknum == null || checklower == null || checkupper == null || checksymbol == null || passlen>=15 || newpass!==repass)
+   {
+    if(oldpass == newpass){
+      document.getElementById("pass-same").style.display = "block";
+    }
+    else{
+      document.getElementById("pass-same").style.display = "none";  
+    }
+
+    if(passlen<8){
+      document.getElementById("pass-len").style.display = "block"; 
+    }
+    else{
+      document.getElementById("pass-len").style.display = "none";
+    }
+
+    if(checknum == null){
+      document.getElementById("pass-num").style.display = "block";
+    }
+    else{
+      document.getElementById("pass-num").style.display = "none";
+    }
+
+    if(checklower == null){
+      document.getElementById("pass-lower").style.display = "block";
+    }
+    else{
+      document.getElementById("pass-lower").style.display = "none";
+    }
+
+    if(checkupper== null){
+      document.getElementById("pass-upper").style.display = "block";
+    }
+    else{
+      document.getElementById("pass-upper").style.display = "none";
+    }
+
+    if(checksymbol== null){
+      document.getElementById("pass-symbol").style.display = "block";
+    }
+    else{
+      document.getElementById("pass-symbol").style.display = "none";
+    }
+
+    if(passlen <= 15){
+      document.getElementById("pass-valid").style.display = "none";
+    }
+    else{
+      document.getElementById("pass-valid").style.display = "block";
+    }
+
+    if(newpass == repass){
+      document.getElementById("pass-equal").style.display = "none";
+    }
+    else{
+      document.getElementById("pass-equal").style.display = "block";
+    }
+   }
+   else{
+     change_pass();
+   }
+  }
   var sname, licet_email, roll_no, dept, reg_no, batch, cell;
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra color mode
@@ -234,21 +311,45 @@ function Profile() {
                     colorScheme="orange"
                     variant="solid"
                     id="pass-button"
-                    onClick={change_pass}
+                    onClick={validation}
                   >
                     Change Password
                   </Button>
-                  <Text color="red" id="pass-mis" display="none">
+                  <Text color="red" id="pass-mis" display="none" style={{textAlign:"center"}}>
                     Passwords Don't Match
                   </Text>
-                  <Text color="red" id="pass-fail" display="none">
+                  <Text color="red" id="pass-fail" display="none" style={{textAlign:"center"}}>
                     Incorrect Old Password or Username or Invalid User
                   </Text>
-                  <Text color="red" id="server-fail" display="none">
+                  <Text color="red" id="server-fail" display="none" style={{textAlign:"center"}}>
                     Server Error. Try again after some time
                   </Text>
-                  <Text color="green" id="pass-success" display="none">
+                  <Text color="green" id="pass-success" display="none" style={{textAlign:"center"}}>
                     Password Changed Successfully
+                  </Text>
+                  <Text color="red" id="pass-same" display="none" style={{textAlign:"center"}}>
+                    New password cannot be same as the old password
+                  </Text>
+                  <Text color="red" id="pass-num" display="none" style={{textAlign:"center"}}>
+                    Your new password should contain atleast 1 number
+                  </Text>
+                  <Text color="red" id="pass-len" display="none" style={{textAlign:"center"}}>
+                    Your password should be atleast 8 characters
+                  </Text>
+                  <Text color="red" id="pass-lower" display="none" style={{textAlign:"center"}}>
+                    Your password should conatin at least 1 lowercase character
+                  </Text>
+                  <Text color="red" id="pass-upper" display="none" style={{textAlign:"center"}}>
+                    Your password should conatin at least 1 uppercase character
+                  </Text>
+                  <Text color="red" id="pass-symbol" display="none" style={{textAlign:"center"}}>
+                    Your password should conatin at least 1 special character.Allowed special characters(!,@,#,$,%,^,&,*)
+                  </Text>
+                  <Text color="red" id="pass-valid" display="none" style={{textAlign:"center"}}>
+                    Your password should be between 8 and 15 characters
+                  </Text>
+                  <Text color="red" id="pass-equal" display="none" style={{textAlign:"center"}}>
+                    Re entered password and new password dosen't match
                   </Text>
                 </ModalBody>
               </ModalContent>
