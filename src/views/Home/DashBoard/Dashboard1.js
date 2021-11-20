@@ -4,7 +4,7 @@ import { Box, Flex, SimpleGrid, Stat, StatLabel } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import BarChart from "components/Charts/BarChart";
+import BarChart from "components/Charts/BarChart1";
 import LineChart from "components/Charts/LineChart";
 
 export default function Dashboard() {
