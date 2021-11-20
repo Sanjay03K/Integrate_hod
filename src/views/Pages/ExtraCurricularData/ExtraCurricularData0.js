@@ -1,3 +1,5 @@
+/** @format */
+
 //Student ExtraCurricularData
 
 import React, { useState, useEffect } from "react";
@@ -214,7 +216,7 @@ function ExtraCurricularData() {
                 </Thead>
                 <Tbody>
                   <Tr>
-                    <Td minWidth="14em">
+                    <Td minWidth={{ sm: "14em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -230,7 +232,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth={{ sm: "14em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -245,7 +247,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth="14em">
+                    <Td minWidth={{ sm: "14em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -262,7 +264,7 @@ function ExtraCurricularData() {
                       </Flex>
                     </Td>
 
-                    <Td minWidth="14em">
+                    <Td minWidth={{ sm: "14em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -453,7 +455,6 @@ function ExtraCurricularData() {
                         </Button>
                       </SlideFade>
                     </Td>
-
                     <Modal
                       isOpen={isOpen}
                       onClose={() => {
