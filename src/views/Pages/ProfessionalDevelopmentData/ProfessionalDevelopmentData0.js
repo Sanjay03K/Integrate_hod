@@ -563,6 +563,7 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
+
         <Collapse in={drop2}>
           <SimpleGrid
             marginLeft="auto"
@@ -753,6 +754,7 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
+
         <Collapse in={drop3}>
           <SimpleGrid
             marginLeft="auto"
@@ -944,6 +946,7 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
+
         <Collapse in={drop4}>
           <SimpleGrid
             marginLeft="auto"
