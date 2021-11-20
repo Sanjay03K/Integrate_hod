@@ -167,6 +167,20 @@ function ProfessionalDevelopmentData0() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [drop1, setDrop1] = useState(false);
+  const [drop2, setDrop2] = useState(false);
+  const [drop3, setDrop3] = useState(false);
+  const [drop4, setDrop4] = useState(false);
+  const [drop5, setDrop5] = useState(false);
+  const [drop6, setDrop6] = useState(false);
+  const [drop7, setDrop7] = useState(false);
+  const [drop8, setDrop8] = useState(false);
+  const [drop9, setDrop9] = useState(false);
+  const [drop10, setDrop10] = useState(false);
+  const [drop11, setDrop11] = useState(false);
+  const [drop12, setDrop12] = useState(false);
+  const [drop13, setDrop13] = useState(false);
+
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
@@ -214,40 +228,52 @@ function ProfessionalDevelopmentData0() {
     <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Industrial Visit
             </Text>
+
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop1(!drop1)}
+            >
+              {drop1 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Industry</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p1data.map((item1) => {
-                  return (
-                    <TableRow5
-                      row1={item1.IndustryID}
-                      row2={item1.Date_and_year}
-                      row3={item1.OutcomeID}
-                      row4={item1.credits}
-                      row5={item1.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop1}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Industry</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p1data.map((item1) => {
+                    return (
+                      <TableRow5
+                        row1={item1.IndustryID}
+                        row2={item1.Date_and_year}
+                        row3={item1.OutcomeID}
+                        row4={item1.credits}
+                        row5={item1.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show}>
+        <Collapse in={show && drop1}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -362,60 +388,73 @@ function ProfessionalDevelopmentData0() {
           </Card>
         </Collapse>
 
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle}
+        <Collapse in={drop1}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Inplant Training
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop2(!drop2)}
+            >
+              {drop2 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Industry</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p2data.map((item2) => {
-                  return (
-                    <TableRow5
-                      row1={item2.IndustryID}
-                      row2={item2.Date_and_year}
-                      row3={item2.OutcomeID}
-                      row4={item2.credits}
-                      row5={item2.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop2}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Industry</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p2data.map((item2) => {
+                    return (
+                      <TableRow5
+                        row1={item2.IndustryID}
+                        row2={item2.Date_and_year}
+                        row3={item2.OutcomeID}
+                        row4={item2.credits}
+                        row5={item2.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show2}>
+        <Collapse in={show2 && drop2}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -524,63 +563,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle2}
+        <Collapse in={drop2}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle2}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show2 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Guest Lecture
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop3(!drop3)}
+            >
+              {drop3 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Topic</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Resource Person</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p3data.map((item3) => {
-                  return (
-                    <TableRow6
-                      row1={item3.Topic}
-                      row2={item3.Date_and_year3}
-                      row3={item3.Resorce_person}
-                      row4={item3.OutcomeID3}
-                      row5={item3.credits}
-                      row6={item3.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse mt="1em" in={drop3}>
+            <CardBody overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Topic</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Resource Person</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p3data.map((item3) => {
+                    return (
+                      <TableRow6
+                        row1={item3.Topic}
+                        row2={item3.Date_and_year3}
+                        row3={item3.Resorce_person}
+                        row4={item3.OutcomeID3}
+                        row5={item3.credits}
+                        row6={item3.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show3}>
+        <Collapse in={show3 && drop3}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -702,63 +753,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle3}
+        <Collapse in={drop3}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle3}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show3 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Motivational Talks
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop4(!drop4)}
+            >
+              {drop4 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Topic</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Resource Person</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p4data.map((item4) => {
-                  return (
-                    <TableRow6
-                      row1={item4.Topic}
-                      row2={item4.Date_and_year3}
-                      row3={item4.Resorce_person}
-                      row4={item4.OutcomeID3}
-                      row5={item4.credits}
-                      row6={item4.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop4}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Topic</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Resource Person</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p4data.map((item4) => {
+                    return (
+                      <TableRow6
+                        row1={item4.Topic}
+                        row2={item4.Date_and_year3}
+                        row3={item4.Resorce_person}
+                        row4={item4.OutcomeID3}
+                        row5={item4.credits}
+                        row6={item4.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show4}>
+        <Collapse in={show4 && drop4}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -881,63 +944,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle4}
+        <Collapse in={drop4}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle4}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show4 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Internships
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop5(!drop5)}
+            >
+              {drop5 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Company</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Duration in months</Th>
-                  <Th color="gray.400">Reference</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p5data.map((item5) => {
-                  return (
-                    <TableRow6
-                      row1={item5.Company}
-                      row2={item5.Date}
-                      row3={item5.Duration}
-                      row4={item5.Reference}
-                      row5={item5.credits}
-                      row6={item5.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop5}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Company</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Duration in months</Th>
+                    <Th color="gray.400">Reference</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p5data.map((item5) => {
+                    return (
+                      <TableRow6
+                        row1={item5.Company}
+                        row2={item5.Date}
+                        row3={item5.Duration}
+                        row4={item5.Reference}
+                        row5={item5.credits}
+                        row6={item5.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show5}>
+        <Collapse in={show5 && drop5}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1061,63 +1136,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle5}
+        <Collapse in={drop5}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle5}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show5 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Value Added Course
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop6(!drop6)}
+            >
+              {drop6 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Course Name</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Platform</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p6data.map((item6) => {
-                  return (
-                    <TableRow6
-                      row1={item6.Course_name}
-                      row2={item6.Date_and_year5}
-                      row3={item6.Platform}
-                      row4={item6.Outcome5}
-                      row5={item6.credits}
-                      row6={item6.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop6}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Course Name</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Platform</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p6data.map((item6) => {
+                    return (
+                      <TableRow6
+                        row1={item6.Course_name}
+                        row2={item6.Date_and_year5}
+                        row3={item6.Platform}
+                        row4={item6.Outcome5}
+                        row5={item6.credits}
+                        row6={item6.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show6}>
+        <Collapse in={show6 && drop6}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1242,62 +1329,75 @@ function ProfessionalDevelopmentData0() {
           </Card>
         </Collapse>
 
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle6}
+        <Collapse in={drop6}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle6}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show6 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Workshop
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop7(!drop7)}
+            >
+              {drop7 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Topic</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Resource Person</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p7data.map((item7) => {
-                  return (
-                    <TableRow6
-                      row1={item7.Topic}
-                      row2={item7.Date_and_year3}
-                      row3={item7.Resorce_person}
-                      row4={item7.OutcomeID3}
-                      row5={item7.credits}
-                      row6={item7.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop7}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Topic</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Resource Person</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p7data.map((item7) => {
+                    return (
+                      <TableRow6
+                        row1={item7.Topic}
+                        row2={item7.Date_and_year3}
+                        row3={item7.Resorce_person}
+                        row4={item7.OutcomeID3}
+                        row5={item7.credits}
+                        row6={item7.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show7}>
+        <Collapse in={show7 && drop7}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1421,63 +1521,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle7}
+        <Collapse in={drop7}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle7}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show7 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Webinar
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop8(!drop8)}
+            >
+              {drop8 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody overflowX={{ sm: "scroll" }}>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Topic</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Resource Person</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p8data.map((item8) => {
-                  return (
-                    <TableRow6
-                      row1={item8.Topic}
-                      row2={item8.Date_and_year3}
-                      row3={item8.Resorce_person}
-                      row4={item8.OutcomeID3}
-                      row5={item8.credits}
-                      row6={item8.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop8}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Topic</Th>
+                    <Th color="gray.400">Date and Year</Th>
+                    <Th color="gray.400">Resource Person</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p8data.map((item8) => {
+                    return (
+                      <TableRow6
+                        row1={item8.Topic}
+                        row2={item8.Date_and_year3}
+                        row3={item8.Resorce_person}
+                        row4={item8.OutcomeID3}
+                        row5={item8.credits}
+                        row6={item8.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show8}>
+        <Collapse in={show8 && drop8}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1600,63 +1712,77 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle8}
+        <Collapse in={drop8}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle8}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show8 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Competition
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop9(!drop9)}
+            >
+              {drop9 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Name</Th>
-                  <Th color="gray.400">Type of Competion (Coding / Project)</Th>
-                  <Th color="gray.400">Date and year</Th>
-                  <Th color="gray.400">Position Secured</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p9data.map((item9) => {
-                  return (
-                    <TableRow6
-                      row1={item9.Name}
-                      row2={item9.Type}
-                      row3={item9.Date_and_year8}
-                      row4={item9.Position}
-                      row5={item9.credits}
-                      row6={item9.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop9}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Name</Th>
+                    <Th color="gray.400">
+                      Type of Competion (Coding / Project)
+                    </Th>
+                    <Th color="gray.400">Date and year</Th>
+                    <Th color="gray.400">Position Secured</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p9data.map((item9) => {
+                    return (
+                      <TableRow6
+                        row1={item9.Name}
+                        row2={item9.Type}
+                        row3={item9.Date_and_year8}
+                        row4={item9.Position}
+                        row5={item9.credits}
+                        row6={item9.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show9}>
+        <Collapse in={show9 && drop9}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1782,63 +1908,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle9}
+        <Collapse in={drop9}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle9}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show9 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Placement Training
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop10(!drop10)}
+            >
+              {drop10 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Aptitude</Th>
-                  <Th color="gray.400">Soft Skill</Th>
-                  <Th color="gray.400">Reasoning</Th>
-                  <Th color="gray.400">Technical Skill</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p10data.map((item10) => {
-                  return (
-                    <TableRow6
-                      row1={item10.Aptitude}
-                      row2={item10.Soft_skill}
-                      row3={item10.Reasoning}
-                      row4={item10.Tech_skill}
-                      row5={item10.credits}
-                      row6={item10.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop10}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Aptitude</Th>
+                    <Th color="gray.400">Soft Skill</Th>
+                    <Th color="gray.400">Reasoning</Th>
+                    <Th color="gray.400">Technical Skill</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p10data.map((item10) => {
+                    return (
+                      <TableRow6
+                        row1={item10.Aptitude}
+                        row2={item10.Soft_skill}
+                        row3={item10.Reasoning}
+                        row4={item10.Tech_skill}
+                        row5={item10.credits}
+                        row6={item10.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show10}>
+        <Collapse in={show10 && drop10}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -1962,63 +2100,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle10}
+        <Collapse in={drop10}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle10}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show10 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Mini Project
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop11(!drop11)}
+            >
+              {drop11 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Title</Th>
-                  <Th color="gray.400">Objective</Th>
-                  <Th color="gray.400">Duration</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p11data.map((item11) => {
-                  return (
-                    <TableRow6
-                      row1={item11.Title}
-                      row2={item11.Objective}
-                      row3={item11.Duration2}
-                      row4={item11.OutcomeID8}
-                      row5={item11.credits}
-                      row6={item11.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop11}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Title</Th>
+                    <Th color="gray.400">Objective</Th>
+                    <Th color="gray.400">Duration</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p11data.map((item11) => {
+                    return (
+                      <TableRow6
+                        row1={item11.Title}
+                        row2={item11.Objective}
+                        row3={item11.Duration2}
+                        row4={item11.OutcomeID8}
+                        row5={item11.credits}
+                        row6={item11.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show11}>
+        <Collapse in={show11 && drop11}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -2142,63 +2292,75 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle11}
+        <Collapse in={drop11}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle11}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show11 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Final Project
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop12(!drop12)}
+            >
+              {drop12 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Title</Th>
-                  <Th color="gray.400">Objective</Th>
-                  <Th color="gray.400">Duration</Th>
-                  <Th color="gray.400">Outcome</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p12data.map((item12) => {
-                  return (
-                    <TableRow6
-                      row1={item12.Title}
-                      row2={item12.Objective}
-                      row3={item12.Duration2}
-                      row4={item12.OutcomeID8}
-                      row5={item12.credits}
-                      row6={item12.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop12}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Title</Th>
+                    <Th color="gray.400">Objective</Th>
+                    <Th color="gray.400">Duration</Th>
+                    <Th color="gray.400">Outcome</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p12data.map((item12) => {
+                    return (
+                      <TableRow6
+                        row1={item12.Title}
+                        row2={item12.Objective}
+                        row3={item12.Duration2}
+                        row4={item12.OutcomeID8}
+                        row5={item12.credits}
+                        row6={item12.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show12}>
+        <Collapse in={show12 && drop12}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -2322,65 +2484,77 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle12}
+        <Collapse in={drop12}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle12}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show12 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Publications
             </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop13(!drop13)}
+            >
+              {drop13 ? "Hide" : "Show"}
+            </Button>
           </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Conference / Journal</Th>
-                  <Th color="gray.400">Name of Conference / Journal</Th>
-                  <Th color="gray.400">Title Of the Article</Th>
-                  <Th color="gray.400">Impact Factor</Th>
-                  <Th color="gray.400">Indexed In</Th>
-                  <Th color="gray.400">Credits</Th>
-                  <Th color="gray.400">Verify Status</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {p13data.map((item13) => {
-                  return (
-                    <TableRow7
-                      row1={item13.Conference}
-                      row2={item13.Name2}
-                      row3={item13.Title2}
-                      row4={item13.Impact}
-                      row5={item13.Indexed}
-                      row6={item13.credits}
-                      row7={item13.verified}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
+          <Collapse in={drop13}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
+              <Table variant="simple" color={textColor}>
+                <Thead>
+                  <Tr my=".8rem" pl="0px" color="gray.400">
+                    <Th color="gray.400">Conference / Journal</Th>
+                    <Th color="gray.400">Name of Conference / Journal</Th>
+                    <Th color="gray.400">Title Of the Article</Th>
+                    <Th color="gray.400">Impact Factor</Th>
+                    <Th color="gray.400">Indexed In</Th>
+                    <Th color="gray.400">Credits</Th>
+                    <Th color="gray.400">Verify Status</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {p13data.map((item13) => {
+                    return (
+                      <TableRow7
+                        row1={item13.Conference}
+                        row2={item13.Name2}
+                        row3={item13.Title2}
+                        row4={item13.Impact}
+                        row5={item13.Indexed}
+                        row6={item13.credits}
+                        row7={item13.verified}
+                      />
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </CardBody>
+          </Collapse>
         </Card>
 
-        <Collapse in={show13}>
+        <Collapse in={show13 && drop13}>
           <Card>
             <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
@@ -2521,25 +2695,26 @@ function ProfessionalDevelopmentData0() {
             </CardBody>
           </Card>
         </Collapse>
-
-        <SimpleGrid
-          marginLeft="auto"
-          width="13em"
-          me="2.5rem"
-          columns={{ sm: 2, md: 2, xl: 2 }}
-          gap={5}
-        >
-          <div></div>
-          <Button
-            ms="5"
-            bg="orange.300"
-            width="fit-content"
-            onClick={handleToggle13}
+        <Collapse in={drop13}>
+          <SimpleGrid
+            marginLeft="auto"
+            width="13em"
+            me="2.5rem"
+            columns={{ sm: 2, md: 2, xl: 2 }}
+            gap={5}
           >
-            <AddIcon w={4} h={4} me="3" />
-            Add
-          </Button>
-        </SimpleGrid>
+            <div></div>
+            <Button
+              ms="5"
+              bg="orange.300"
+              width="fit-content"
+              onClick={handleToggle13}
+            >
+              <AddIcon w={4} h={4} me="3" />
+              {show13 ? "Cancel" : "Add"}
+            </Button>
+          </SimpleGrid>
+        </Collapse>
       </SimpleGrid>
     </Flex>
   );
