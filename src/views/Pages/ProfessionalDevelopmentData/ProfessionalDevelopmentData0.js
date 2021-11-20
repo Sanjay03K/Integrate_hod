@@ -49,6 +49,7 @@ import TableRow3 from "components/Tables/TableRow/TableRow3";
 import TableRow4 from "components/Tables/TableRow/TableRow4";
 import TableRow5 from "components/Tables/TableRow/TableRow5";
 import TableRow6 from "components/Tables/TableRow/TableRow6";
+import TableRow7 from "components/Tables/TableRow/TableRow7";
 
 var resul;
 
@@ -167,6 +168,9 @@ function ProfessionalDevelopmentData0(){
   const [show8, setShow8] = useState(false);
   const [show9, setShow9] = useState(false);
   const [show10, setShow10] = useState(false);
+  const [show11, setShow11] = useState(false);
+  const [show12, setShow12] = useState(false);
+  const [show13, setShow13] = useState(false);
 
   const handleToggle = () => setShow(!show);
   const handleToggle2 = () => setShow2(!show2);
@@ -178,6 +182,9 @@ function ProfessionalDevelopmentData0(){
   const handleToggle8 = () => setShow8(!show8);
   const handleToggle9 = () => setShow9(!show9);
   const handleToggle10 = () => setShow10(!show10);
+  const handleToggle11 = () => setShow11(!show11);
+  const handleToggle12 = () => setShow12(!show12);
+  const handleToggle13 = () => setShow13(!show13);
 
 
   const [data, setCdata] = useState([]);
@@ -191,6 +198,9 @@ function ProfessionalDevelopmentData0(){
   const [p8data, setp8data] = useState([]);
   const [p9data, setp9data] = useState([]);
   const [p10data, setp10data] = useState([]);
+  const [p11data, setp11data] = useState([]);
+  const [p12data, setp12data] = useState([]);
+  const [p13data, setp13data] = useState([]);
   
   // do work for setdata from backend here
 
@@ -1906,7 +1916,7 @@ function ProfessionalDevelopmentData0(){
                           borderRadius="5px"
                           fontSize="sm"
                           type="text"
-                          placeholder="Enter Name"
+                          placeholder="Aptitude"
                           id="Aptitude"
                         />
                       
@@ -1923,7 +1933,7 @@ function ProfessionalDevelopmentData0(){
                         borderRadius="5px"
                         fontSize="sm"
                         type="text"
-                        placeholder="Enter Type Of Competition"
+                        placeholder="Soft Skills"
                         id="Soft Skill"
                       />
                     </Flex>
@@ -1939,8 +1949,8 @@ function ProfessionalDevelopmentData0(){
                       <Input
                         borderRadius="5px"
                         fontSize="sm"
-                        type="date"
-                        placeholder="Enter Date"
+                        type="text"
+                        placeholder="Reasoning"
                         id="Reasoning"
                       />
                     </Flex>
@@ -1957,7 +1967,7 @@ function ProfessionalDevelopmentData0(){
                           borderRadius="5px"
                           fontSize="sm"
                           type="text"
-                          placeholder="Enter Position"
+                          placeholder="Technical Skill"
                           id="Technical Skill"
                         />
                       
@@ -2029,177 +2039,12 @@ function ProfessionalDevelopmentData0(){
       </SimpleGrid>
     </Flex>
 
-<Flex direction="column" pt={{ base: "500px", md: "75px" }}>
-        <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-          <CardHeader p="6px 0px 22px 0px">
-            <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Placement Training
-            </Text>
-          </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Aptitude</Th>
-                  <Th color="gray.400">Soft Skill</Th>
-                  <Th color="gray.400">Reasoning</Th>
-                  <Th color="gray.400">Technical Skill</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {PlacementTraining.map((row) => {
-                  return (
-                    <TableRow4
-                      row1={row.Aptitude}
-                      row2={row.Soft_skill}
-                      row3={row.Reasoning}
-                      row4={row.Tech_skill}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Flex direction="column">
-                        <Input
-                          borderRadius="5px"
-                          fontSize="sm"
-                          type="text"
-                          placeholder="Aptitude"
-                          id="Aptitude"
-                        />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Soft skills"
-                        id="Soft_skill"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Reasoning"
-                        id="Reasoning"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Technical skill"
-                        id="Tech_skill"
-                      />
-                    </Flex>
-                  </Td>
-                 
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
-
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
-                          >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
-        </Card>
-        </SimpleGrid>
-        <SimpleGrid
-        alignSelf="flex-end"
-        mt="1rem"
-        width="10em"
-        me="2.5rem"
-        columns={{ sm: 2, md: 2, xl: 2 }}
-        gap={5}
-      >
-        <div>
-          <SlideFade in={show}>
-            <Button onClick={substudinter} bg="orange.300" width="fit-content">
-              Submit
-            </Button>
-          </SlideFade>
-        </div>
-        <Button
-          ms="5"
-          bg="orange.300"
-          width="fit-content"
-          onClick={handleToggle}
-        >
-          <AddIcon w={4} h={4} me="3" />
-          Add
-        </Button>
-      </SimpleGrid>
-      </Flex>
-
-<Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
         <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Mini Project
+            Mini Project
             </Text>
           </CardHeader>
           <CardBody>
@@ -2210,24 +2055,40 @@ function ProfessionalDevelopmentData0(){
                   <Th color="gray.400">Objective</Th>
                   <Th color="gray.400">Duration</Th>
                   <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {MiniProject.map((row) => {
+                {p11data.map((item11) => {
                   return (
-                    <TableRow4
-                      row1={row.Title}
-                      row2={row.Objective}
-                      row3={row.Duration2}
-                      row4={row.OutcomeID8}
+                    <TableRow6
+                    row1={item11.Title}
+                    row2={item11.Objective}
+                    row3={item11.Duration2}
+                    row4={item11.OutcomeID8}
+                    row5={item11.credits}
+                    row6={item11.verified}
                     />
                   );
                 })}
               </Tbody>
             </Table>
           </CardBody>
-          <Collapse in={show} animateOpacity>
+          </Card>
+
+          <Collapse in={show11} animateOpacity>
+            <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
             <Table variant="simple" color={textColor}>
+            <Thead>
+                  <Tr>
+                  <Th color="gray.400">Title</Th>
+                  <Th color="gray.400">Objective</Th>
+                  <Th color="gray.400">Duration</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  </Tr>
+                </Thead>
               <Tbody>
                 <Tr>
                   <Td minWidth="14em">
@@ -2237,15 +2098,15 @@ function ProfessionalDevelopmentData0(){
                       minWidth="100%"
                       flexWrap="nowrap"
                     >
-                      <Flex direction="column">
+                     
                         <Input
                           borderRadius="5px"
                           fontSize="sm"
                           type="text"
-                          placeholder="Enter Title"
-                          id="Title"
+                          placeholder="Title"
+                          id="Aptitude"
                         />
-                      </Flex>
+                      
                     </Flex>
                   </Td>
                   <Td minWidth="14em">
@@ -2259,11 +2120,12 @@ function ProfessionalDevelopmentData0(){
                         borderRadius="5px"
                         fontSize="sm"
                         type="text"
-                        placeholder="Enter objective"
-                        id="Objective"
+                        placeholder="Objective"
+                        id="Soft Skill"
                       />
                     </Flex>
                   </Td>
+                 
                   <Td minWidth="14em">
                     <Flex
                       align="center"
@@ -2276,7 +2138,7 @@ function ProfessionalDevelopmentData0(){
                         fontSize="sm"
                         type="text"
                         placeholder="Duration"
-                        id="Duration2"
+                        id="Reasoning"
                       />
                     </Flex>
                   </Td>
@@ -2287,361 +2149,15 @@ function ProfessionalDevelopmentData0(){
                       minWidth="100%"
                       flexWrap="nowrap"
                     >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Outcome"
-                        id="OutcomeID8"
-                      />
-                    </Flex>
-                  </Td>
-                  
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
-
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
-                          >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
-        </Card>
-        </SimpleGrid>
-        <SimpleGrid
-        alignSelf="flex-end"
-        mt="1rem"
-        width="10em"
-        me="2.5rem"
-        columns={{ sm: 2, md: 2, xl: 2 }}
-        gap={5}
-      >
-        <div>
-          <SlideFade in={show}>
-            <Button onClick={substudinter} bg="orange.300" width="fit-content">
-              Submit
-            </Button>
-          </SlideFade>
-        </div>
-        <Button
-          ms="5"
-          bg="orange.300"
-          width="fit-content"
-          onClick={handleToggle}
-        >
-          <AddIcon w={4} h={4} me="3" />
-          Add
-        </Button>
-      </SimpleGrid>
-      </Flex>
-
-<Flex direction="column" pt={{ base: "500px", md: "75px" }}>
-        <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-          <CardHeader p="6px 0px 22px 0px">
-            <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Final Project
-            </Text>
-          </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Topic</Th>
-                  <Th color="gray.400">Date and Year</Th>
-                  <Th color="gray.400">Resource Person</Th>
-                  <Th color="gray.400">Outcome</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {FinalProject.map((row) => {
-                  return (
-                    <TableRow4
-                      row1={row.Topic4}
-                      row2={row.Date_and_year9}
-                      row3={row.Resource_person5}
-                      row4={row.OutcomeID9}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Flex direction="column">
+                     
                         <Input
                           borderRadius="5px"
                           fontSize="sm"
                           type="text"
-                          placeholder="Enter Topic"
-                          id="Topic4"
+                          placeholder="Outcome"
+                          id="Technical Skill"
                         />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Enter Date and Year"
-                        id="Date_and_year9"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Resource Person"
-                        id="Resource_person5"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Outcome"
-                        id="OutcomeID9"
-                      />
-                    </Flex>
-                  </Td>
-                 
-                  <Td>
-                    <Modal
-                      isOpen={isOpen}
-                      onClose={() => {
-                        onClose();
-                        window.location.reload(false);
-                      }}
-                    >
-                      <ModalOverlay />
-                      <ModalContent>
-                        <ModalHeader>Result</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>{resul}</ModalBody>
-
-                        <ModalFooter>
-                          <Button
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={() => {
-                              onClose();
-                              window.location.reload(false);
-                            }}
-                          >
-                            Close
-                          </Button>
-                        </ModalFooter>
-                      </ModalContent>
-                    </Modal>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </Collapse>
-        </Card>
-        </SimpleGrid>
-        <SimpleGrid
-        alignSelf="flex-end"
-        mt="1rem"
-        width="10em"
-        me="2.5rem"
-        columns={{ sm: 2, md: 2, xl: 2 }}
-        gap={5}
-      >
-        <div>
-          <SlideFade in={show}>
-            <Button onClick={substudinter} bg="orange.300" width="fit-content">
-              Submit
-            </Button>
-          </SlideFade>
-        </div>
-        <Button
-          ms="5"
-          bg="orange.300"
-          width="fit-content"
-          onClick={handleToggle}
-        >
-          <AddIcon w={4} h={4} me="3" />
-          Add
-        </Button>
-      </SimpleGrid>
-      </Flex>
-
-<Flex direction="column" pt={{ base: "500px", md: "75px" }}>
-        <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-          <CardHeader p="6px 0px 22px 0px">
-            <Text fontSize="xl" color={textColor} fontWeight="bold">
-              Publications
-            </Text>
-          </CardHeader>
-          <CardBody>
-            <Table variant="simple" color={textColor}>
-              <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Conference / Journal</Th>
-                  <Th color="gray.400">Name of Conference / Journal</Th>
-                  <Th color="gray.400">Title Of the Article</Th>
-                  <Th color="gray.400">Impact Factor</Th>
-                  <Th color="gray.400">Indexed In</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Publications.map((row) => {
-                  return (
-                    <TableRow5
-                      row1={row.Conference}
-                      row2={row.Name2}
-                      row3={row.Title2}
-                      row4={row.Impact}
-                      row5={row.Indexed}
-                    />
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </CardBody>
-          <Collapse in={show} animateOpacity>
-            <Table variant="simple" color={textColor}>
-              <Tbody>
-                <Tr>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Flex direction="column">
-                        <Input
-                          borderRadius="5px"
-                          fontSize="sm"
-                          type="text"
-                          placeholder="Enter Conference/Journal"
-                          id="Conference"
-                        />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Name of Conference/Journal"
-                        id="Name2"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Title of the article"
-                        id="Title2"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Impact factor"
-                        id="Impact"
-                      />
-                    </Flex>
-                  </Td>
-                  <Td minWidth="14em">
-                    <Flex
-                      align="center"
-                      py=".8rem"
-                      minWidth="100%"
-                      flexWrap="nowrap"
-                    >
-                      <Input
-                        borderRadius="5px"
-                        fontSize="sm"
-                        type="text"
-                        placeholder="Indexed in"
-                        id="Indexed"
-                      />
+                      
                     </Flex>
                   </Td>
                   
@@ -2678,10 +2194,12 @@ function ProfessionalDevelopmentData0(){
                 </Tr>
               </Tbody>
             </Table>
-          </Collapse>
+            </CardBody>
+         
         </Card>
-      </SimpleGrid>
-      <SimpleGrid
+        </Collapse>
+        </SimpleGrid>
+        <SimpleGrid
         alignSelf="flex-end"
         mt="1rem"
         width="10em"
@@ -2690,7 +2208,7 @@ function ProfessionalDevelopmentData0(){
         gap={5}
       >
         <div>
-          <SlideFade in={show}>
+          <SlideFade in={show11}>
             <Button onClick={substudinter} bg="orange.300" width="fit-content">
               Submit
             </Button>
@@ -2700,13 +2218,409 @@ function ProfessionalDevelopmentData0(){
           ms="5"
           bg="orange.300"
           width="fit-content"
-          onClick={handleToggle}
+          onClick={handleToggle11}
         >
           <AddIcon w={4} h={4} me="3" />
           Add
         </Button>
       </SimpleGrid>
     </Flex>
+
+    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+      <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <CardHeader p="6px 0px 22px 0px">
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+            Final Project
+            </Text>
+          </CardHeader>
+          <CardBody>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  <Th color="gray.400">Title</Th>
+                  <Th color="gray.400">Objective</Th>
+                  <Th color="gray.400">Duration</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {p12data.map((item12) => {
+                  return (
+                    <TableRow6
+                    row1={item12.Title}
+                    row2={item12.Objective}
+                    row3={item12.Duration2}
+                    row4={item12.OutcomeID8}
+                    row5={item12.credits}
+                    row6={item12.verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+          </Card>
+
+          <Collapse in={show12} animateOpacity>
+            <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+            <Thead>
+                  <Tr>
+                  <Th color="gray.400">Title</Th>
+                  <Th color="gray.400">Objective</Th>
+                  <Th color="gray.400">Duration</Th>
+                  <Th color="gray.400">Outcome</Th>
+                  </Tr>
+                </Thead>
+              <Tbody>
+                <Tr>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                     
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Title"
+                          id="Aptitude"
+                        />
+                      
+                    </Flex>
+                  </Td>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Objective"
+                        id="Soft Skill"
+                      />
+                    </Flex>
+                  </Td>
+                 
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Duration"
+                        id="Reasoning"
+                      />
+                    </Flex>
+                  </Td>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                     
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Outcome"
+                          id="Technical Skill"
+                        />
+                      
+                    </Flex>
+                  </Td>
+                  
+
+                  <Td>
+                    <Modal
+                      isOpen={isOpen}
+                      onClose={() => {
+                        onClose();
+                        window.location.reload(false);
+                      }}
+                    >
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Result</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>{resul}</ModalBody>
+
+                        <ModalFooter>
+                          <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={() => {
+                              onClose();
+                              window.location.reload(false);
+                            }}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+            </CardBody>
+         
+        </Card>
+        </Collapse>
+        </SimpleGrid>
+        <SimpleGrid
+        alignSelf="flex-end"
+        mt="1rem"
+        width="10em"
+        me="2.5rem"
+        columns={{ sm: 2, md: 2, xl: 2 }}
+        gap={5}
+      >
+        <div>
+          <SlideFade in={show12}>
+            <Button onClick={substudinter} bg="orange.300" width="fit-content">
+              Submit
+            </Button>
+          </SlideFade>
+        </div>
+        <Button
+          ms="5"
+          bg="orange.300"
+          width="fit-content"
+          onClick={handleToggle12}
+        >
+          <AddIcon w={4} h={4} me="3" />
+          Add
+        </Button>
+      </SimpleGrid>
+    </Flex>
+
+    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+      <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <CardHeader p="6px 0px 22px 0px">
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+            Publications
+            </Text>
+          </CardHeader>
+          <CardBody>
+            <Table variant="simple" color={textColor}>
+              <Thead>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                <Th color="gray.400">Conference / Journal</Th>
+                  <Th color="gray.400">Name of Conference / Journal</Th>
+                  <Th color="gray.400">Title Of the Article</Th>
+                  <Th color="gray.400">Impact Factor</Th>
+                  <Th color="gray.400">Indexed In</Th>
+                  <Th color="gray.400">Credits</Th>
+                  <Th color="gray.400">Verify Status</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {p13data.map((item13) => {
+                  return (
+                    <TableRow7
+                    row1={item13.Conference}
+                    row2={item13.Name2}
+                    row3={item13.Title2}
+                    row4={item13.Impact}
+                    row5={item13.Indexed}
+                    row6={item13.credits}
+                    row7={item13.verified}
+                    />
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </CardBody>
+          </Card>
+
+          <Collapse in={show13} animateOpacity>
+            <Card>
+            <CardBody overflowX={{ sm: "scroll" }}>
+            <Table variant="simple" color={textColor}>
+            <Thead>
+                  <Tr>
+                  <Th color="gray.400">Conference / Journal</Th>
+                  <Th color="gray.400">Name of Conference / Journal</Th>
+                  <Th color="gray.400">Title Of the Article</Th>
+                  <Th color="gray.400">Impact Factor</Th>
+                  <Th color="gray.400">Indexed In</Th>
+                  </Tr>
+                </Thead>
+              <Tbody>
+                <Tr>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                     
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Conference / Journal"
+                          id="Aptitude"
+                        />
+                      
+                    </Flex>
+                  </Td>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Name of Conference / Journal"
+                        id="Soft Skill"
+                      />
+                    </Flex>
+                  </Td>
+                 
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                      <Input
+                        borderRadius="5px"
+                        fontSize="sm"
+                        type="text"
+                        placeholder="Title Of The Article"
+                        id="Reasoning"
+                      />
+                    </Flex>
+                  </Td>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                     
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Impact Factor"
+                          id="Technical Skill"
+                        />
+                      
+                    </Flex>
+                  </Td>
+                  <Td minWidth="14em">
+                    <Flex
+                      align="center"
+                      py=".8rem"
+                      minWidth="100%"
+                      flexWrap="nowrap"
+                    >
+                     
+                        <Input
+                          borderRadius="5px"
+                          fontSize="sm"
+                          type="text"
+                          placeholder="Indexed In"
+                          id="Technical Skill"
+                        />
+                      
+                    </Flex>
+                  </Td>
+                  
+
+                  <Td>
+                    <Modal
+                      isOpen={isOpen}
+                      onClose={() => {
+                        onClose();
+                        window.location.reload(false);
+                      }}
+                    >
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Result</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>{resul}</ModalBody>
+
+                        <ModalFooter>
+                          <Button
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={() => {
+                              onClose();
+                              window.location.reload(false);
+                            }}
+                          >
+                            Close
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+            </CardBody>
+         
+        </Card>
+        </Collapse>
+        </SimpleGrid>
+        <SimpleGrid
+        alignSelf="flex-end"
+        mt="1rem"
+        width="10em"
+        me="2.5rem"
+        columns={{ sm: 2, md: 2, xl: 2 }}
+        gap={5}
+      >
+        <div>
+          <SlideFade in={show13}>
+            <Button onClick={substudinter} bg="orange.300" width="fit-content">
+              Submit
+            </Button>
+          </SlideFade>
+        </div>
+        <Button
+          ms="5"
+          bg="orange.300"
+          width="fit-content"
+          onClick={handleToggle13}
+        >
+          <AddIcon w={4} h={4} me="3" />
+          Add
+        </Button>
+      </SimpleGrid>
+    </Flex>
+
 </Flex>
   );
 }
