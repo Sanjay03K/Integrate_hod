@@ -5,6 +5,7 @@ import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation
 import InternationalData from "views/Pages/InternationalData/InternationalData0";
 import ExtraCurricularData from "views/Pages/ExtraCurricularData/ExtraCurricularData0";
 import Academicsdata from "views/Pages/AcademicData/Academicdata0";
+import ProfessionalDevelopmentData from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData0";
 
 import Profile from "views/Home/Profile/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -17,6 +18,7 @@ import {
   DocumentIcon,
   RocketIcon,
 } from "components/Icons/Icons";
+import ProfessionalDevelopmentData0 from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData0";
 
 var dashRoutes = [
   {
@@ -56,6 +58,24 @@ var dashRoutes = [
     name: "ExtraCurricular",
     icon: <StatsIcon color="inherit" />,
     component: ExtraCurricularData,
+    layout: "/admin0",
+  },
+  {
+    path: "/ProfessionalDevelopmentdata",
+    name: (
+      <p
+        style={{
+          textAlign: "left",
+          lineHeight: "1.2rem",
+          whiteSpace: "normal",
+          wordWrap: "break-word",
+        }}
+      >
+        Professional Development
+      </p>
+    ),
+    icon: <StatsIcon color="inherit" />,
+    component: ProfessionalDevelopmentData0,
     layout: "/admin0",
   },
   {
