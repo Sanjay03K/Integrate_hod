@@ -1,3 +1,5 @@
+/** @format */
+
 //Student International Exposure Data
 
 import React, { useState, useEffect } from "react";
@@ -80,7 +82,7 @@ function InternationalData() {
   const handleToggle = () => setShow(!show);
 
   return (
-    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+    <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
         <Card>
           <CardHeader p="6px 0px 22px 0px">

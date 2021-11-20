@@ -1,3 +1,5 @@
+/** @format */
+
 //Table with 2 columns
 
 import { Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
@@ -9,7 +11,7 @@ function TableRow2(props) {
 
   return (
     <Tr>
-      <Td width={{ sm: "16vw" }}>
+      <Td minWidth={{ sm: "10em", md: "15em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text
@@ -32,11 +34,13 @@ function TableRow2(props) {
               color={textColor}
               fontWeight="light-bold"
               minWidth="100%"
-            ></Text>
+            >
+              :
+            </Text>
           </Flex>
         </Flex>
       </Td>
-      <Td minWidth={{ sm: "18vw" }}>
+      <Td minWidth={{ sm: "20em", md: "26em" }}>
         <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
           <Flex direction="column">
             <Text

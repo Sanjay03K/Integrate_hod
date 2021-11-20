@@ -1,3 +1,5 @@
+/** @format */
+
 // Student routes
 
 import Dashboard from "views/Home/DashBoard/Dashboard0.js";
@@ -5,7 +7,7 @@ import GeneralInformation from "views/Home/GeneralInformation/GeneralInformation
 import InternationalData from "views/Pages/InternationalData/InternationalData0";
 import ExtraCurricularData from "views/Pages/ExtraCurricularData/ExtraCurricularData0";
 import Academicsdata from "views/Pages/AcademicData/Academicdata0";
-import ProfessionalDevelopmentData from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData0";
+import ProfessionalDevelopmentData0 from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData0";
 
 import Profile from "views/Home/Profile/Profile0.js";
 import SignIn from "views/Pages/SignIn.js";
@@ -18,7 +20,6 @@ import {
   DocumentIcon,
   RocketIcon,
 } from "components/Icons/Icons";
-import ProfessionalDevelopmentData0 from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData0";
 
 var dashRoutes = [
   {

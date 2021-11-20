@@ -1,3 +1,5 @@
+/** @format */
+
 //Class Advisor ExtraCurricularData
 
 import React, { useState, useEffect } from "react";
@@ -61,7 +63,7 @@ function ExtraCurricularData() {
   }, []);
 
   return (
-    <Flex direction="column" pt={{ base: "400px", md: "75px" }}>
+    <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <Grid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
         <GridItem>
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>

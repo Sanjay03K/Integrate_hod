@@ -1,3 +1,5 @@
+/** @format */
+
 // Student Dashboard/General
 
 import React, { useState } from "react";
@@ -34,16 +36,16 @@ function GeneralInformationdata({ location }) {
   const textColor = useColorModeValue("gray.700", "white");
 
   return (
-    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+    <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
-        <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+        <Card>
           <CardHeader p="6px 0px 22px 0px">
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               General Particulars
             </Text>
           </CardHeader>
 
-          <CardBody>
+          <CardBody overflowX={{ sm: "scroll" }}>
             <Table variant="simple" color={textColor}>
               <Tbody>
                 <Tr>
@@ -176,13 +178,13 @@ function GeneralInformationdata({ location }) {
           </CardBody>
         </Card>
         <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Higher Secondary Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -264,13 +266,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 10th Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -340,13 +342,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Father's Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -491,13 +493,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Mother's Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -622,13 +624,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Admission Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -681,13 +683,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Scholarship Details
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -735,13 +737,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Technical and Non-Technical Skills
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>
@@ -855,13 +857,13 @@ function GeneralInformationdata({ location }) {
             </CardBody>
           </Card>
 
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+          <Card>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
                 Goals and Professional Membership
               </Text>
             </CardHeader>
-            <CardBody>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Tbody>
                   <Tr>

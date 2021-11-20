@@ -170,7 +170,7 @@ function ExtraCurricularData() {
   }, []);
 
   return (
-    <Flex direction="column" pt={{ base: "500px", md: "75px" }}>
+    <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
         <Card>
           <CardHeader>
