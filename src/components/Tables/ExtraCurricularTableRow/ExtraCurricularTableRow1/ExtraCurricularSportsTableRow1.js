@@ -18,6 +18,9 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import React from "react";
+import axios from "axios";
+
+var server_URL = "http://localhost:5000/";
 
 function ExtraCurricularTableRow(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,18 +31,19 @@ function ExtraCurricularTableRow(props) {
     let cid = { id };
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
-    params.append("outreachname", document.getElementById("ECID").value);
-    params.append("date", document.getElementById("EPID").value);
-    params.append("outcome", document.getElementById("EOID").value);
-    params.append("credits", document.getElementById("EPDID").value);
-    // axios.post(server_URL + "OutreachEdit", params);
+    params.append("sportname", document.getElementById("SNID").value);
+    params.append("representation", document.getElementById("SRID").value);
+    params.append("position", document.getElementById("SPID").value);
+    params.append("date", document.getElementById("SDID").value);
+    params.append("credits", document.getElementById("SCID").value);
+    axios.post(server_URL + "SportEdit", params);
   }
 
   function fundelete() {
     let cid = { id };
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
-    // axios.post(server_URL + "OutreachDelete", params);
+    axios.post(server_URL + "SportDelete", params);
   }
 
   function funverify() {
@@ -47,7 +51,7 @@ function ExtraCurricularTableRow(props) {
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
     params.append("verify", "Verified");
-    // axios.post(server_URL + "OutreachVerify", params);
+    axios.post(server_URL + "SportVerify", params);
   }
 
   return (
@@ -103,7 +107,7 @@ function ExtraCurricularTableRow(props) {
             <ModalBody>
               <Tr>
                 <Td>
-                  <Text m="1em">Activity</Text>
+                  <Text m="1em">Name of the sport</Text>
                 </Td>
                 <Td>
                   <Input
@@ -112,13 +116,13 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row1}
-                    id="ECID"
+                    id="SNID"
                   />
                 </Td>
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="1em">Date</Text>
+                  <Text m="1em">Representation</Text>
                 </Td>
                 <Td>
                   <Input
@@ -127,13 +131,13 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row2}
-                    id="EPID"
+                    id="SRID"
                   />
                 </Td>
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="1em">Outcome</Text>
+                  <Text m="1em">Position Secured</Text>
                 </Td>
                 <Td>
                   <Input
@@ -142,7 +146,22 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row3}
-                    id="EOID"
+                    id="SPID"
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Text m="1em">Date & Year</Text>
+                </Td>
+                <Td>
+                  <Input
+                    minWidth="20em"
+                    borderRadius="5px"
+                    fontSize="sm"
+                    type="text"
+                    defaultValue={row4}
+                    id="SDID"
                   />
                 </Td>
               </Tr>
@@ -156,8 +175,8 @@ function ExtraCurricularTableRow(props) {
                     borderRadius="5px"
                     fontSize="sm"
                     type="text"
-                    defaultValue={row4}
-                    id="EPDID"
+                    defaultValue={row5}
+                    id="SCID"
                   />
                 </Td>
               </Tr>
@@ -194,7 +213,7 @@ function ExtraCurricularTableRow(props) {
           bg="orange.300"
           alignSelf="flex-end"
           width="fit-content"
-          disabled={{ row5 }.row5 == "Verified" ? true : false}
+          disabled={{ row6 }.row6 == "Verified" ? true : false}
         >
           Verify
         </Button>

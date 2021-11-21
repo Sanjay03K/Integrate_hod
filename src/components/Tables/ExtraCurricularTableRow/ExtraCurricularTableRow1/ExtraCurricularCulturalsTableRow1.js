@@ -19,6 +19,9 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
+
+var server_URL = "http://localhost:5000/";
+
 function ExtraCurricularTableRow(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { id, row1, row2, row3, row4, row5 } = props;
@@ -28,18 +31,18 @@ function ExtraCurricularTableRow(props) {
     let cid = { id };
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
-    params.append("outreachname", document.getElementById("ECID").value);
-    params.append("date", document.getElementById("EPID").value);
-    params.append("outcome", document.getElementById("EOID").value);
-    params.append("credits", document.getElementById("EPDID").value);
-    // axios.post(server_URL + "OutreachEdit", params);
+    params.append("culturalname", document.getElementById("CNID").value);
+    params.append("date", document.getElementById("CDID").value);
+    params.append("position", document.getElementById("CPID").value);
+    params.append("credits", document.getElementById("CCID").value);
+    axios.post(server_URL + "CulturalEdit", params);
   }
 
   function fundelete() {
     let cid = { id };
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
-    // axios.post(server_URL + "OutreachDelete", params);
+    axios.post(server_URL + "CulturalDelete", params);
   }
 
   function funverify() {
@@ -47,7 +50,7 @@ function ExtraCurricularTableRow(props) {
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
     params.append("verify", "Verified");
-    // axios.post(server_URL + "OutreachVerify", params);
+    axios.post(server_URL + "CulturalVerify", params);
   }
 
   return (
@@ -98,7 +101,7 @@ function ExtraCurricularTableRow(props) {
             <ModalBody>
               <Tr>
                 <Td>
-                  <Text m="1em">Activity</Text>
+                  <Text m="1em">Name of the Event</Text>
                 </Td>
                 <Td>
                   <Input
@@ -107,13 +110,13 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row1}
-                    id="ECID"
+                    id="CNID"
                   />
                 </Td>
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="1em">Date</Text>
+                  <Text m="1em">Date & Year</Text>
                 </Td>
                 <Td>
                   <Input
@@ -122,13 +125,13 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row2}
-                    id="EPID"
+                    id="CDID"
                   />
                 </Td>
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="1em">Outcome</Text>
+                  <Text m="1em">Position Secured</Text>
                 </Td>
                 <Td>
                   <Input
@@ -137,7 +140,7 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row3}
-                    id="EOID"
+                    id="CPID"
                   />
                 </Td>
               </Tr>
@@ -152,7 +155,7 @@ function ExtraCurricularTableRow(props) {
                     fontSize="sm"
                     type="text"
                     defaultValue={row4}
-                    id="EPDID"
+                    id="CCID"
                   />
                 </Td>
               </Tr>

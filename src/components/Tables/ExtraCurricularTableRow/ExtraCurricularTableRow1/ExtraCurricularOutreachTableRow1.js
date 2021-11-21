@@ -116,7 +116,7 @@ function ExtraCurricularTableRow(props) {
               </Tr>
               <Tr>
                 <Td>
-                  <Text m="1em">Date</Text>
+                  <Text m="1em">Date & Year</Text>
                 </Td>
                 <Td>
                   <Input
