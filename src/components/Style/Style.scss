@@ -21,6 +21,11 @@
   border-radius: 100vw;
 }
 
+::-webkit-scrollbar-thumb:active {
+  background-color: orange;
+  border-radius: 100vw;
+}
+
 .spinner {
   margin: auto;
   width: 70px;

@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 // import axios from "axios";
 // Chakra imports
@@ -14,6 +16,7 @@ import {
   Switch,
   Text,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import handleLogin from "../../controller/UserloginCtrl";
 // Assets
@@ -38,29 +41,18 @@ function SignIn() {
         mx="auto"
         justifyContent="space-between"
         mb="30px"
-        pt={{ sm: "100px", md: "0px" }}
+        pt={{ sm: "5vh", md: "0px" }}
       >
         <Box
-          display={{ base: "none", md: "block" }}
-          overflowX="hidden"
-          h="100%"
-          w="40vw"
-          paddingTop="10rem"
+          mt={{ sm: "8vw", md: "32vh", xl: "35vh" }}
+          ms={{ base: "28vw", md: "50vw", xl: "40vw" }}
           position="absolute"
-          right="0px"
+          boxSize={{ sm: "200px", md: "300px" }}
         >
-          <Box
-            bgImage={signInImage}
-            w="60%"
-            h="60%"
-            bgSize="300px 300px"
-            bgRepeat="no-repeat"
-            bgPosition="50%"
-            position="absolute"
-            borderBottomLeftRadius="20px"
-          ></Box>
+          <Image objectFit="cover" src={signInImage} alt="Segun Adebayo" />
         </Box>
         <Flex
+          mt={{ sm: "30vh", md: "10vh" }}
           alignItems="center"
           justifyContent="start"
           style={{ userSelect: "none" }}
