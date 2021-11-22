@@ -2,7 +2,7 @@
 
 //Student AcademicData
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 // Chakra imports
 import {
   Flex,
@@ -36,9 +36,34 @@ import Academicsummarytablerow from "components/Tables/AcademicTableRow/Academic
 
 import { AcademicSummary } from "variables/general";
 import { Academicinfo } from "variables/general";
+import axios from "axios";
+var server_URL = "http://localhost:5000/";
 
 function Academicdata() {
   const textColor = useColorModeValue("gray.700", "white");
+  let params = new URLSearchParams();
+  const [data, setData] = useState([]);
+
+  params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+  useEffect(async () => {
+    axios
+      .post(server_URL + "getColumnName", params)
+      .then((items) => {
+        setData(items.data);
+      });
+  });
+
+  function tablecolumn(data){
+    var simple = data[1].COLUMN_NAME;
+    var para = document.createElement(simple);
+    var node = document.createTextNode(simple);
+    para.append(node);
+    document.getElementById(simple).innerHTML = simple;
+    const element = document.getElementById("roll_no");
+    element.appendChild(para);
+  }
+  
+  //tablecolumn(data);
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
@@ -52,27 +77,13 @@ function Academicdata() {
           <CardBody overflowX={{ sm: "scroll" }}>
             <Table variant="simple" color={textColor}>
               <Thead>
-                <Tr my=".8rem" pl="0px" color="gray.400">
-                  <Th color="gray.400">Subjects</Th>
-                  <Th color="gray.400">
-                    Cat1 <br />
-                    (Marks Obtained)
-                  </Th>
-                  <Th color="gray.400">
-                    Cat2 <br />
-                    (Marks Obtained)
-                  </Th>
-                  <Th color="gray.400">
-                    Model
-                    <br />
-                    (Marks Obtained)
-                  </Th>
-                  <Th color="gray.400">
-                    University
-                    <br />
-                    (Marks Obtained)
-                  </Th>
-                </Tr>
+              <Tr my=".8rem" pl="0px" color="gray.400">
+                {data.map((items)=>{ 
+                  return(
+                  <Th color="gray.400">{items.COLUMN_NAME}</Th>
+                  );
+                })}
+              </Tr>
               </Thead>
 
               <Tbody>
