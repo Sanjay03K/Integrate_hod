@@ -46,14 +46,17 @@ function Academicdata() {
 
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
   useEffect(async () => {
-    axios
-      .post(server_URL + "getColumnName", params)
-      .then((items) => {
-        setData(items.data);
-      });
+    axios.post(server_URL + "getColumnName", params).then((items) => {
+      let filtered_data = items.data.filter(
+        (header) =>
+          header.COLUMN_NAME != "id" && header.COLUMN_NAME != "roll_no"
+      );
+      console.log(filtered_data);
+      setData(filtered_data);
+    });
   });
 
-  function tablecolumn(data){
+  function tablecolumn(data) {
     var simple = data[1].COLUMN_NAME;
     var para = document.createElement(simple);
     var node = document.createTextNode(simple);
@@ -62,7 +65,7 @@ function Academicdata() {
     const element = document.getElementById("roll_no");
     element.appendChild(para);
   }
-  
+
   //tablecolumn(data);
 
   return (
@@ -77,13 +80,11 @@ function Academicdata() {
           <CardBody overflowX={{ sm: "scroll" }}>
             <Table variant="simple" color={textColor}>
               <Thead>
-              <Tr my=".8rem" pl="0px" color="gray.400">
-                {data.map((items)=>{ 
-                  return(
-                  <Th color="gray.400">{items.COLUMN_NAME}</Th>
-                  );
-                })}
-              </Tr>
+                <Tr my=".8rem" pl="0px" color="gray.400">
+                  {data.map((items) => {
+                    return <Th color="gray.400">{items.COLUMN_NAME}</Th>;
+                  })}
+                </Tr>
               </Thead>
 
               <Tbody>
