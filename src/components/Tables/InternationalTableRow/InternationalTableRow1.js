@@ -29,7 +29,7 @@ function InternationalTableRow(props) {
     let cd = { row2 };
     let cp = { row3 };
     let co = { row4 };
-    let cpd = { row5 };
+    let cpd = { row5};
     let cf = { row6 };
     let params = new URLSearchParams();
     params.append("columnid", cid.id);
