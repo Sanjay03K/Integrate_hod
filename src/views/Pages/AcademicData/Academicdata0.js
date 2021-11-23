@@ -51,7 +51,7 @@ function Academicdata() {
         (header) =>
           header.COLUMN_NAME != "id" && header.COLUMN_NAME != "roll_no"
       );
-      console.log(filtered_data);
+      // console.log(filtered_data);
       setData(filtered_data);
     });
   });
