@@ -41,7 +41,7 @@ import TableRow5 from "components/Tables/TableRow/TableRow5";
 import TableRow6 from "components/Tables/TableRow/TableRow6";
 import TableRow7 from "components/Tables/TableRow/TableRow7";
 
-var resul;
+var server_URL = "http://localhost:5000/";
 
 function ProfessionalDevelopmentData0() {
   function substudinter() {
@@ -162,6 +162,25 @@ function ProfessionalDevelopmentData0() {
         }
       });
   }
+  let params = new URLSearchParams();
+  params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+  useEffect(async () => {
+    axios
+      .all([
+        // axios.post(server_URL + "ExtraClubStudentDisplay", params),// data1
+        // axios.post(server_URL + "ExtraOutreachStudentDisplay", params), //data2
+        // axios.post(server_URL + "ExtraSportsStudentDisplay", params), //data3
+        // axios.post(server_URL + "ExtraCulturalStudentDisplay", params), // data4
+      ])
+      .then(
+        axios.spread((data1, data2, data3, data4) => {
+          setCdata(data1.data);
+          setp1data(data2.data);
+          setSdata(data3.data);
+          setFdata(data4.data);
+        })
+      );
+  }, []);
 
   const textColor = useColorModeValue("gray.700", "white");
 
