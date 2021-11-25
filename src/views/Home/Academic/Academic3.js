@@ -37,7 +37,7 @@ function Academic() {
   let params = new URLSearchParams();
 
   useEffect(async () => {
-    axios.get(server_URL + "Academic").then((items) => {
+    axios.post(server_URL + "AcademicsDataofficial").then((items) => {
       setData(items.data);
     });
   });

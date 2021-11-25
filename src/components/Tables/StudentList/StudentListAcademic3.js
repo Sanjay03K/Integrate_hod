@@ -64,6 +64,11 @@ function StudentListAcademic(props) {
       </Td>
       <Td>
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+          {dept}
+        </Text>
+      </Td>
+      <Td>
+        <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {batch}
         </Text>
       </Td>
