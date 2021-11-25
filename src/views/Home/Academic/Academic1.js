@@ -18,6 +18,8 @@ import {
   InputGroup,
   InputLeftElement,
   SimpleGrid,
+  useDisclosure,
+  Collapse,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
@@ -36,15 +38,33 @@ function Academic() {
   params.append("dept", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.get(server_URL + "Academic").then((items) => {
+    axios.post(server_URL + "Academic", params).then((items) => {
       setData(items.data);
     });
   });
+
+  let onFileChange = (event) => {
+    console.log(event.target.files);
+    onFileUpload(event.target.files[0]);
+  };
+
+  // On file upload (click the upload button)
+  let onFileUpload = (file) => {
+    const formData = new FormData();
+    formData.append("excel", file);
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
+    axios.post("http://localhost:5000/upload", formData, config);
+  };
 
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -103,15 +123,26 @@ function Academic() {
             value={searchTerm}
           />
         </InputGroup>
-        <Button
-          minWidth="fit-content"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-        >
-          Download Report
-        </Button>
+        <Flex>
+          <Button
+            minWidth="fit-content"
+            onClick={onToggle}
+            colorScheme="orange"
+            variant="solid"
+          >
+            Bulk Upload
+          </Button>
+          <Button
+            minWidth="fit-content"
+            onClick="m"
+            colorScheme="orange"
+            alignSelf="flex-end"
+            variant="solid"
+            marginLeft="75%"
+          >
+            Download Report
+          </Button>
+        </Flex>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
@@ -168,6 +199,21 @@ function Academic() {
           </Table>
         </CardBody>
       </Card>
+      <Collapse in={isOpen} animateOpacity>
+        <Card
+          p="40px"
+          color="white"
+          mt="4"
+          bg="orange.300"
+          rounded="md"
+          shadow="md"
+        >
+          <Input width="50%" type="file" onChange={onFileChange} />
+          <Button ms="4" marginTop="2" bg="gray.700" width="fit-content">
+            Confirm
+          </Button>
+        </Card>
+      </Collapse>
     </Flex>
   );
 }

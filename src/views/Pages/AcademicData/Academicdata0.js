@@ -55,19 +55,6 @@ function Academicdata() {
       setData(filtered_data);
     });
   });
-
-  function tablecolumn(data) {
-    var simple = data[1].COLUMN_NAME;
-    var para = document.createElement(simple);
-    var node = document.createTextNode(simple);
-    para.append(node);
-    document.getElementById(simple).innerHTML = simple;
-    const element = document.getElementById("roll_no");
-    element.appendChild(para);
-  }
-
-  //tablecolumn(data);
-
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
