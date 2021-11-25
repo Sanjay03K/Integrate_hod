@@ -167,17 +167,35 @@ function ProfessionalDevelopmentData0() {
   useEffect(async () => {
     axios
       .all([
-        // axios.post(server_URL + "ExtraClubStudentDisplay", params),// data1
-        // axios.post(server_URL + "ExtraOutreachStudentDisplay", params), //data2
-        // axios.post(server_URL + "ExtraSportsStudentDisplay", params), //data3
-        // axios.post(server_URL + "ExtraCulturalStudentDisplay", params), // data4
+        axios.post(server_URL + "comp_stud_display", params),
+        axios.post(server_URL + "cour_Stud_display", params),
+        axios.post(server_URL + "finpro_Stud_display", params),
+        axios.post(server_URL + "guest_stud_display", params),
+        axios.post(server_URL + "Industrialv_display", params),
+        axios.post(server_URL + "Inplant_display", params),
+        axios.post(server_URL + "intern_stud_display", params),
+        axios.post(server_URL + "Miniproj_display", params),
+        axios.post(server_URL + "Motivational_display", params),
+        axios.post(server_URL + "placement_display", params),
+        axios.post(server_URL + "publication_display", params),
+        axios.post(server_URL + "webinar_display", params),
+        axios.post(server_URL + "workshop_studisplay", params),  
       ])
       .then(
-        axios.spread((data1, data2, data3, data4) => {
-          setCdata(data1.data);
-          setp1data(data2.data);
-          setSdata(data3.data);
-          setFdata(data4.data);
+        axios.spread((data1, data2, data3, data4, data5,data6, data7, data8, data9, data10, data11, data12, data13) => {
+          setp1data(data1.data);
+          setp2data(data2.data);
+          setp3data(data3.data);
+          setp4data(data4.data);
+          setp5data(data5.data);
+          setp6data(data6.data);
+          setp7data(data7.data);
+          setp8data(data8.data);
+          setp9data(data9.data);
+          setp10data(data10.data);
+          setp11data(data11.data);
+          setp12data(data12.data);
+          setp13data(data13.data);
         })
       );
   }, []);
@@ -228,7 +246,7 @@ function ProfessionalDevelopmentData0() {
   const handleToggle12 = () => setShow12(!show12);
   const handleToggle13 = () => setShow13(!show13);
 
-  const [data, setCdata] = useState([]);
+  
   const [p1data, setp1data] = useState([]);
   const [p2data, setp2data] = useState([]);
   const [p3data, setp3data] = useState([]);
@@ -242,7 +260,7 @@ function ProfessionalDevelopmentData0() {
   const [p11data, setp11data] = useState([]);
   const [p12data, setp12data] = useState([]);
   const [p13data, setp13data] = useState([]);
-  // do work for setdata from backend here
+  
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
