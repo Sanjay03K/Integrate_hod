@@ -41,7 +41,7 @@ import TableRow5 from "components/Tables/TableRow/TableRow5";
 import TableRow6 from "components/Tables/TableRow/TableRow6";
 import TableRow7 from "components/Tables/TableRow/TableRow7";
 
-var server_URL = "http://localhost:5000/";
+var server_URL = "http://localhost:5000/",resul;
 
 function ProfessionalDevelopmentData0() {
   function substudinter() {
