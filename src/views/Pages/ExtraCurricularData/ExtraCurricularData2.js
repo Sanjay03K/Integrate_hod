@@ -131,7 +131,7 @@ function ExtraCurricularData() {
                         row1={item.outreach_activity_name}
                         row2={item.outreach_date}
                         row3={item.outreach_outcome}
-                        row4={item.outreach_credits}
+                        row4={item.credits}
                         row5={item.outreach_verified}
                       />
                     );
@@ -168,7 +168,7 @@ function ExtraCurricularData() {
                         row2={row.representation}
                         row3={row.position_secures}
                         row4={row.date}
-                        row5={row.date}
+                        row5={row.credits}
                         row6={row.verified}
                       />
                     );
@@ -203,7 +203,7 @@ function ExtraCurricularData() {
                         row1={row.event_name}
                         row2={row.date}
                         row3={row.position_secures}
-                        row4={row.date}
+                        row4={row.credits}
                         row5={row.verified}
                       />
                     );

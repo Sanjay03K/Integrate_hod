@@ -28,17 +28,20 @@ import CardBody from "components/Card/CardBody.js";
 import StudentListAcademic from "components/Tables/StudentList/StudentListAcademic2";
 
 var server_URL = "http://localhost:5000/";
+var data2 = [];
+
+import { CSVLink } from "react-csv";
 
 function Academic() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTerm1, setSearchTerm1] = useState("");
-
+  const [searchTerm2, setSearchTerm2] = useState("");
   let params = new URLSearchParams();
-  params.append("dept", localStorage.getItem("dept"));
+  params.append("department", localStorage.getItem("dept"));
 
   useEffect(async () => {
-    axios.get(server_URL + "Academic").then((items) => {
+    axios.post(server_URL + "AcademicsDataHOD", params).then((items) => {
       setData(items.data);
     });
   });
@@ -47,6 +50,40 @@ function Academic() {
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
+
+  data2 = data.filter((item) => {
+    if (searchTerm2 == "" && searchTerm == "" && searchTerm1 == "") {
+      return item;
+    } else if (searchTerm2 !== "" && searchTerm1 == "" && searchTerm == "") {
+      if (item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase())) {
+        return item;
+      }
+    } else if (searchTerm2 == "" && searchTerm1 !== "" && searchTerm == "") {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
+        return item;
+      }
+    } else if (searchTerm2 !== "" && searchTerm1 !== "" && searchTerm == "") {
+      if (
+        item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())
+      ) {
+        return item;
+      }
+    } else {
+      if (
+        item.dept.toLowerCase().includes(searchTerm2.toLocaleLowerCase()) &&
+        item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())
+      ) {
+        if (
+          item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+        ) {
+          return item;
+        }
+      }
+    }
+  });
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -58,7 +95,8 @@ function Academic() {
             </Text>
           </Flex>
         </CardBody>
-        <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} gap={5}>
+
+        <SimpleGrid columns={{ sm: 1, md: 3, xl: 3 }} gap={5}>
           <Box>
             <CardHeader mt="1em">
               <Text fontSize="lg" color={textColor} fontWeight="semi">
@@ -109,13 +147,13 @@ function Academic() {
               />
             </InputGroup>
           </Box>
+
           <Box>
             <CardHeader mt="1em">
               <Text fontSize="lg" color={textColor} fontWeight="semi">
                 Search Student
               </Text>
             </CardHeader>
-
             <InputGroup
               bg={inputBg}
               mt="1rem"
@@ -160,24 +198,27 @@ function Academic() {
             </InputGroup>
           </Box>
         </SimpleGrid>
-        <Button
-          minWidth="fit-content"
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-        >
-          Download Report
-        </Button>
+        <Box alignSelf="flex-end">
+          <CSVLink data={data2}>
+            <Button
+              minWidth="fit-content"
+              mt="1em"
+              onClick="m"
+              colorScheme="orange"
+              variant="solid"
+            >
+              Download Report
+            </Button>
+          </CSVLink>
+        </Box>
       </Card>
-      <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+      <Card>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
             Students List
           </Text>
         </CardHeader>
-        <CardBody>
+        <CardBody overflowX={{ sm: "scroll" }}>
           <Table variant="simple" color={textColor} id="dataTable">
             <Thead>
               <Tr my=".8rem" pl="0px" color="gray.400">
@@ -192,10 +233,45 @@ function Academic() {
             <Tbody>
               {data
                 .filter((item) => {
-                  if (searchTerm == "" && searchTerm1 == "") {
+                  if (
+                    searchTerm2 == "" &&
+                    searchTerm == "" &&
+                    searchTerm1 == ""
+                  ) {
                     return item;
-                  } else if (searchTerm1 != "" && searchTerm == "") {
+                  } else if (
+                    searchTerm2 !== "" &&
+                    searchTerm1 == "" &&
+                    searchTerm == ""
+                  ) {
                     if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase())
+                    ) {
+                      return item;
+                    }
+                  } else if (
+                    searchTerm2 == "" &&
+                    searchTerm1 !== "" &&
+                    searchTerm == ""
+                  ) {
+                    if (
+                      item.batch
+                        .toLowerCase()
+                        .includes(searchTerm1.toLocaleLowerCase())
+                    ) {
+                      return item;
+                    }
+                  } else if (
+                    searchTerm2 !== "" &&
+                    searchTerm1 !== "" &&
+                    searchTerm == ""
+                  ) {
+                    if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase()) &&
                       item.batch
                         .toLowerCase()
                         .includes(searchTerm1.toLocaleLowerCase())
@@ -204,6 +280,9 @@ function Academic() {
                     }
                   } else {
                     if (
+                      item.dept
+                        .toLowerCase()
+                        .includes(searchTerm2.toLocaleLowerCase()) &&
                       item.batch
                         .toLowerCase()
                         .includes(searchTerm1.toLocaleLowerCase())
@@ -232,6 +311,7 @@ function Academic() {
                       reg={item.reg_no}
                       batch={item.batch}
                       email={item.licet_email}
+                      dept={item.dept}
                     />
                   );
                 })}

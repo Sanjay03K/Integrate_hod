@@ -28,6 +28,9 @@ import CardBody from "components/Card/CardBody.js";
 import StudentListExtraCurricular from "components/Tables/StudentList/StudentListExtraCurricular2";
 
 var server_URL = "http://localhost:5000/";
+var data2 = [];
+
+import { CSVLink } from "react-csv";
 
 function Extracurricular() {
   const [data, setData] = useState([]);
@@ -48,6 +51,26 @@ function Extracurricular() {
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
+
+  data2 = data.filter((item) => {
+    if (searchTerm == "" && searchTerm1 == "") {
+      return item;
+    } else if (searchTerm1 != "" && searchTerm == "") {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
+        return item;
+      }
+    } else {
+      if (item.batch.toLowerCase().includes(searchTerm1.toLocaleLowerCase())) {
+        if (
+          item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+        ) {
+          return item;
+        }
+      }
+    }
+  });
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -162,16 +185,19 @@ function Extracurricular() {
           </Box>
         </SimpleGrid>
 
-        <Button
-          minWidth="fit-content"
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-        >
-          Download Report
-        </Button>
+        <Box alignSelf="flex-end">
+          <CSVLink data={data2}>
+            <Button
+              minWidth="fit-content"
+              mt="1em"
+              onClick="m"
+              colorScheme="orange"
+              variant="solid"
+            >
+              Download Report
+            </Button>
+          </CSVLink>
+        </Box>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">

@@ -22,6 +22,7 @@ import {
   SimpleGrid,
   useDisclosure,
   Collapse,
+  Box,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
@@ -30,7 +31,10 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import StudentListAcademic from "components/Tables/StudentList/StudentListAcademic1";
 
+var data2 = [];
+
 var server_URL = "http://localhost:5000/";
+import { CSVLink } from "react-csv";
 
 function Academic() {
   const [data, setData] = useState([]);
@@ -67,6 +71,19 @@ function Academic() {
   const mainorange = useColorModeValue("orange.300", "orange.300");
   const searchIconColor = useColorModeValue("gray.700", "gray.200");
   const { isOpen, onToggle } = useDisclosure();
+
+  data2 = data.filter((item) => {
+    if (searchTerm == "") {
+      return item;
+    } else if (
+      item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ) {
+      return item;
+    }
+  });
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px" }}>
@@ -126,23 +143,30 @@ function Academic() {
           />
         </InputGroup>
         <Flex alignSelf="flex-end" marginLeft="75%">
-          <Button
-            me="1em"
-            minWidth="fit-content"
-            onClick={onToggle}
-            colorScheme="orange"
-            variant="solid"
-          >
-            Bulk Upload
-          </Button>
-          <Button
-            minWidth="fit-content"
-            onClick="m"
-            colorScheme="orange"
-            variant="solid"
-          >
-            Download Report
-          </Button>
+          <Box alignSelf="flex-end">
+            <Button
+              me="1em"
+              minWidth="fit-content"
+              onClick={onToggle}
+              colorScheme="orange"
+              variant="solid"
+            >
+              Bulk Upload
+            </Button>
+          </Box>
+          <Box alignSelf="flex-end">
+            <CSVLink data={data2}>
+              <Button
+                minWidth="fit-content"
+                mt="1em"
+                onClick="m"
+                colorScheme="orange"
+                variant="solid"
+              >
+                Download Report
+              </Button>
+            </CSVLink>
+          </Box>
         </Flex>
       </Card>
       <Collapse in={isOpen} animateOpacity>
