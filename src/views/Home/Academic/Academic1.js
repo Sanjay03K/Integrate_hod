@@ -1,3 +1,5 @@
+/** @format */
+
 //Class Advisor Academic
 
 import React, { useState, useEffect } from "react";
@@ -57,7 +59,7 @@ function Academic() {
         "content-type": "multipart/form-data",
       },
     };
-    axios.post("http://localhost:5000/upload", formData, config);
+    axios.post(server_URL + "bulkupload", formData, config);
   };
 
   const textColor = useColorModeValue("gray.700", "white");
@@ -123,8 +125,9 @@ function Academic() {
             value={searchTerm}
           />
         </InputGroup>
-        <Flex>
+        <Flex alignSelf="flex-end" marginLeft="75%">
           <Button
+            me="1em"
             minWidth="fit-content"
             onClick={onToggle}
             colorScheme="orange"
@@ -136,14 +139,28 @@ function Academic() {
             minWidth="fit-content"
             onClick="m"
             colorScheme="orange"
-            alignSelf="flex-end"
             variant="solid"
-            marginLeft="75%"
           >
             Download Report
           </Button>
         </Flex>
       </Card>
+      <Collapse in={isOpen} animateOpacity>
+        <Card color="white" mb="4" bg="orange.300" rounded="md" shadow="md">
+          <Input width="50%" type="file" onChange={onFileChange} />
+          <Button
+            onClick={() => {
+              onToggle();
+            }}
+            ms="4"
+            marginTop="2"
+            bg="gray.700"
+            width="fit-content"
+          >
+            Confirm
+          </Button>
+        </Card>
+      </Collapse>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
           <Text fontSize="xl" color={textColor} fontWeight="bold">
@@ -199,21 +216,6 @@ function Academic() {
           </Table>
         </CardBody>
       </Card>
-      <Collapse in={isOpen} animateOpacity>
-        <Card
-          p="40px"
-          color="white"
-          mt="4"
-          bg="orange.300"
-          rounded="md"
-          shadow="md"
-        >
-          <Input width="50%" type="file" onChange={onFileChange} />
-          <Button ms="4" marginTop="2" bg="gray.700" width="fit-content">
-            Confirm
-          </Button>
-        </Card>
-      </Collapse>
     </Flex>
   );
 }
