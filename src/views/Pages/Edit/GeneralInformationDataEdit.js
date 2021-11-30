@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Chakra imports
@@ -4463,7 +4465,7 @@ function GeneralInformationDataEdit(props) {
             <Button
               onClick={() => {
                 window.location.href =
-                  URl + "Class-Advisor#/admin1/GeneralInformationdata";
+                  URL + "Class-Advisor#/admin1/GeneralInformationdata";
               }}
               colorScheme="orange"
               variant="solid"

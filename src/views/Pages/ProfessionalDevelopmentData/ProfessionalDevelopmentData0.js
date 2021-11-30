@@ -41,128 +41,83 @@ import TableRow5 from "components/Tables/TableRow/TableRow5";
 import TableRow6 from "components/Tables/TableRow/TableRow6";
 import TableRow7 from "components/Tables/TableRow/TableRow7";
 
-var server_URL = "http://localhost:5000/",resul;
+var server_URL = "http://localhost:5000/";
+var resul;
 
 function ProfessionalDevelopmentData0() {
-  function substudinter() {
+  function insertindustry() {
     let params = new URLSearchParams();
-    params.append("Industry", document.getElementById("IndustryID").value);
-    params.append("DateYear", document.getElementById("Date_and_year").value);
-    params.append("Outcome", document.getElementById("OutcomeID").value);
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Industry", document.getElementById("Industry1").value);
+    params.append("DateYear", document.getElementById("DY1").value);
+    params.append("Outcome", document.getElementById("O1").value);
     params.append("status", "Pending");
-
-    params.append("Industry", document.getElementById("IndustryID2").value);
-    params.append("DateYear", document.getElementById("Date_and_year2").value);
-    params.append("Outcome", document.getElementById("OutcomeID2").value);
-    params.append("status", "Pending");
-
-    params.append("Topic", document.getElementById("Topic").value);
-    params.append("DateYear", document.getElementById("Date_and_year3").value);
-    params.append(
-      "Resource Person",
-      document.getElementById("Resource_perason").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID3").value);
-    params.append("status", "Pending");
-
-    params.append("Topic", document.getElementById("Topic2").value);
-    params.append("DateYear", document.getElementById("Date_and_year4").value);
-    params.append(
-      "Resource Person",
-      document.getElementById("Resource_perason2").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID4").value);
-    params.append("status", "Pending");
-
-    params.append("Company", document.getElementById("Company").value);
-    params.append("Duration", document.getElementById("Duration").value);
-    params.append("Date", document.getElementById("Date").value);
-    params.append("Reference", document.getElementById("Reference").value);
-    params.append("status", "Pending");
-
-    params.append("Course Name", document.getElementById("Course_name").value);
-    params.append("Platform", document.getElementById("Platform").value);
-    params.append(
-      "Date and Year",
-      document.getElementById("Date_and_year5").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID5").value);
-    params.append("status", "Pending");
-
-    params.append("Topic", document.getElementById("Topic3").value);
-    params.append("DateYear", document.getElementById("Date_and_year6").value);
-    params.append(
-      "Resource Person",
-      document.getElementById("Resource_perason3").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID6").value);
-    params.append("status", "Pending");
-
-    params.append("Topic", document.getElementById("Topic4").value);
-    params.append("DateYear", document.getElementById("Date_and_year7").value);
-    params.append(
-      "Resource Person",
-      document.getElementById("Resource_perason4").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID7").value);
-    params.append("status", "Pending");
-
-    params.append("Name", document.getElementById("Name").value);
-    params.append("Type of Event", document.getElementById("Type").value);
-    params.append(
-      "Date and Year",
-      document.getElementById("Date_and_year8").value
-    );
-    params.append(
-      "Position Secured",
-      document.getElementById("Position").value
-    );
-    params.append("status", "Pending");
-
-    params.append("Aptitude", document.getElementById("Aptitude").value);
-    params.append("Soft Skills", document.getElementById("Soft_skill").value);
-    params.append("Reasoning", document.getElementById("Reasoning").value);
-    params.append(
-      "Technical skill",
-      document.getElementById("Tech_skill").value
-    );
-    params.append("status", "Pending");
-
-    params.append("Title", document.getElementById("Title").value);
-    params.append("Objective", document.getElementById("Objective").value);
-    params.append("Duration", document.getElementById("Duration2").value);
-    params.append("Outcome", document.getElementById("OutcomeID8").value);
-    params.append("status", "Pending");
-
-    params.append("Topic", document.getElementById("Topic4").value);
-    params.append("DateYear", document.getElementById("Date_and_year9").value);
-    params.append(
-      "Resource Person",
-      document.getElementById("Resource_perason5").value
-    );
-    params.append("Outcome", document.getElementById("OutcomeID9").value);
-    params.append("status", "Pending");
-
-    params.append("Conference", document.getElementById("Conference").value);
-    params.append("Name", document.getElementById("Name2").value);
-    params.append("Title", document.getElementById("Title2").value);
-    params.append("Impact factor", document.getElementById("Impact").value);
-    params.append("Indexed in", document.getElementById("Indexed").value);
-    params.append("status", "Pending");
-
-    axios
-      .post("http://localhost:5000/insertstudinter", params)
-      .then((items) => {
-        if (items.data == "Inserted") {
-          resul = "Sucessfully Added!!";
-          onOpen(resul);
-        } else if (items.data == "NotInserted") {
-          resul = "Error Occured!!";
-          onOpen(resul);
-        }
-      });
+    axios.post(server_URL + "Industrialv_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
   }
-  let params = new URLSearchParams();
+  function insertinplant() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Industry", document.getElementById("Industry2").value);
+    params.append("DateYear", document.getElementById("DY2").value);
+    params.append("Outcome", document.getElementById("O2").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "Inplant_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+  function insertlecture() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Topic", document.getElementById("Topic").value);
+    params.append("DateYear", document.getElementById("DY3").value);
+    params.append("Resource", document.getElementById("Resource").value);
+    params.append("Outcome", document.getElementById("O3").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "guest_stud_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertlecture() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Topic", document.getElementById("Topic").value);
+    params.append("DateYear", document.getElementById("DY3").value);
+    params.append("Resource", document.getElementById("Resource").value);
+    params.append("Outcome", document.getElementById("O3").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "guest_stud_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  /* let params = new URLSearchParams();
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
   useEffect(async () => {
     axios
@@ -179,26 +134,42 @@ function ProfessionalDevelopmentData0() {
         axios.post(server_URL + "placement_display", params),
         axios.post(server_URL + "publication_display", params),
         axios.post(server_URL + "webinar_display", params),
-        axios.post(server_URL + "workshop_studisplay", params),  
+        axios.post(server_URL + "workshop_studisplay", params),
       ])
       .then(
-        axios.spread((data1, data2, data3, data4, data5,data6, data7, data8, data9, data10, data11, data12, data13) => {
-          setp1data(data1.data);
-          setp2data(data2.data);
-          setp3data(data3.data);
-          setp4data(data4.data);
-          setp5data(data5.data);
-          setp6data(data6.data);
-          setp7data(data7.data);
-          setp8data(data8.data);
-          setp9data(data9.data);
-          setp10data(data10.data);
-          setp11data(data11.data);
-          setp12data(data12.data);
-          setp13data(data13.data);
-        })
+        axios.spread(
+          (
+            data1,
+            data2,
+            data3,
+            data4,
+            data5,
+            data6,
+            data7,
+            data8,
+            data9,
+            data10,
+            data11,
+            data12,
+            data13
+          ) => {
+            setp1data(data1.data);
+            setp2data(data2.data);
+            setp3data(data3.data);
+            setp4data(data4.data);
+            setp5data(data5.data);
+            setp6data(data6.data);
+            setp7data(data7.data);
+            setp8data(data8.data);
+            setp9data(data9.data);
+            setp10data(data10.data);
+            setp11data(data11.data);
+            setp12data(data12.data);
+            setp13data(data13.data);
+          }
+        )
       );
-  }, []);
+  }, []); */
 
   const textColor = useColorModeValue("gray.700", "white");
 
@@ -246,7 +217,6 @@ function ProfessionalDevelopmentData0() {
   const handleToggle12 = () => setShow12(!show12);
   const handleToggle13 = () => setShow13(!show13);
 
-  
   const [p1data, setp1data] = useState([]);
   const [p2data, setp2data] = useState([]);
   const [p3data, setp3data] = useState([]);
@@ -260,10 +230,48 @@ function ProfessionalDevelopmentData0() {
   const [p11data, setp11data] = useState([]);
   const [p12data, setp12data] = useState([]);
   const [p13data, setp13data] = useState([]);
-  
+
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Button
+          ms="auto"
+          me="1em"
+          bg="orange.400"
+          width="fit-content"
+          height="2em"
+          onClick={() => {
+            setDrop1(!drop1),
+              setDrop2(!drop2),
+              setDrop3(!drop3),
+              setDrop4(!drop4),
+              setDrop5(!drop5),
+              setDrop6(!drop6),
+              setDrop7(!drop7),
+              setDrop8(!drop8),
+              setDrop9(!drop9),
+              setDrop10(!drop10),
+              setDrop11(!drop11),
+              setDrop12(!drop12),
+              setDrop13(!drop13);
+          }}
+        >
+          {drop1 ||
+          drop2 ||
+          drop3 ||
+          drop4 ||
+          drop5 ||
+          drop6 ||
+          drop7 ||
+          drop8 ||
+          drop9 ||
+          drop10 ||
+          drop11 ||
+          drop12 ||
+          drop13
+            ? "Hide All"
+            : "Show All"}
+        </Button>
         <Card>
           <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
@@ -323,7 +331,7 @@ function ProfessionalDevelopmentData0() {
                 </Thead>
                 <Tbody>
                   <Tr>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -335,11 +343,11 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Industry"
-                          id="IndustryID2"
+                          id="Industry1"
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -351,12 +359,12 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year2"
+                          id="DY1"
                         />
                       </Flex>
                     </Td>
 
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -368,7 +376,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="OutcomeID2"
+                          id="O1"
                         />
                       </Flex>
                     </Td>
@@ -381,7 +389,7 @@ function ProfessionalDevelopmentData0() {
                       >
                         <SlideFade in={show}>
                           <Button
-                            onClick={substudinter}
+                            onClick={insertindustry}
                             bg="orange.300"
                             width="fit-content"
                           >
@@ -504,7 +512,7 @@ function ProfessionalDevelopmentData0() {
                 </Thead>
                 <Tbody>
                   <Tr>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -516,11 +524,11 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Industry"
-                          id="IndustryID"
+                          id="Industry2"
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -532,12 +540,12 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year"
+                          id="DY2"
                         />
                       </Flex>
                     </Td>
 
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -549,7 +557,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="OutcomeID"
+                          id="O2"
                         />
                       </Flex>
                     </Td>
@@ -557,7 +565,7 @@ function ProfessionalDevelopmentData0() {
                       <SlideFade in={show2}>
                         <SlideFade in={show2}>
                           <Button
-                            onClick={substudinter}
+                            onClick={insertinplant}
                             bg="orange.300"
                             width="fit-content"
                           >
@@ -711,7 +719,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year3"
+                          id="DY3"
                         />
                       </Flex>
                     </Td>
@@ -727,7 +735,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Resource Person"
-                          id="OutcomeID3"
+                          id="Resource"
                         />
                       </Flex>
                     </Td>
@@ -743,14 +751,14 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="Topic"
+                          id="O3"
                         />
                       </Flex>
                     </Td>
                     <Td>
                       <SlideFade in={show3}>
                         <Button
-                          onClick={substudinter}
+                          onClick={insertlecture}
                           bg="orange.300"
                           width="fit-content"
                         >
@@ -941,11 +949,7 @@ function ProfessionalDevelopmentData0() {
                     </Td>
                     <Td>
                       <SlideFade in={show4}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -1134,11 +1138,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show5}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -1326,11 +1326,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show6}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -1519,11 +1515,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show7}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -1710,11 +1702,7 @@ function ProfessionalDevelopmentData0() {
                     </Td>
                     <Td>
                       <SlideFade in={show8}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -1906,11 +1894,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show9}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -2098,11 +2082,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show10}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -2290,11 +2270,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show11}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -2354,7 +2330,7 @@ function ProfessionalDevelopmentData0() {
         </Collapse>
 
         <Card>
-          <CardHeader p="6px 0px 22px 0px">
+          <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
               Final Project
             </Text>
@@ -2482,11 +2458,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show12}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
@@ -2693,11 +2665,7 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show13}>
-                        <Button
-                          onClick={substudinter}
-                          bg="orange.300"
-                          width="fit-content"
-                        >
+                        <Button bg="orange.300" width="fit-content">
                           Submit
                         </Button>
                       </SlideFade>
