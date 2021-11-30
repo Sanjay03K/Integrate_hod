@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor  Placement TableRow
 import {
     Button,
     Flex,
@@ -24,25 +24,26 @@ import {
   function ProfessionalDevelopmentTableRow(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
-    const { id, row1, row2, row3, row4, row5 } = props;
+    const { id, row1, row2, row3, row4, row5, row6 } = props;
     const textColor = useColorModeValue("gray.700", "white");
   
     function funedit() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("Industry", document.getElementById("IndustryID").value);
-      params.append("DateYear", document.getElementById("Date_and_year").value);
-      params.append("Outcome", document.getElementById("OutcomeID").value);
-      params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      params.append("aptitude", document.getElementById("APT").value);
+      params.append("soft_skills", document.getElementById("SOFTSKILL").value);
+      params.append("reasoning", document.getElementById("REASON").value);
+      params.append("technical_training", document.getElementById("TECHT").value);
+      params.append("credits", document.getElementById("CRED4").value);
+      axios.post(server_URL + "placement_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "placement_delete", params);
     }
   
     function funverify() {
@@ -50,7 +51,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "placement_verify", params);
     }
   
     return (
@@ -79,9 +80,14 @@ import {
             <Flex direction="column">{row4}</Flex>
           </Flex>
         </Td>
-        <Td minWidth={{ sm: "5em" }}>
+        <Td minWidth={{ sm: "10em" }}>
           <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
             <Flex direction="column">{row5}</Flex>
+          </Flex>
+        </Td>
+        <Td minWidth={{ sm: "5em" }}>
+          <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+            <Flex direction="column">{row6}</Flex>
           </Flex>
         </Td>
         
@@ -102,7 +108,7 @@ import {
               <ModalBody>
                 <Tr>
                   <Td>
-                    <Text m="1em">Name of the Industry</Text>
+                    <Text m="1em">Aptitude</Text>
                   </Td>
                   <Td>
                     <Input
@@ -111,14 +117,14 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row1}
-                      id="IndustryID"
+                      id="APT"
                     />
                   </Td>
                 </Tr>
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Soft Skills</Text>
                   </Td>
   
                   <Td>
@@ -128,13 +134,13 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row2}
-                      id="Date_and_year"
+                      id="SOFTSKILL"
                     />
                   </Td>
                 </Tr>
                 <Tr>
                   <Td>
-                    <Text m="1em">Outcome</Text>
+                    <Text m="1em">Reasoning</Text>
                   </Td>
                   <Td>
                     <Input
@@ -143,7 +149,22 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row3}
-                      id="OutcomeID"
+                      id="REASON"
+                    />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>
+                    <Text m="1em">Technical Training</Text>
+                  </Td>
+                  <Td>
+                    <Input
+                      minWidth="20em"
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      defaultValue={row4}
+                      id="TECHT"
                     />
                   </Td>
                 </Tr>
@@ -158,7 +179,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row4}
-                      id="credits"
+                      id="CRED4"
                     />
                   </Td>
                 </Tr>

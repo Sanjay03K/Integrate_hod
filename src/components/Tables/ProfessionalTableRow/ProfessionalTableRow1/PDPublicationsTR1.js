@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor PF Publications TableRow
 import {
     Button,
     Flex,
@@ -24,25 +24,27 @@ import {
   function ProfessionalDevelopmentTableRow(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
-    const { id, row1, row2, row3, row4, row5 } = props;
+    const { id, row1, row2, row3, row4, row5 ,row6, row7 } = props;
     const textColor = useColorModeValue("gray.700", "white");
   
     function funedit() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("Industry", document.getElementById("IndustryID").value);
-      params.append("DateYear", document.getElementById("Date_and_year").value);
-      params.append("Outcome", document.getElementById("OutcomeID").value);
-      params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      params.append("conf_or_journal", document.getElementById("CONJOU").value);
+      params.append("name", document.getElementById("NAME").value);
+      params.append("title", document.getElementById("TITLE").value);
+      params.append("impact_factor", document.getElementById("IMPFACT").value);
+      params.append("indexed_in", document.getElementById("INDIN").value);
+      params.append("credits", document.getElementById("CRED5").value);
+      axios.post(server_URL + "publication_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "publication_delete", params);
     }
   
     function funverify() {
@@ -50,7 +52,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "publication_verify", params);
     }
   
     return (
@@ -79,9 +81,19 @@ import {
             <Flex direction="column">{row4}</Flex>
           </Flex>
         </Td>
-        <Td minWidth={{ sm: "5em" }}>
+        <Td minWidth={{ sm: "10em" }}>
           <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
             <Flex direction="column">{row5}</Flex>
+          </Flex>
+        </Td>
+        <Td minWidth={{ sm: "10em" }}>
+          <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+            <Flex direction="column">{row6}</Flex>
+          </Flex>
+        </Td>
+        <Td minWidth={{ sm: "5em" }}>
+          <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+            <Flex direction="column">{row7}</Flex>
           </Flex>
         </Td>
         
@@ -102,7 +114,7 @@ import {
               <ModalBody>
                 <Tr>
                   <Td>
-                    <Text m="1em">Name of the Industry</Text>
+                    <Text m="1em">Conference or Journal</Text>
                   </Td>
                   <Td>
                     <Input
@@ -111,14 +123,14 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row1}
-                      id="IndustryID"
+                      id="CONJOU"
                     />
                   </Td>
                 </Tr>
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Name</Text>
                   </Td>
   
                   <Td>
@@ -128,13 +140,13 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row2}
-                      id="Date_and_year"
+                      id="NAME"
                     />
                   </Td>
                 </Tr>
                 <Tr>
                   <Td>
-                    <Text m="1em">Outcome</Text>
+                    <Text m="1em">Title</Text>
                   </Td>
                   <Td>
                     <Input
@@ -143,7 +155,37 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row3}
-                      id="OutcomeID"
+                      id="TITLE"
+                    />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>
+                    <Text m="1em">Impact Factor</Text>
+                  </Td>
+                  <Td>
+                    <Input
+                      minWidth="20em"
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      defaultValue={row4}
+                      id="IMPFACT"
+                    />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>
+                    <Text m="1em">Indexed In</Text>
+                  </Td>
+                  <Td>
+                    <Input
+                      minWidth="20em"
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      defaultValue={row4}
+                      id="INDIN"
                     />
                   </Td>
                 </Tr>
@@ -158,7 +200,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row4}
-                      id="credits"
+                      id="CRED5"
                     />
                   </Td>
                 </Tr>

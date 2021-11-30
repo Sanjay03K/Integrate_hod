@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor PF Inplant Training TableRow
 import {
     Button,
     Flex,
@@ -31,18 +31,18 @@ import {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("Industry", document.getElementById("IndustryID").value);
-      params.append("DateYear", document.getElementById("Date_and_year").value);
-      params.append("Outcome", document.getElementById("OutcomeID").value);
+      params.append("industry", document.getElementById("IndustryID").value);
+      params.append("date", document.getElementById("Date_and_year").value);
+      params.append("outcome", document.getElementById("OutcomeID").value);
       params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      axios.post(server_URL + "Inplant_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "Inplant_delete", params);
     }
   
     function funverify() {
@@ -50,7 +50,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "Inplant_verify", params);
     }
   
     return (
@@ -118,7 +118,7 @@ import {
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Date</Text>
                   </Td>
   
                   <Td>

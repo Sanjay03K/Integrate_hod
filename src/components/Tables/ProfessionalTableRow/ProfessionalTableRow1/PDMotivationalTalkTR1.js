@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor PF Motivational Talk TableRow
 import {
     Button,
     Flex,
@@ -31,18 +31,18 @@ import {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("Industry", document.getElementById("IndustryID").value);
-      params.append("DateYear", document.getElementById("Date_and_year").value);
-      params.append("Outcome", document.getElementById("OutcomeID").value);
-      params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      params.append("topic", document.getElementById("TOPIC").value);
+      params.append("resource_person", document.getElementById("RESPER").value);
+      params.append("outcome", document.getElementById("OutcomeID3").value);
+      params.append("credits", document.getElementById("CRED3").value);
+      axios.post(server_URL + "Motivational_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "Motivational_delete", params);
     }
   
     function funverify() {
@@ -50,7 +50,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "Motivational_verify", params);
     }
   
     return (
@@ -102,7 +102,7 @@ import {
               <ModalBody>
                 <Tr>
                   <Td>
-                    <Text m="1em">Name of the Industry</Text>
+                    <Text m="1em">Topic</Text>
                   </Td>
                   <Td>
                     <Input
@@ -111,14 +111,14 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row1}
-                      id="IndustryID"
+                      id="TOPIC"
                     />
                   </Td>
                 </Tr>
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Resource Person</Text>
                   </Td>
   
                   <Td>
@@ -128,7 +128,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row2}
-                      id="Date_and_year"
+                      id="RESPER"
                     />
                   </Td>
                 </Tr>
@@ -143,7 +143,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row3}
-                      id="OutcomeID"
+                      id="OutcomeID3"
                     />
                   </Td>
                 </Tr>
@@ -158,7 +158,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row4}
-                      id="credits"
+                      id="CRED3"
                     />
                   </Td>
                 </Tr>

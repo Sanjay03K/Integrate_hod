@@ -17,6 +17,7 @@ import Academicdata2 from "views/Pages/AcademicData/Academicdata2";
 import Academicdata3 from "views/Pages/AcademicData/Academicdata3";
 
 import ProfessionalDevelopmentData1 from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData1";
+import ProfessionalDevelopmentData2 from "views/Pages/ProfessionalDevelopmentData/ProfessionalDevelopmentData2";
 
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
@@ -96,7 +97,11 @@ var dashRoutes = [
     component: ProfessionalDevelopmentData1,
     layout: "/admin1",
   },
-
+  {
+    path: "/ProfessionalDevelopmentData",
+    component: ProfessionalDevelopmentData2,
+    layout: "/admin2",
+  },
   {
     path: "/GeneralInformationdata",
     component: GeneralInformationdata,
