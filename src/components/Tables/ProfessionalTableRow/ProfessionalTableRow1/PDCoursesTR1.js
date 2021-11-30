@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor PD Courses TableRow
 import {
     Button,
     Flex,
@@ -31,18 +31,18 @@ import {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("industry_name", document.getElementById("IndustryID").value);
-      params.append("date", document.getElementById("Date_and_year").value);
+      params.append("course_name", document.getElementById("CourseID").value);
+      params.append("date", document.getElementById("DateID").value);
       params.append("outcome", document.getElementById("OutcomeID").value);
-      params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      params.append("credits", document.getElementById("CreditsID").value);
+      axios.post(server_URL + "PdCour_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "PdCour_delete", params);
     }
   
     function funverify() {
@@ -50,7 +50,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "PdCour_verify", params);
     }
   
     return (
@@ -102,7 +102,7 @@ import {
               <ModalBody>
                 <Tr>
                   <Td>
-                    <Text m="1em">Name of the Industry</Text>
+                    <Text m="1em">Name of the Course</Text>
                   </Td>
                   <Td>
                     <Input
@@ -111,14 +111,14 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row1}
-                      id="IndustryID"
+                      id="CourseID"
                     />
                   </Td>
                 </Tr>
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Date</Text>
                   </Td>
   
                   <Td>
@@ -128,7 +128,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row2}
-                      id="Date_and_year"
+                      id="DateID"
                     />
                   </Td>
                 </Tr>
@@ -158,7 +158,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row4}
-                      id="credits"
+                      id="CreditsID"
                     />
                   </Td>
                 </Tr>
