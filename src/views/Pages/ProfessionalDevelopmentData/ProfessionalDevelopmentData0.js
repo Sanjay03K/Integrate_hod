@@ -98,15 +98,15 @@ function ProfessionalDevelopmentData0() {
     });
   }
 
-  function insertlecture() {
+  function insertmotivation() {
     let params = new URLSearchParams();
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
-    params.append("Topic", document.getElementById("Topic").value);
-    params.append("DateYear", document.getElementById("DY3").value);
-    params.append("Resource", document.getElementById("Resource").value);
-    params.append("Outcome", document.getElementById("O3").value);
+    params.append("Topic", document.getElementById("Topic4").value);
+    params.append("DateYear", document.getElementById("DY4").value);
+    params.append("Resource", document.getElementById("Resource4").value);
+    params.append("Outcome", document.getElementById("O4").value);
     params.append("status", "Pending");
-    axios.post(server_URL + "guest_stud_insert", params).then((items) => {
+    axios.post(server_URL + "Motivational_insert", params).then((items) => {
       if (items.data == "Inserted") {
         resul = "Sucessfully Added!!";
         onOpen(resul);
@@ -117,6 +117,135 @@ function ProfessionalDevelopmentData0() {
     });
   }
 
+  function insertintern() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Company", document.getElementById("Company5").value);
+    params.append("DateYear", document.getElementById("DY5").value);
+    params.append("Duration", document.getElementById("Duration5").value);
+    params.append("Reference", document.getElementById("Reference5").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "intern_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertvalue() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Course", document.getElementById("Course6").value);
+    params.append("DateYear", document.getElementById("DY6").value);
+    params.append("Outcome", document.getElementById("O6").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "Cour_Stud_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertworkshop() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Topic", document.getElementById("Topic7").value);
+    params.append("DateYear", document.getElementById("DY7").value);
+    params.append("Resource", document.getElementById("Resource7").value);
+    params.append("Outcome", document.getElementById("O7").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "workshop_stuinsert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertwebinar() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Topic", document.getElementById("Topic8").value);
+    params.append("DateYear", document.getElementById("DY8").value);
+    params.append("Resource", document.getElementById("Resource8").value);
+    params.append("Outcome", document.getElementById("O8").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "webinar_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertcompetition() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Name", document.getElementById("Name9").value);
+    params.append("Competition", document.getElementById("Competition9").value);
+    params.append("DateYear", document.getElementById("DY9").value);
+    params.append("Position", document.getElementById("Position9").value);
+    params.append("status", "Pending");
+    axios.post(server_URL + "comp_Stud_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertplacement() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Aptitude", document.getElementById("Aptitude10").value);
+    params.append("Soft", document.getElementById("Soft10").value);
+    params.append("Reasoning", document.getElementById("Reasoning10").value);
+    params.append("Technical", document.getElementById("Technical10").value);
+    axios.post(server_URL + "placement_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
+
+  function insertmini() {
+    let params = new URLSearchParams();
+    params.append("StudentDetails", localStorage.getItem("StudentRoll"));
+    params.append("Aptitude", document.getElementById("Aptitude10").value);
+    params.append("Soft", document.getElementById("Soft10").value);
+    params.append("Reasoning", document.getElementById("Reasoning10").value);
+    params.append("Technical", document.getElementById("Technical10").value);
+    axios.post(server_URL + "placement_insert", params).then((items) => {
+      if (items.data == "Inserted") {
+        resul = "Sucessfully Added!!";
+        onOpen(resul);
+      } else if (items.data == "NotInserted") {
+        resul = "Error Occured!!";
+        onOpen(resul);
+      }
+    });
+  }
   /* let params = new URLSearchParams();
   params.append("StudentDetails", localStorage.getItem("StudentRoll"));
   useEffect(async () => {
@@ -894,7 +1023,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Topic"
-                          id="Topic"
+                          id="Topic4"
                         />
                       </Flex>
                     </Td>
@@ -910,7 +1039,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year3"
+                          id="DY4"
                         />
                       </Flex>
                     </Td>
@@ -927,7 +1056,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Resource Person"
-                          id="OutcomeID3"
+                          id="Resource4"
                         />
                       </Flex>
                     </Td>
@@ -943,13 +1072,17 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="Topic"
+                          id="O4"
                         />
                       </Flex>
                     </Td>
                     <Td>
                       <SlideFade in={show4}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertmotivation}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -1082,7 +1215,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter company"
-                          id="Topic"
+                          id="Company5"
                         />
                       </Flex>
                     </Td>
@@ -1098,7 +1231,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Date and Year"
-                          id="Date_and_year3"
+                          id="DY5"
                         />
                       </Flex>
                     </Td>
@@ -1115,7 +1248,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Duration in months"
-                          id="OutcomeID3"
+                          id="Duration5"
                         />
                       </Flex>
                     </Td>
@@ -1131,14 +1264,18 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Reference"
-                          id="Topic"
+                          id="Reference5"
                         />
                       </Flex>
                     </Td>
 
                     <Td>
                       <SlideFade in={show5}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertintern}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -1219,7 +1356,6 @@ function ProfessionalDevelopmentData0() {
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Course Name</Th>
                     <Th color="gray.400">Date and Year</Th>
-                    <Th color="gray.400">Platform</Th>
                     <Th color="gray.400">Outcome</Th>
                     <Th color="gray.400">Credits</Th>
                     <Th color="gray.400">Verify Status</Th>
@@ -1252,7 +1388,6 @@ function ProfessionalDevelopmentData0() {
                   <Tr>
                     <Th color="gray.400">Course Name</Th>
                     <Th color="gray.400">Date and Year</Th>
-                    <Th color="gray.400">Platform</Th>
                     <Th color="gray.400">Outcome</Th>
                   </Tr>
                 </Thead>
@@ -1270,7 +1405,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Course Name"
-                          id="Topic"
+                          id="Course6"
                         />
                       </Flex>
                     </Td>
@@ -1286,27 +1421,11 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Date and Year"
-                          id="Date_and_year3"
+                          id="DY6"
                         />
                       </Flex>
                     </Td>
 
-                    <Td minWidth={{ sm: "14em" }}>
-                      <Flex
-                        align="center"
-                        py=".8rem"
-                        minWidth="100%"
-                        flexWrap="nowrap"
-                      >
-                        <Input
-                          borderRadius="5px"
-                          fontSize="sm"
-                          type="text"
-                          placeholder="Enter Platform"
-                          id="OutcomeID3"
-                        />
-                      </Flex>
-                    </Td>
                     <Td minWidth={{ sm: "14em" }}>
                       <Flex
                         align="center"
@@ -1319,14 +1438,18 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Outcome"
-                          id="Topic"
+                          id="O6"
                         />
                       </Flex>
                     </Td>
 
                     <Td>
                       <SlideFade in={show6}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertvalue}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -1459,7 +1582,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Topic"
-                          id="Topic"
+                          id="Topic7"
                         />
                       </Flex>
                     </Td>
@@ -1475,7 +1598,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year3"
+                          id="DY7"
                         />
                       </Flex>
                     </Td>
@@ -1492,7 +1615,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Resource Person"
-                          id="OutcomeID3"
+                          id="Resource7"
                         />
                       </Flex>
                     </Td>
@@ -1508,14 +1631,18 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="Topic"
+                          id="O7"
                         />
                       </Flex>
                     </Td>
 
                     <Td>
                       <SlideFade in={show7}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertworkshop}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -1647,7 +1774,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Topic"
-                          id="Topic"
+                          id="Topic8"
                         />
                       </Flex>
                     </Td>
@@ -1663,7 +1790,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date and Year"
-                          id="Date_and_year3"
+                          id="DY8"
                         />
                       </Flex>
                     </Td>
@@ -1680,7 +1807,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Resource Person"
-                          id="OutcomeID3"
+                          id="Resource8"
                         />
                       </Flex>
                     </Td>
@@ -1696,13 +1823,17 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Outcome"
-                          id="Topic"
+                          id="O8"
                         />
                       </Flex>
                     </Td>
                     <Td>
                       <SlideFade in={show8}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertwebinar}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -1838,7 +1969,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Name"
-                          id="Topic"
+                          id="Name9"
                         />
                       </Flex>
                     </Td>
@@ -1854,7 +1985,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Type Of Competition"
-                          id="type_Of_Competition"
+                          id="Competition9"
                         />
                       </Flex>
                     </Td>
@@ -1871,7 +2002,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="date"
                           placeholder="Enter Date"
-                          id="Date_and_year3"
+                          id="DY9"
                         />
                       </Flex>
                     </Td>
@@ -1887,14 +2018,18 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Enter Position"
-                          id="Position"
+                          id="Position9"
                         />
                       </Flex>
                     </Td>
 
                     <Td>
                       <SlideFade in={show9}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertcompetition}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -2026,7 +2161,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Aptitude"
-                          id="Aptitude"
+                          id="Aptitude10"
                         />
                       </Flex>
                     </Td>
@@ -2042,7 +2177,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Soft Skills"
-                          id="Soft Skill"
+                          id="Soft10"
                         />
                       </Flex>
                     </Td>
@@ -2059,7 +2194,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Reasoning"
-                          id="Reasoning"
+                          id="Reasoning10"
                         />
                       </Flex>
                     </Td>
@@ -2075,14 +2210,18 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Technical Skill"
-                          id="Technical Skill"
+                          id="Technical10"
                         />
                       </Flex>
                     </Td>
 
                     <Td>
                       <SlideFade in={show10}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertplacement}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
@@ -2270,7 +2409,11 @@ function ProfessionalDevelopmentData0() {
 
                     <Td>
                       <SlideFade in={show11}>
-                        <Button bg="orange.300" width="fit-content">
+                        <Button
+                          onClick={insertmini}
+                          bg="orange.300"
+                          width="fit-content"
+                        >
                           Submit
                         </Button>
                       </SlideFade>
