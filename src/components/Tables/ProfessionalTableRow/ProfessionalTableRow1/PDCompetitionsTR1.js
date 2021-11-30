@@ -1,4 +1,4 @@
-//Class Advisor PF Industrial Visit TableRow
+//Class Advisor PD Competitions TableRow
 import {
     Button,
     Flex,
@@ -24,25 +24,26 @@ import {
   function ProfessionalDevelopmentTableRow(props) {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
-    const { id, row1, row2, row3, row4, row5 } = props;
+    const { id, row1, row2, row3, row4, row5, row6 } = props;
     const textColor = useColorModeValue("gray.700", "white");
   
     function funedit() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      params.append("industry_name", document.getElementById("IndustryID").value);
-      params.append("date", document.getElementById("Date_and_year").value);
-      params.append("utcome", document.getElementById("OutcomeID").value);
-      params.append("credits", document.getElementById("credits").value);
-      axios.post(server_URL + "Industrialv_edit", params);
+      params.append("comp_name", document.getElementById("nameID").value);
+      params.append("comp_type", document.getElementById("compID").value);
+      params.append("date", document.getElementById("dateID").value);
+      params.append("position_secured", document.getElementById("psID").value);
+      params.append("credits", document.getElementById("creditsID").value);
+      axios.post(server_URL + "PdComp_edit", params);
     }
   
     function fundelete() {
       let cid = { id };
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
-      axios.post(server_URL + "Industrialv_delete", params);
+      axios.post(server_URL + "PdComp_delete", params);
     }
   
     function funverify() {
@@ -50,7 +51,7 @@ import {
       let params = new URLSearchParams();
       params.append("columnid", cid.id);
       params.append("verify", "Verified");
-      axios.post(server_URL + "Industrialv_verify", params);
+      axios.post(server_URL + "PdComp_verify", params);
     }
   
     return (
@@ -79,9 +80,14 @@ import {
             <Flex direction="column">{row4}</Flex>
           </Flex>
         </Td>
-        <Td minWidth={{ sm: "5em" }}>
+        <Td minWidth={{ sm: "10em" }}>
           <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
             <Flex direction="column">{row5}</Flex>
+          </Flex>
+        </Td>
+        <Td minWidth={{ sm: "5em" }}>
+          <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
+            <Flex direction="column">{row6}</Flex>
           </Flex>
         </Td>
         
@@ -102,7 +108,7 @@ import {
               <ModalBody>
                 <Tr>
                   <Td>
-                    <Text m="1em">Name of the Industry</Text>
+                    <Text m="1em">Name of the Competition</Text>
                   </Td>
                   <Td>
                     <Input
@@ -111,14 +117,30 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row1}
-                      id="IndustryID"
+                      id="nameID"
+                    />
+                  </Td>
+                </Tr>
+
+                <Tr>
+                  <Td>
+                    <Text m="1em">Competition Type</Text>
+                  </Td>
+                  <Td>
+                    <Input
+                      minWidth="20em"
+                      borderRadius="5px"
+                      fontSize="sm"
+                      type="text"
+                      defaultValue={row1}
+                      id="compID"
                     />
                   </Td>
                 </Tr>
                 
                 <Tr>
                   <Td>
-                    <Text m="1em">Date & Year</Text>
+                    <Text m="1em">Date</Text>
                   </Td>
   
                   <Td>
@@ -128,13 +150,13 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row2}
-                      id="Date_and_year"
+                      id="dateID"
                     />
                   </Td>
                 </Tr>
                 <Tr>
                   <Td>
-                    <Text m="1em">Outcome</Text>
+                    <Text m="1em">Position Secured</Text>
                   </Td>
                   <Td>
                     <Input
@@ -143,7 +165,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row3}
-                      id="OutcomeID"
+                      id="psID"
                     />
                   </Td>
                 </Tr>
@@ -158,7 +180,7 @@ import {
                       fontSize="sm"
                       type="text"
                       defaultValue={row4}
-                      id="credits"
+                      id="creditsID"
                     />
                   </Td>
                 </Tr>

@@ -172,6 +172,22 @@ function ExtraCurricularData() {
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
       <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Button
+          ms="auto"
+          me="1em"
+          bg="orange.400"
+          width="fit-content"
+          height="2em"
+          onClick={() => {
+            setDrop1(!drop1),
+              setDrop2(!drop2),
+              setDrop3(!drop3),
+              setDrop4(!drop4);
+          }}
+        >
+          {drop1 || drop2 || drop3 || drop4 ? "Hide All" : "Show All"}
+        </Button>
+
         <Card>
           <CardHeader>
             <Text fontSize="xl" color={textColor} fontWeight="bold">
@@ -428,7 +444,7 @@ function ExtraCurricularData() {
                 </Thead>
                 <Tbody>
                   <Tr>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -444,7 +460,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -459,7 +475,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -802,7 +818,7 @@ function ExtraCurricularData() {
                 </Thead>
                 <Tbody>
                   <Tr>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -818,7 +834,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
@@ -833,7 +849,7 @@ function ExtraCurricularData() {
                         />
                       </Flex>
                     </Td>
-                    <Td minWidth={{ sm: "20em" }}>
+                    <Td minWidth={{ sm: "19em" }}>
                       <Flex
                         align="center"
                         py=".8rem"
