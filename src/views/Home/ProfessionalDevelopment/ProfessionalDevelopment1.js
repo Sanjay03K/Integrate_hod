@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { CSVLink } from "react-csv";
+var data2 = [];
 // Chakra imports
 import {
   Flex,
@@ -17,6 +19,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Box,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 // Custom components
@@ -40,6 +43,19 @@ function ProfessionalDevelopment() {
       console.log(items.data);
     });
   }, []);
+
+  data2 = data.filter((item) => {
+    if (searchTerm == "") {
+      return item;
+    } else if (
+      item.sname.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.roll_no.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.batch.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      item.reg_no.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ) {
+      return item;
+    }
+  });
   const textColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("white", "gray.800");
   const mainorange = useColorModeValue("orange.300", "orange.300");
@@ -101,17 +117,20 @@ function ProfessionalDevelopment() {
             value={searchTerm}
           />
         </InputGroup>
-
-        <Button
-          minWidth="fit-content"
-          mt="1em"
-          onClick="m"
-          colorScheme="orange"
-          alignSelf="flex-end"
-          variant="solid"
-        >
-          Download Report
-        </Button>
+        <Box alignSelf="flex-end">
+          <CSVLink data={data2}>
+            <Button
+              minWidth="fit-content"
+              mt="1em"
+              onClick="m"
+              colorScheme="orange"
+              alignSelf="flex-end"
+              variant="solid"
+            >
+              Download Report
+            </Button>
+        </CSVLink>
+        </Box>
       </Card>
       <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
         <CardHeader p="6px 0px 22px 0px">
