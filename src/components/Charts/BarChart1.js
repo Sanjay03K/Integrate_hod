@@ -31,10 +31,10 @@ let chartOptions = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["2019-2023", "2020-2024"],
-    show: false,
+    categories: ["2019-2023"],
+    show: true,
     labels: {
-      show: false,
+      show: true,
       style: {
         colors: "#fff",
         fontSize: "12px",
@@ -88,9 +88,9 @@ let chartOptions = {
 };
 
 function BarChartPlacement() {
-  const [placement_lst, setplacement] = useState([]);
+  const [intern_lst, setintern] = useState([100]);
 
-  var chartData = { name: "Internship", data: placement_lst };
+  var chartData = { name: "Internship", data: intern_lst };
 
   let params = new URLSearchParams();
   params.append("batch", localStorage.getItem("batch"));
@@ -101,7 +101,8 @@ function BarChartPlacement() {
       // console.log(items);
       // console.log(items.data.placement_lst);
       // console.log(...items.data.placement_lst);
-      setplacement(items.data.placement_lst);
+      setintern(items.data.intern_lst);
+      chartOptions.xaxis.categories = items.data.batches;
     });
   });
 
