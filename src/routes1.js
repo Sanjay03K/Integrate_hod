@@ -60,24 +60,24 @@ var dashRoutes = [
     component: Extracurricular,
     layout: "/admin1",
   },
-  {
-    path: "/ProfessionalDevelopment",
-    name: (
-      <p
-        style={{
-          textAlign: "left",
-          lineHeight: "1.2rem",
-          whiteSpace: "normal",
-          wordWrap: "break-word",
-        }}
-      >
-        Professional Development
-      </p>
-    ),
-    icon: <CreditIcon color="inherit" />,
-    component: ProfessionalDevelopment,
-    layout: "/admin1",
-  },
+  // {
+  //   path: "/ProfessionalDevelopment",
+  //   name: (
+  //     <p
+  //       style={{
+  //         textAlign: "left",
+  //         lineHeight: "1.2rem",
+  //         whiteSpace: "normal",
+  //         wordWrap: "break-word",
+  //       }}
+  //     >
+  //       Professional Development
+  //     </p>
+  //   ),
+  //   icon: <CreditIcon color="inherit" />,
+  //   component: ProfessionalDevelopment,
+  //   layout: "/admin1",
+  // },
   {
     path: "/Academics",
     name: "Academics",
