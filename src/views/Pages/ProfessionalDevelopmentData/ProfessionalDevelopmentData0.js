@@ -232,11 +232,10 @@ function ProfessionalDevelopmentData0() {
   function insertmini() {
     let params = new URLSearchParams();
     params.append("StudentDetails", localStorage.getItem("StudentRoll"));
-    params.append("Aptitude", document.getElementById("Aptitude10").value);
-    params.append("Soft", document.getElementById("Soft10").value);
-    params.append("Reasoning", document.getElementById("Reasoning10").value);
-    params.append("Technical", document.getElementById("Technical10").value);
-    axios.post(server_URL + "placement_insert", params).then((items) => {
+    params.append("Title", document.getElementById("Title11").value);
+    params.append("Objective", document.getElementById("Objective11").value);
+    params.append("Outcome", document.getElementById("O11").value);
+    axios.post(server_URL + "PdMini_Stud_insert", params).then((items) => {
       if (items.data == "Inserted") {
         resul = "Sucessfully Added!!";
         onOpen(resul);
@@ -2302,7 +2301,6 @@ function ProfessionalDevelopmentData0() {
                   <Tr my=".8rem" pl="0px" color="gray.400">
                     <Th color="gray.400">Title</Th>
                     <Th color="gray.400">Objective</Th>
-                    <Th color="gray.400">Duration</Th>
                     <Th color="gray.400">Outcome</Th>
                     <Th color="gray.400">Credits</Th>
                     <Th color="gray.400">Verify Status</Th>
@@ -2335,7 +2333,6 @@ function ProfessionalDevelopmentData0() {
                   <Tr>
                     <Th color="gray.400">Title</Th>
                     <Th color="gray.400">Objective</Th>
-                    <Th color="gray.400">Duration</Th>
                     <Th color="gray.400">Outcome</Th>
                   </Tr>
                 </Thead>
@@ -2353,7 +2350,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Title"
-                          id="Aptitude"
+                          id="Title11"
                         />
                       </Flex>
                     </Td>
@@ -2369,7 +2366,7 @@ function ProfessionalDevelopmentData0() {
                           fontSize="sm"
                           type="text"
                           placeholder="Objective"
-                          id="Soft Skill"
+                          id="Objective11"
                         />
                       </Flex>
                     </Td>
@@ -2385,24 +2382,8 @@ function ProfessionalDevelopmentData0() {
                           borderRadius="5px"
                           fontSize="sm"
                           type="text"
-                          placeholder="Duration"
-                          id="Reasoning"
-                        />
-                      </Flex>
-                    </Td>
-                    <Td minWidth={{ sm: "14em" }}>
-                      <Flex
-                        align="center"
-                        py=".8rem"
-                        minWidth="100%"
-                        flexWrap="nowrap"
-                      >
-                        <Input
-                          borderRadius="5px"
-                          fontSize="sm"
-                          type="text"
                           placeholder="Outcome"
-                          id="Technical Skill"
+                          id="O11"
                         />
                       </Flex>
                     </Td>
