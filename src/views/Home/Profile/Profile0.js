@@ -133,7 +133,7 @@ function Profile() {
       change_pass();
     }
   }
-  var sname, licet_email, roll_no, dept, reg_no, batch, cell;
+  var sname, licet_email, roll_no, dept, reg_no, batch, cell,year;
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Chakra color mode
   const textColor = useColorModeValue("gray.700", "white");
@@ -155,13 +155,17 @@ function Profile() {
     setData(items.data);
   });
   data.map((item) => {
-    (sname = item.sname),
-      (licet_email = item.licet_email),
-      (roll_no = item.roll_no),
-      (dept = item.dept),
-      (reg_no = item.reg_no),
-      (batch = item.batch),
-      (cell = item.contact_no);
+    var now = new Date()
+    var currentYear = parseInt(now.getFullYear());
+    let updated_year = currentYear-parseInt(item.batch.substr(0,4))+1;
+    sname = item.sname;
+    licet_email = item.licet_email;
+    roll_no = item.roll_no;
+    dept = item.dept;
+    reg_no = item.reg_no;
+    batch = item.batch;
+    cell = item.contact_no;
+    year=(updated_year>=4)?"Passed Out":updated_year;
   });
   return (
     <Flex direction="column">
@@ -490,7 +494,7 @@ function Profile() {
           <CardBody px="5px">
             <Flex align="center" mb="18px">
               <Text fontSize="md" color="gray.500" fontWeight="400">
-                II
+                {year}
               </Text>
             </Flex>
           </CardBody>

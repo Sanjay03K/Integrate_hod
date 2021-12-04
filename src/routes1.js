@@ -21,13 +21,13 @@ import {
 
 
 var dashRoutes = [
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: <HomeIcon color="inherit" />,
-    component: Dashboard,
-    layout: "/admin1",
-  },
+  // {
+  //   path: "/dashboard",
+  //   name: "Dashboard",
+  //   icon: <HomeIcon color="inherit" />,
+  //   component: Dashboard,
+  //   layout: "/admin1",
+  // },
   {
     path: "/GeneralInformation",
     name: "General Information",
