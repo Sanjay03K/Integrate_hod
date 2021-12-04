@@ -573,8 +573,8 @@ function ExtraCurricularData() {
             </Button>
           </CardHeader>
 
-          <Collapse mt="1em" in={drop3}>
-            <CardBody overflowX={{ sm: "scroll" }}>
+          <Collapse in={drop3}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">

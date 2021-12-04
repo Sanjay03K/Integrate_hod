@@ -1,4 +1,9 @@
-/*eslint-disable*/
+/**
+ * /*eslint-disable
+ *
+ * @format
+ */
+
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 // chakra imports
 import {
@@ -15,6 +20,7 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
+  Image,
   Menu,
   MenuButton,
   MenuList,
@@ -27,11 +33,12 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import IconBox from "components/Icons/IconBox";
-import { CreativeTimLogo } from "components/Icons/Icons";
+
 import { Separator } from "components/Separator/Separator";
 import PropTypes from "prop-types";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import signInImage from "assets/img/signInImage.png";
 
 // FUNCTIONS
 
@@ -228,8 +235,10 @@ function Sidebar(props) {
         alignItems="center"
         fontSize="11px"
       >
-        <CreativeTimLogo w="32px" h="32px" me="10px" />
-        <Text fontSize="sm" mt="3px">
+        <Box boxSize="50px" me="1em">
+          <Image src={signInImage} alt="LICET Logo" />
+        </Box>
+        <Text fontSize="xl" lineHeight="1.2">
           {logoText}
         </Text>
       </Link>
@@ -446,7 +455,6 @@ export function SidebarResponsive(props) {
         alignItems="center"
         fontSize="11px"
       >
-        <CreativeTimLogo w="32px" h="32px" me="10px" />
         <Text fontSize="sm" mt="3px">
           {logoText}
         </Text>

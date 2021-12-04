@@ -14,8 +14,9 @@ import {
   Thead,
   Tr,
   useColorModeValue,
-  Grid,
-  GridItem,
+  SimpleGrid,
+  Button,
+  Collapse,
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
@@ -25,15 +26,13 @@ import ExtraCurricualarTableRow1 from "components/Tables/ExtraCurricularTableRow
 import ExtraCurricualarTableRow2 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularOutreachTableRow1";
 import ExtraCurricualarTableRow3 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularSportsTableRow1";
 import ExtraCurricualarTableRow4 from "components/Tables/ExtraCurricularTableRow/ExtraCurricularTableRow1/ExtraCurricularCulturalsTableRow1";
-import { IndustrialVist } from "variables/general";
-import { InplantTraining } from "variables/general";
-import { GuestLecture } from "variables/general";
-import { Clubs } from "variables/general";
-import { OutReachActivity } from "variables/general";
-import { SportsAchievements } from "variables/general";
-import { Culturals } from "variables/general";
 
 function ExtraCurricularData() {
+  const [drop1, setDrop1] = useState(false);
+  const [drop2, setDrop2] = useState(false);
+  const [drop3, setDrop3] = useState(false);
+  const [drop4, setDrop4] = useState(false);
+
   const [Cdata, setCdata] = useState([]);
   const [Odata, setOdata] = useState([]);
   const [Sdata, setSdata] = useState([]);
@@ -64,15 +63,39 @@ function ExtraCurricularData() {
 
   return (
     <Flex direction="column" pt={{ base: "120px", md: "65px" }}>
-      <Grid columns={{ sm: 1, md: 2, xl: 2 }} gap={4}>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Clubs
-              </Text>
-            </CardHeader>
-            <CardBody>
+      <SimpleGrid columns={{ sm: 1, md: 1, xl: 1 }} gap={5}>
+        <Button
+          ms="auto"
+          me="1em"
+          bg="orange.400"
+          width="fit-content"
+          height="2em"
+          onClick={() => {
+            setDrop1(!drop1),
+              setDrop2(!drop2),
+              setDrop3(!drop3),
+              setDrop4(!drop4);
+          }}
+        >
+          {drop1 || drop2 || drop3 || drop4 ? "Hide All" : "Show All"}
+        </Button>
+        <Card>
+          <CardHeader>
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Clubs
+            </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop1(!drop1)}
+            >
+              {drop1 ? "Hide" : "Show"}
+            </Button>
+          </CardHeader>
+          <Collapse in={drop1}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
@@ -104,16 +127,26 @@ function ExtraCurricularData() {
                 </Tbody>
               </Table>
             </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Outreach Activity
-              </Text>
-            </CardHeader>
-            <CardBody>
+          </Collapse>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Outreach Activity
+            </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop2(!drop2)}
+            >
+              {drop2 ? "Hide" : "Show"}
+            </Button>
+          </CardHeader>
+          <Collapse in={drop2}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
@@ -143,16 +176,26 @@ function ExtraCurricularData() {
                 </Tbody>
               </Table>
             </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Sports Achievements
-              </Text>
-            </CardHeader>
-            <CardBody>
+          </Collapse>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Sports Achievements
+            </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop3(!drop3)}
+            >
+              {drop3 ? "Hide" : "Show"}
+            </Button>
+          </CardHeader>
+          <Collapse in={drop3}>
+            <CardBody mt="1em" overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
@@ -184,16 +227,26 @@ function ExtraCurricularData() {
                 </Tbody>
               </Table>
             </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem>
-          <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
-            <CardHeader p="6px 0px 22px 0px">
-              <Text fontSize="xl" color={textColor} fontWeight="bold">
-                Culturals
-              </Text>
-            </CardHeader>
-            <CardBody>
+          </Collapse>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <Text fontSize="xl" color={textColor} fontWeight="bold">
+              Culturals
+            </Text>
+            <Button
+              ms="auto"
+              bg="orange.400"
+              width="fit-content"
+              height="2em"
+              onClick={() => setDrop4(!drop4)}
+            >
+              {drop4 ? "Hide" : "Show"}
+            </Button>
+          </CardHeader>
+          <Collapse in={drop4}>
+            <CardBody overflowX={{ sm: "scroll" }}>
               <Table variant="simple" color={textColor}>
                 <Thead>
                   <Tr my=".8rem" pl="0px" color="gray.400">
@@ -223,9 +276,9 @@ function ExtraCurricularData() {
                 </Tbody>
               </Table>
             </CardBody>
-          </Card>
-        </GridItem>
-      </Grid>
+          </Collapse>
+        </Card>
+      </SimpleGrid>
     </Flex>
   );
 }

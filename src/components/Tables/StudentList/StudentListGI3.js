@@ -1,3 +1,5 @@
+/** @format */
+
 //Official - StudentList GeneralInformation
 
 import {
@@ -48,7 +50,7 @@ function GeneralParticularstablerow(props) {
           </Text>
         </Flex>
       </Td>
-      <Td minWidth="17em">
+      <Td minWidth="12em">
         <Flex direction="column">
           <Text fontSize="md" color={textColor} fontWeight="bold">
             {name}
@@ -70,7 +72,7 @@ function GeneralParticularstablerow(props) {
           {batch}
         </Text>
       </Td>
-      <Td minWidth="17em">
+      <Td minWidth="14em">
         <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
           {email}
         </Text>

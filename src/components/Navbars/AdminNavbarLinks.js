@@ -55,11 +55,7 @@ export default function HeaderLinks(props) {
   }
   const settingsRef = React.useRef();
   return (
-    <Flex
-      pe={{ sm: "0px", md: "16px" }}
-      w={{ sm: "100%", md: "auto" }}
-      alignItems="center"
-    >
+    <Flex w={{ sm: "100%", md: "auto" }} alignItems="center">
       <NavLink to="/auth/signin">
         <Button
           ms="0px"
@@ -84,7 +80,6 @@ export default function HeaderLinks(props) {
       <SettingsIcon
         cursor="pointer"
         ms={{ base: "16px", xl: "0px" }}
-        me="16px"
         ref={settingsRef}
         onClick={props.onOpen}
         color={navbarIcon}

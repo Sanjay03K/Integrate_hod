@@ -49,7 +49,7 @@ function SignIn() {
           position="absolute"
           boxSize={{ sm: "200px", md: "300px" }}
         >
-          <Image objectFit="cover" src={signInImage} alt="Segun Adebayo" />
+          <Image objectFit="cover" src={signInImage} alt="LICET Logo" />
         </Box>
         <Flex
           mt={{ sm: "30vh", md: "10vh" }}

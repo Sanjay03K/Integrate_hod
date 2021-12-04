@@ -1,3 +1,5 @@
+/** @format */
+
 //Class Advisor ExtraCurricular Club TableRow
 import {
   Button,

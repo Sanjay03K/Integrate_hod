@@ -1,3 +1,5 @@
+/** @format */
+
 //Class Advisor Extracurricular
 
 import React, { useState, useEffect } from "react";
@@ -124,7 +126,7 @@ function Extracurricular() {
           <CSVLink data={data2}>
             <Button
               minWidth="fit-content"
-              mt="1em"
+              mt="1.5em"
               onClick="m"
               colorScheme="orange"
               variant="solid"
