@@ -1,3 +1,5 @@
+/** @format */
+
 // Invisible Routes
 
 import GeneralInformationdata1 from "views/Pages/GeneralInformationData/GeneralInformationdata1";
@@ -21,6 +23,8 @@ import ProfessionalDevelopmentData2 from "views/Pages/ProfessionalDevelopmentDat
 
 import GeneralInformationDataEdit from "views/Pages/Edit/GeneralInformationDataEdit";
 import GeneralInformationdata from "views/Pages/Edit/GeneralInformationdata";
+
+import Error404 from "views/Pages/Error404.js";
 
 var dashRoutes = [
   {
@@ -105,6 +109,11 @@ var dashRoutes = [
   {
     path: "/GeneralInformationdata",
     component: GeneralInformationdata,
+    layout: "/auth",
+  },
+  {
+    path: "/Error404",
+    component: Error404,
     layout: "/auth",
   },
 ];
