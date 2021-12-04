@@ -38,19 +38,19 @@ export default function handleLogin() {
       console.log(check);
       if (check.user_type == 2) {
         localStorage.setItem("dept", check.dept);
-        window.location.href = URL + "/HoD#/admin2/dashboard";
+        window.location.href = URL + "/HoD#/admin2/GeneralInformation";
       } else if (check.user_type == 1) {
         localStorage.setItem("batch", check.batch);
         localStorage.setItem("dept", check.dept);
-        window.location.href = URL + "/Class-Advisor#/admin1/dashboard";
+        window.location.href = URL + "/Class-Advisor#/admin1/GeneralInformation";
       } else if (check.user_type == 3) {
-        window.location.href = URL + "/LICET#/admin3/dashboard";
+        window.location.href = URL + "/LICET#/admin3/GeneralInformation";
       } else if (check.user_type == 0) {
         if (check.roll_no == null) {
           window.location.href = URL + "/Student#/auth/GeneralInformationdata";
         } else {
           localStorage.setItem("StudentRoll", check.roll_no);
-          window.location.href = URL + "/Student#/admin0/dashboard";
+          window.location.href = URL + "/Student#/admin0/GeneralInformation";
         }
       }
       localStorage.setItem("useremail", result.data[0].email);
